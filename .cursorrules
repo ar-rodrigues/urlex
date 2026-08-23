@@ -1,0 +1,42 @@
+# Reglas del proyecto urlex
+
+## Audiencia e idioma
+- El público objetivo habla español. Todo el texto visible para el usuario debe estar en español.
+- Las traducciones viven en `messages/es.json` (y futuros `messages/{locale}.json`).
+- Usa `getTranslations` en Server Components y `useTranslations` en Client Components.
+
+## Traducciones (obligatorio)
+- **Cada componente nuevo** que muestre texto al usuario DEBE registrar sus cadenas en `messages/es.json`.
+- Usa claves con namespace por componente: `NombreComponente.clave` (ej. `Hero.title`, `LandingNav.cta`).
+- No hardcodees strings visibles en JSX/TSX; siempre pasa por next-intl.
+
+## DRY y componentes reutilizables
+- No repitas lógica ni markup: extrae a hooks (`src/hooks/`), utilidades (`src/lib/`) o componentes compartidos.
+- Componentes genéricos de UI → `src/components/ui/`.
+- Secciones específicas de la landing → `src/components/landing/`.
+- Si un patrón aparece dos veces, refactoriza antes de duplicar una tercera vez.
+
+## Guía de estilo (obligatorio)
+- La referencia visual vive en `docs/style-guide.md`. **Todo componente UI nuevo debe seguirla.**
+- También está reforzada en `.cursor/rules/style-guide.mdc` (`alwaysApply`).
+- Paleta de marca: navy primary, gold accent, fondo hueso; tipografía Libre Baskerville + Figtree.
+
+## CSS y theming
+- Usa **variables CSS** definidas en `src/app/globals.css` para colores, espaciado y tipografía.
+- No uses valores de color literales en componentes; referencia `var(--color-*)`, `var(--spacing-*)`, etc.
+- Ant Design: personaliza con `ConfigProvider` y `cssVar: true`; alinea tokens con las variables del proyecto.
+
+## Patrón de componentes (Next.js App Router)
+- Prefiere **Server Components** por defecto.
+- Añade `'use client'` solo cuando necesites estado, efectos, APIs del navegador o componentes interactivos de Ant Design.
+- No uses sub-componentes con notación punto de Ant Design (ej. `Select.Option`); importa desde rutas explícitas.
+
+## Convenciones de nombres
+- Archivos: `kebab-case.tsx`
+- Componentes React: `PascalCase`
+- Funciones y variables: `camelCase`
+
+## i18n y rutas
+- Locale en URL: prefijo `/es` (configurado en `src/i18n/routing.ts`).
+- Enlaces internos: usa `Link` de `src/lib/navigation.ts`, no `next/link` directamente.
+- Archivo de enrutamiento i18n en Next.js 16: `src/proxy.ts` (no `middleware.ts`).

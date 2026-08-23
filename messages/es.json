@@ -1,0 +1,698 @@
+{
+  "Metadata": {
+    "title": "URLEX — Bufete jurídico en Puebla",
+    "description": "Bufete jurídico en Puebla con más de 30 años protegiendo tus derechos. Asesoría legal personalizada para personas, empresas e instituciones."
+  },
+  "LandingNav": {
+    "brand": "URLEX",
+    "home": "Inicio",
+    "services": "Servicios",
+    "facilities": "Instalaciones",
+    "trajectory": "Trayectoria",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "cta": "Solicitar asesoría",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
+  },
+  "Hero": {
+    "titleBefore": "Bufete jurídico en Puebla con más de",
+    "titleHighlight": "30 años",
+    "titleAfter": "protegiendo tus derechos",
+    "subtitle": "En URLEX te brindamos asesoría legal personalizada para resolver conflictos, proteger tu patrimonio y darte certeza jurídica en cada etapa del proceso.",
+    "ctaPrimary": "Asesoría gratuita",
+    "ctaSecondary": "Conoce nuestros servicios",
+    "meta": "Bufete jurídico en Puebla · Atención personalizada · Más de 30 años de experiencia",
+    "imageAlt": "Consulta legal profesional en oficina"
+  },
+  "AboutSection": {
+    "title": "Respaldo legal con experiencia, compromiso y certeza jurídica",
+    "body": "URLEX es un bufete jurídico con más de 30 años de experiencia en Puebla, especializado en asesoría y representación legal para personas, empresas, asociaciones e instituciones. Sabemos que un problema legal genera incertidumbre. Por eso nuestro trabajo se enfoca en acompañarte, resolver tus dudas y diseñar una estrategia que proteja tus derechos desde el primer día.",
+    "quote": "“Tu tranquilidad comienza con una estrategia legal bien acompañada.”",
+    "imageAlt": "Profesionales revisando documentos legales"
+  },
+  "StatsSection": {
+    "items": {
+      "experience": {
+        "value": "30+",
+        "label": "Años de experiencia"
+      },
+      "areas": {
+        "value": "3+",
+        "label": "Áreas principales"
+      },
+      "attention": {
+        "value": "100%",
+        "label": "Atención personalizada"
+      },
+      "location": {
+        "value": "Puebla",
+        "label": "Sede y cobertura estatal"
+      }
+    }
+  },
+  "ServicesSection": {
+    "title": "Soluciones legales para cada etapa de tu vida y tu negocio",
+    "subtitle": "Atendemos personas, empresas y asociaciones en las áreas legales que más impactan su día a día.",
+    "cta": "Conocer más",
+    "items": {
+      "family": {
+        "title": "Derecho Familiar",
+        "description": "Divorcios, custodia y pensiones."
+      },
+      "lease": {
+        "title": "Arrendamiento Seguro",
+        "description": "Renta con respaldo jurídico."
+      },
+      "commercial": {
+        "title": "Derecho Mercantil",
+        "description": "Protege y formaliza tu negocio."
+      },
+      "contracts": {
+        "title": "Resolución de Contratos",
+        "description": "Nulidades, rescisiones y conflictos."
+      },
+      "civil": {
+        "title": "Derecho Civil",
+        "description": "Contratos, propiedades y sociedades."
+      },
+      "labor": {
+        "title": "Derecho Laboral",
+        "description": "Protección para empresas y trabajadores."
+      },
+      "permits": {
+        "title": "Permisos y Licencias",
+        "description": "Gestión legal ante autoridades."
+      }
+    }
+  },
+  "BenefitsSection": {
+    "title": "¿Por qué elegir URLEX?",
+    "items": {
+      "trajectory": {
+        "title": "30 años de trayectoria",
+        "description": "Experiencia acumulada en Puebla que se traduce en estrategias legales probadas y resultados concretos."
+      },
+      "preventive": {
+        "title": "Asesoría preventiva",
+        "description": "Actuamos antes del conflicto. Te ayudamos a identificar riesgos legales antes de que se conviertan en problemas."
+      },
+      "personalized": {
+        "title": "Atención personalizada",
+        "description": "Cada caso recibe seguimiento directo. No eres un expediente, eres una persona con derechos."
+      },
+      "integral": {
+        "title": "Acompañamiento integral",
+        "description": "Estamos contigo antes, durante y después del proceso: asesoría, representación y seguimiento."
+      }
+    }
+  },
+  "SuccessCasesSection": {
+    "title": "Empresas e instituciones que confían en nosotros"
+  },
+  "ContactSection": {
+    "title": "Cuéntanos tu caso",
+    "fullName": "Nombre completo",
+    "fullNamePlaceholder": "Tu nombre",
+    "phone": "Teléfono",
+    "phonePlaceholder": "Tu teléfono",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "correo@ejemplo.com",
+    "service": "Servicio requerido",
+    "servicePlaceholder": "Selecciona un servicio",
+    "message": "Describe tu situación",
+    "messagePlaceholder": "Cuéntanos brevemente tu caso",
+    "submit": "Solicitar asesoría legal",
+    "success": "Gracias. Hemos recibido tu solicitud.",
+    "services": {
+      "family": "Derecho Familiar",
+      "lease": "Arrendamiento Seguro",
+      "commercial": "Derecho Mercantil",
+      "contracts": "Resolución de Contratos",
+      "civil": "Derecho Civil",
+      "labor": "Derecho Laboral",
+      "permits": "Permisos y Licencias",
+      "other": "Otro"
+    }
+  },
+  "SiteFooter": {
+    "brand": "URLEX",
+    "tagline": "Bufete jurídico en Puebla. Más de 30 años protegiendo tus derechos con certeza y cercanía.",
+    "quote": "“Tu tranquilidad comienza con una estrategia legal bien acompañada.”",
+    "servicesTitle": "Servicios",
+    "navTitle": "Navegación",
+    "contactTitle": "Contacto",
+    "address": "Puebla, México",
+    "phone": "+52 (222) 000 0000",
+    "email": "contacto@urlex.mx",
+    "privacy": "Aviso de privacidad",
+    "copyright": "© {year} URLEX. Todos los derechos reservados.",
+    "socialInstagram": "Instagram",
+    "socialLinkedin": "LinkedIn",
+    "socialX": "X",
+    "linkFamily": "Derecho Familiar",
+    "linkLease": "Arrendamiento Seguro",
+    "linkCommercial": "Derecho Mercantil",
+    "linkMore": "Más servicios",
+    "linkHome": "Inicio",
+    "linkServices": "Servicios",
+    "linkAbout": "Nosotros",
+    "linkContact": "Contacto",
+    "linkContracts": "Resolución de contratos",
+    "linkCivil": "Derecho civil",
+    "linkLabor": "Derecho laboral",
+    "linkPermits": "Permisos y licencias",
+    "linkFacilities": "Instalaciones",
+    "linkTrajectory": "Trayectoria"
+  },
+  "PracticeShared": {
+    "howTitle": "¿Cómo te acompañamos en este proceso?",
+    "sidebarCta": "Consulta gratuita para evaluar tu caso sin compromiso.",
+    "sidebarCtaButton": "Agendar consulta",
+    "otherAreasTitle": "Otras áreas de práctica",
+    "trustTitle": "¿Por qué confiar en URLEX?",
+    "trust": {
+      "experience": "+30 años de experiencia en Puebla",
+      "personalized": "Atención personalizada en cada caso",
+      "preventive": "Asesoría preventiva y estratégica",
+      "integral": "Acompañamiento integral durante el proceso"
+    },
+    "areas": {
+      "arrendamiento": "Arrendamiento Seguro",
+      "familiar": "Derecho Familiar",
+      "mercantil": "Derecho Mercantil",
+      "contratos": "Resolución de Contratos",
+      "civil": "Derecho Civil",
+      "laboral": "Derecho Laboral",
+      "licencias": "Permisos y Licencias"
+    }
+  },
+  "Practice": {
+    "arrendamiento": {
+      "metaTitle": "Arrendamiento Seguro — URLEX",
+      "metaDescription": "Renta tu inmueble con protección legal. Pólizas jurídicas, revisión y elaboración de contratos de arrendamiento en Puebla.",
+      "breadcrumbHome": "Inicio",
+      "breadcrumbServices": "Servicios",
+      "breadcrumbCurrent": "Arrendamiento Seguro",
+      "title": "Renta tu inmueble con protección legal desde el primer día",
+      "body": "Rentar un inmueble sin respaldo legal puede exponer al propietario a incumplimientos, ocupaciones prolongadas o pérdidas difíciles de recuperar. En URLEX ofrecemos asesoría y pólizas jurídicas de arrendamiento para que rentes con seguridad, claridad y protección.",
+      "practiceArea": "Área de Práctica · Arrendamiento Seguro",
+      "imageAlt": "Asesoría inmobiliaria y contrato de arrendamiento",
+      "subtitle": "Nuestro servicio previene conflictos entre arrendador y arrendatario, protege el patrimonio del propietario y formaliza acuerdos con el respaldo legal que da certeza a ambas partes.",
+      "items": {
+        "policies": {
+          "title": "Pólizas jurídicas de arrendamiento",
+          "description": "Contratación y gestión de pólizas que protegen al propietario ante incumplimientos del inquilino."
+        },
+        "review": {
+          "title": "Revisión de contratos de arrendamiento",
+          "description": "Análisis de cláusulas, riesgos y condiciones antes de firmar."
+        },
+        "drafting": {
+          "title": "Elaboración de contratos",
+          "description": "Redacción de contratos de arrendamiento adaptados a cada caso."
+        },
+        "advice": {
+          "title": "Asesoría para propietarios e inquilinos",
+          "description": "Orientación legal desde ambas posiciones para acuerdos justos y viables."
+        },
+        "prevention": {
+          "title": "Prevención de incumplimientos",
+          "description": "Identificación de riesgos y cláusulas de protección antes de rentar."
+        },
+        "conflicts": {
+          "title": "Acompañamiento en conflictos derivados del arrendamiento",
+          "description": "Representación legal ante desocupaciones, daños o adeudos."
+        }
+      },
+      "ctaTitle": "¿Tienes una situación de arrendamiento que requiere atención legal?",
+      "ctaSubtitle": "Nuestro equipo está listo para escucharte y orientarte",
+      "ctaButton": "Proteger mi inmueble"
+    },
+    "familiar": {
+      "metaTitle": "Derecho Familiar — URLEX",
+      "metaDescription": "Asesoría y representación en derecho familiar en Puebla: divorcios, custodia, pensiones y más.",
+      "breadcrumbHome": "Inicio",
+      "breadcrumbServices": "Servicios",
+      "breadcrumbCurrent": "Derecho Familiar",
+      "title": "Protección legal para ti y tu familia en Puebla",
+      "body": "Los asuntos familiares son de los más sensibles y complejos desde el punto de vista legal y emocional. En URLEX brindamos asesoría y representación especializada en derecho familiar.",
+      "practiceArea": "Área de Práctica · Derecho Familiar",
+      "imageAlt": "Familia protegida con asesoría legal",
+      "subtitle": "Nuestro objetivo es procurar el bienestar de cada persona dentro del núcleo familiar, garantizando estabilidad, claridad legal y acompañamiento durante procesos que exigen tanto rigor jurídico como sensibilidad humana.",
+      "items": {
+        "divorces": {
+          "title": "Divorcios",
+          "description": "Asesoría y representación en divorcios por mutuo acuerdo o necesario."
+        },
+        "litigation": {
+          "title": "Patrocinio en juicios",
+          "description": "Representación legal ante tribunales en todas las etapas del proceso."
+        },
+        "alimony": {
+          "title": "Pensiones alimenticias",
+          "description": "Fijación, cobro y defensa de pensiones alimenticias."
+        },
+        "custody": {
+          "title": "Guarda y custodia de menores",
+          "description": "Determinación, modificación y defensa de la guarda y custodia."
+        },
+        "visits": {
+          "title": "Régimen de visitas y convivencia",
+          "description": "Establecimiento y cumplimiento de regímenes de convivencia parental."
+        },
+        "alimonyChange": {
+          "title": "Cancelación o disminución de pensiones",
+          "description": "Gestión legal para modificar condiciones de pensiones existentes."
+        },
+        "inheritance": {
+          "title": "Testamentarías",
+          "description": "Apertura y tramitación de sucesiones testamentarias e intestamentarias."
+        },
+        "other": {
+          "title": "Otros asuntos familiares",
+          "description": "Asesoría en adopciones, tutelas, divorcios exprés y más."
+        }
+      },
+      "ctaTitle": "¿Tienes una situación familiar que requiere atención legal?",
+      "ctaSubtitle": "Nuestro equipo está listo para escucharte y orientarte",
+      "ctaButton": "Solicitar asesoría familiar"
+    },
+    "mercantil": {
+      "metaTitle": "Derecho Mercantil — URLEX",
+      "metaDescription": "Asesoría mercantil en Puebla: contratos, sociedades, marcas, cobro de deudas y más.",
+      "breadcrumbHome": "Inicio",
+      "breadcrumbServices": "Servicios",
+      "breadcrumbCurrent": "Derecho Mercantil",
+      "title": "Asesoría legal para proteger y fortalecer tu negocio en Puebla",
+      "body": "El mundo empresarial exige certeza jurídica en cada decisión: un contrato mal redactado, una marca sin registro o una deuda sin respaldo legal puede costar mucho más que una asesoría preventiva.",
+      "practiceArea": "Área de Práctica · Derecho Mercantil",
+      "imageAlt": "Asesoría mercantil para empresas",
+      "subtitle": "Te ayudamos a prevenir riesgos, proteger activos comerciales y resolver controversias mercantiles con estrategia, experiencia y criterio legal.",
+      "items": {
+        "debts": {
+          "title": "Cobro de deudas y cartera vencida",
+          "description": "Gestión legal para recuperar adeudos de manera eficiente."
+        },
+        "incorporation": {
+          "title": "Redacción y alta de actas constitutivas",
+          "description": "Constitución formal de sociedades mercantiles ante notario y Registro Público."
+        },
+        "ip": {
+          "title": "Registro de patentes, marcas, arte y obras",
+          "description": "Protección de propiedad intelectual para tu negocio y creaciones."
+        },
+        "contracts": {
+          "title": "Elaboración y revisión de contratos mercantiles",
+          "description": "Redacción y análisis de contratos comerciales adaptados a tu operación."
+        },
+        "negotiable": {
+          "title": "Contratos relacionados con facturas, cheques y títulos",
+          "description": "Gestión legal de documentos y obligaciones cambiarias."
+        },
+        "dissolution": {
+          "title": "Disolución y liquidación de sociedades",
+          "description": "Cierre ordenado de sociedades con respaldo legal y registral."
+        },
+        "amparo": {
+          "title": "Juicio de amparo en materia mercantil",
+          "description": "Defensa de derechos frente a actos de autoridad que afecten tu negocio."
+        },
+        "registry": {
+          "title": "Gestoría ante Corredor Público y Registro Público de Comercio",
+          "description": "Trámites notariales y registrales para formalizar tu empresa."
+        }
+      },
+      "ctaTitle": "¿Tienes una situación mercantil que requiere atención legal?",
+      "ctaSubtitle": "Nuestro equipo está listo para escucharte y orientarte",
+      "ctaButton": "Solicitar asesoría mercantil"
+    },
+    "contratos": {
+      "metaTitle": "Resolución de Contratos — URLEX",
+      "metaDescription": "Soluciones legales ante conflictos contractuales: nulidad, rescisión, obligaciones y terminación de contratos en Puebla.",
+      "breadcrumbHome": "Inicio",
+      "breadcrumbServices": "Servicios",
+      "breadcrumbCurrent": "Resolución de Contratos",
+      "title": "Soluciones legales cuando una relación contractual ya no funciona",
+      "body": "Un contrato en conflicto puede generar pérdidas, incertidumbre y litigios prolongados. En URLEX analizamos tu situación y te acompañamos para resolver, renegociar o terminar la relación con el menor riesgo posible.",
+      "practiceArea": "Área de Práctica · Resolución de Contratos",
+      "imageAlt": "Revisión legal de contratos",
+      "subtitle": "Analizamos la validez, eficacia y riesgos de cada contrato para definir la mejor ruta: renegociación, cumplimiento forzoso o terminación legal.",
+      "items": {
+        "efficacy": {
+          "title": "Eficacia e ineficacia de contratos",
+          "description": "Análisis de si un contrato es válido, exigible y tiene efectos legales reales."
+        },
+        "nullity": {
+          "title": "Nulidad del contrato",
+          "description": "Gestión legal cuando el contrato carece de requisitos de fondo o forma."
+        },
+        "annullability": {
+          "title": "Anulabilidad del contrato",
+          "description": "Acción legal para impugnar contratos con vicios del consentimiento."
+        },
+        "rescission": {
+          "title": "Rescisión del contrato",
+          "description": "Terminación del contrato por incumplimiento de una de las partes."
+        },
+        "obligations": {
+          "title": "Revisión de obligaciones contractuales",
+          "description": "Evaluación de lo que cada parte debe cumplir y cómo exigirlo."
+        },
+        "termination": {
+          "title": "Asesoría para terminar relaciones contractuales",
+          "description": "Acompañamiento para cerrar vínculos contractuales con el menor riesgo legal posible."
+        }
+      },
+      "ctaTitle": "¿Tienes una situación de contratos que requiere atención legal?",
+      "ctaSubtitle": "Nuestro equipo está listo para escucharte y orientarte",
+      "ctaButton": "Revisar mi contrato"
+    },
+    "civil": {
+      "metaTitle": "Derecho Civil — URLEX",
+      "metaDescription": "Asesoría civil integral en Puebla: contratos, propiedad, posesión, asociaciones y conflictos entre particulares.",
+      "breadcrumbHome": "Inicio",
+      "breadcrumbServices": "Servicios",
+      "breadcrumbCurrent": "Derecho Civil",
+      "title": "Asesoría civil integral para personas, empresas y asociaciones en Puebla",
+      "body": "El derecho civil regula las relaciones más cotidianas: contratos, propiedad, posesión, herencias, sociedades y conflictos entre particulares. Una asesoría adecuada en esta materia previene litigios costosos y da solidez legal a tus decisiones.",
+      "practiceArea": "Área de Práctica · Derecho Civil",
+      "imageAlt": "Asesoría en derecho civil",
+      "subtitle": "En URLEX brindamos asesoría y representación civil enfocada en prevenir conflictos, fortalecer documentos legales y defender a nuestros clientes cuando es necesario iniciar o enfrentar un procedimiento judicial.",
+      "items": {
+        "eviction": {
+          "title": "Juicios de desocupación",
+          "description": "Tramitación legal para recuperar un inmueble de forma eficiente."
+        },
+        "executive": {
+          "title": "Juicios ejecutivos civiles",
+          "description": "Cobro forzoso de obligaciones documentadas con procedimiento ágil."
+        },
+        "possessory": {
+          "title": "Juicios posesorios",
+          "description": "Defensa y recuperación de la posesión sobre bienes inmuebles."
+        },
+        "granting": {
+          "title": "Otorgamiento de contratos",
+          "description": "Elaboración y formalización de contratos civiles adaptados a cada caso."
+        },
+        "judgmentNullity": {
+          "title": "Nulidad de juicio concluido",
+          "description": "Acción legal para impugnar resoluciones con vicios de forma o fondo."
+        },
+        "corporateAdvice": {
+          "title": "Asesoría contractual integral a empresas",
+          "description": "Revisión y diseño de esquemas contractuales para reducir riesgos operativos."
+        },
+        "associations": {
+          "title": "Constitución de asociaciones y sociedades civiles",
+          "description": "Formalización legal de asociaciones y sociedades civiles ante autoridad competente."
+        },
+        "notarial": {
+          "title": "Gestoría notarial",
+          "description": "Acompañamiento en trámites ante notario público."
+        },
+        "propertyRegistry": {
+          "title": "Gestoría ante Registro Público de la Propiedad",
+          "description": "Inscripción y actualización de actos jurídicos sobre bienes inmuebles."
+        },
+        "condo": {
+          "title": "Consultoría en régimen de condominio",
+          "description": "Asesoría en reglamentos, asambleas y conflictos entre condóminos."
+        }
+      },
+      "ctaTitle": "¿Tienes una situación civil que requiere atención legal?",
+      "ctaSubtitle": "Nuestro equipo está listo para escucharte y orientarte",
+      "ctaButton": "Solicitar asesoría civil"
+    },
+    "laboral": {
+      "metaTitle": "Derecho Laboral — URLEX",
+      "metaDescription": "Asesoría laboral en Puebla para empresas y trabajadores: contratos, terminaciones, conciliación y prevención de demandas.",
+      "breadcrumbHome": "Inicio",
+      "breadcrumbServices": "Servicios",
+      "breadcrumbCurrent": "Derecho Laboral",
+      "title": "Asesoría laboral en Puebla para prevenir y resolver conflictos de trabajo",
+      "body": "Las relaciones laborales son una fuente frecuente de conflictos que, sin asesoría adecuada, pueden derivar en demandas costosas o en violaciones a los derechos de los trabajadores.",
+      "practiceArea": "Área de Práctica · Derecho Laboral",
+      "imageAlt": "Asesoría en derecho laboral",
+      "subtitle": "En URLEX acompañamos tanto a empresas como a trabajadores en la prevención, atención y resolución de conflictos laborales. Nuestro objetivo es brindar claridad jurídica, reducir riesgos y construir soluciones que protejan los derechos de todas las partes.",
+      "items": {
+        "contracts": {
+          "title": "Contratos laborales",
+          "description": "Redacción y revisión de contratos individuales y colectivos de trabajo."
+        },
+        "terminations": {
+          "title": "Terminaciones laborales",
+          "description": "Asesoría en despidos justificados, voluntarios y liquidaciones correctas."
+        },
+        "agreements": {
+          "title": "Convenios laborales",
+          "description": "Elaboración de acuerdos de terminación con respaldo legal."
+        },
+        "conflicts": {
+          "title": "Conflictos de trabajo",
+          "description": "Representación ante el Centro de Conciliación Laboral y tribunales."
+        },
+        "conciliation": {
+          "title": "Procesos de conciliación",
+          "description": "Acompañamiento en etapas de conciliación ante autoridades laborales."
+        },
+        "prevention": {
+          "title": "Prevención de demandas laborales",
+          "description": "Diagnóstico y corrección de prácticas que generan riesgo legal."
+        },
+        "advice": {
+          "title": "Asesoría para empresas y trabajadores",
+          "description": "Orientación legal desde ambas posiciones para resolver conflictos de forma justa."
+        },
+        "strategy": {
+          "title": "Estrategias legales ante conflictos laborales",
+          "description": "Diseño de la mejor ruta para proteger los intereses del cliente."
+        }
+      },
+      "ctaTitle": "¿Tienes una situación laboral que requiere atención legal?",
+      "ctaSubtitle": "Nuestro equipo está listo para escucharte y orientarte",
+      "ctaButton": "Recibir asesoría laboral"
+    },
+    "licencias": {
+      "metaTitle": "Permisos y Licencias — URLEX",
+      "metaDescription": "Gestión legal de permisos, licencias y trámites ante autoridades en Puebla.",
+      "breadcrumbHome": "Inicio",
+      "breadcrumbServices": "Servicios",
+      "breadcrumbCurrent": "Gestión de Permisos y Licencias",
+      "title": "Gestión legal de permisos, licencias y trámites ante autoridades en Puebla",
+      "body": "Operar sin los permisos correctos puede detener tu proyecto o negocio. En URLEX te acompañamos en la gestión legal ante autoridades para que cumplas requisitos con certeza y seguimiento puntual.",
+      "practiceArea": "Área de Práctica · Permisos y Licencias",
+      "imageAlt": "Gestión de permisos y licencias",
+      "subtitle": "Acompañamos a empresas, asociaciones e instituciones en la preparación documental, el seguimiento puntual y el cumplimiento de todos los requisitos para que puedas operar con certeza jurídica.",
+      "items": {
+        "government": {
+          "title": "Gestión de permisos gubernamentales",
+          "description": "Tramitación ante dependencias municipales, estatales y federales."
+        },
+        "operating": {
+          "title": "Licencias de funcionamiento",
+          "description": "Obtención y renovación de licencias para operar negocios."
+        },
+        "municipal": {
+          "title": "Trámites municipales y estatales",
+          "description": "Acompañamiento en gestiones ante autoridades de Puebla."
+        },
+        "documents": {
+          "title": "Acompañamiento documental",
+          "description": "Preparación y revisión de toda la documentación requerida."
+        },
+        "followUp": {
+          "title": "Seguimiento ante autoridades",
+          "description": "Monitoreo del avance de trámites y resolución de observaciones."
+        },
+        "regularization": {
+          "title": "Regularización de documentación",
+          "description": "Corrección y actualización de permisos o licencias vencidas o incompletas."
+        },
+        "compliance": {
+          "title": "Respuesta a requerimientos",
+          "description": "Respuesta y cumplimiento ante requerimientos de entidades gubernamentales."
+        }
+      },
+      "ctaTitle": "¿Tienes una situación de permisos y licencias que requiere atención legal?",
+      "ctaSubtitle": "Nuestro equipo está listo para escucharte y orientarte",
+      "ctaButton": "Gestionar mi permiso o licencia"
+    }
+  },
+  "PageHero": {
+    "breadcrumbHome": "Inicio"
+  },
+  "Trayectoria": {
+    "metaTitle": "Trayectoria — URLEX",
+    "metaDescription": "Más de 30 años de experiencia jurídica en Puebla. Conoce la trayectoria de URLEX.",
+    "breadcrumbCurrent": "Trayectoria",
+    "title": "30 años de experiencia jurídica en Puebla que respaldan cada estrategia",
+    "body": "A lo largo de más de tres décadas, URLEX ha acompañado a personas, empresas, cámaras, asociaciones e instituciones en procesos legales complejos. Nuestra trayectoria nos ha dado la experiencia y el criterio para diseñar soluciones que realmente funcionan.",
+    "tagline": "Trayectoria basada en confianza, resultados y compromiso",
+    "imageAlt": "Despacho jurídico profesional",
+    "timelineTitle": "Nuestra trayectoria",
+    "timeline": {
+      "1996": {
+        "year": "1996",
+        "title": "Fundación de URLEX",
+        "body": "Nace en Puebla con el propósito de brindar asesoría legal cercana, clara y estratégica."
+      },
+      "2005": {
+        "year": "2005",
+        "title": "Expansión de áreas de práctica",
+        "body": "Ampliamos nuestra atención a empresas, asociaciones e instituciones con servicios especializados."
+      },
+      "2012": {
+        "year": "2012",
+        "title": "Fortalecimiento institucional",
+        "body": "Consolidamos alianzas y procesos para acompañar casos de mayor complejidad con el mismo criterio cercano."
+      },
+      "2018": {
+        "year": "2018",
+        "title": "Enfoque preventivo",
+        "body": "Impulsamos asesoría preventiva para reducir riesgos legales antes de que se conviertan en conflictos."
+      },
+      "2024": {
+        "year": "2024",
+        "title": "Más de tres décadas",
+        "body": "Seguimos acompañando a Puebla con experiencia acumulada, resultados y compromiso profesional."
+      }
+    },
+    "experienceTitle": "Experiencia que respalda cada estrategia legal",
+    "processTitle": "Así acompañamos tu caso",
+    "process": {
+      "1": {
+        "title": "Escuchamos tu situación",
+        "body": "Analizamos tu caso, resolvemos tus primeras dudas y entendemos el contexto legal del problema."
+      },
+      "2": {
+        "title": "Evaluamos las opciones",
+        "body": "Identificamos riesgos, documentos necesarios y posibles escenarios legales."
+      },
+      "3": {
+        "title": "Diseñamos una estrategia",
+        "body": "Definimos el camino más conveniente para proteger tus derechos e intereses."
+      },
+      "4": {
+        "title": "Te acompañamos en el proceso",
+        "body": "Seguimiento personalizado antes, durante y después de cada etapa."
+      },
+      "5": {
+        "title": "Buscamos soluciones viables",
+        "body": "Cuando es posible, impulsamos acuerdos, mediación o negociación para resolver de forma eficiente."
+      }
+    },
+    "ctaTitle": "¿Tienes una situación legal que requiere experiencia y compromiso?",
+    "ctaSubtitle": "Nuestro equipo está listo para escucharte y orientarte",
+    "ctaButton": "Solicitar asesoría legal"
+  },
+  "Instalaciones": {
+    "metaTitle": "Instalaciones — URLEX",
+    "metaDescription": "Conoce nuestras instalaciones en Puebla: un espacio profesional diseñado para tu tranquilidad.",
+    "breadcrumbCurrent": "Instalaciones",
+    "title": "Un espacio profesional diseñado para tu tranquilidad",
+    "body": "Nuestras instalaciones en Puebla están pensadas para brindarte un ambiente de privacidad, comodidad y profesionalismo durante cada consulta. Atendemos con discreción y te ofrecemos el espacio adecuado para hablar con confianza sobre tu situación legal.",
+    "imageAlt": "Instalaciones del bufete URLEX",
+    "galleryAlt": "Galería de instalaciones",
+    "contactTitle": "Contacto",
+    "addressLine1": "Privada de la 37 sur #2115",
+    "addressLine2": "Col. Belisario Domínguez.",
+    "addressLine3": "Puebla, Pue",
+    "scheduleLabel": "Horario:",
+    "scheduleValue": "Lunes a viernes, 9:00 – 18:00",
+    "phoneLabel": "Teléfono:",
+    "phoneValue": "+52 (222) 000 0000",
+    "whatsappLabel": "WhatsApp:",
+    "whatsappValue": "+52 (222) 000 0000",
+    "emailLabel": "Correo:",
+    "emailValue": "contacto.juridico@urlex.com",
+    "sidebarCta": "Consulta gratuita para evaluar tu caso sin compromiso.",
+    "sidebarCtaButton": "Agendar consulta",
+    "mapTitle": "Ubicación"
+  },
+  "Nosotros": {
+    "metaTitle": "Nosotros — URLEX",
+    "metaDescription": "Conoce al equipo de URLEX: más de 30 años protegiendo derechos en Puebla.",
+    "breadcrumbCurrent": "Nosotros",
+    "heroTitle": "Un equipo legal comprometido con tu tranquilidad y tus derechos",
+    "imageAlt": "Equipo legal URLEX",
+    "historyTitle": "Nuestra historia",
+    "historyBody": "URLEX nació en Puebla con la convicción de que el acceso a una buena asesoría legal debería ser cercano, claro y estratégico. A lo largo de más de 30 años hemos crecido junto a nuestros clientes, ampliando nuestras áreas de práctica y consolidando un equipo de abogados con experiencia real en los tribunales y en la mesa de negociación. Hoy atendemos a personas, familias, empresas, asociaciones e instituciones en Puebla y su zona de influencia, con el mismo compromiso con el que iniciamos: resolver problemas legales con honestidad, claridad y resultados.",
+    "missionTitle": "Misión",
+    "missionBody": "Proteger los derechos e intereses de nuestros clientes mediante asesoría jurídica personalizada, estratégica y fundamentada, con el compromiso de acompañarlos en cada etapa de su proceso legal.",
+    "whyTitle": "¿Por qué elegir URLEX?",
+    "values": {
+      "honesty": {
+        "title": "Honestidad",
+        "body": "Te decimos la verdad sobre tu caso, aunque no sea lo que quieras escuchar."
+      },
+      "commitment": {
+        "title": "Compromiso",
+        "body": "Tu problema es nuestro problema. Lo atendemos con responsabilidad profesional real."
+      },
+      "clarity": {
+        "title": "Claridad",
+        "body": "Explicamos cada paso en términos que puedas entender, sin tecnicismos innecesarios."
+      },
+      "strategy": {
+        "title": "Estrategia",
+        "body": "No reaccionamos. Planificamos. Cada acción tiene un propósito dentro de tu caso."
+      }
+    },
+    "teamTitle": "Las personas detrás de tu estrategia legal",
+    "team": {
+      "luis": {
+        "name": "Lic. Luis Ignacio Sánchez Castañeda",
+        "role": "Socio fundador",
+        "bio": "Responsable de la dirección estratégica del despacho jurídico, representación legal, coordinación y seguimiento de clientes institucionales y empresariales."
+      },
+      "juan": {
+        "name": "Lic. Juan Manuel Bonilla Godínez",
+        "role": "Socio director",
+        "bio": "Responsable de coordinar trámites notariales y administrativos ante dependencias gubernamentales y notarías públicas, garantizando legalidad y continuidad operativa."
+      },
+      "maricruz": {
+        "name": "Lic. Maricruz Vázquez López",
+        "role": "Socia directora",
+        "bio": "Responsable de la gestión integral ante Ayuntamiento y Gobierno del Estado para la obtención de licencias, uso de suelo, regularización de obras y cumplimiento normativo vigente."
+      }
+    },
+    "faqTitle": "Preguntas frecuentes",
+    "faq": {
+      "when": {
+        "q": "¿Cuándo debo buscar asesoría legal?",
+        "a": "Cuando enfrentas un conflicto, vas a firmar un documento importante o necesitas prevenir riesgos legales. Entre más temprana la asesoría, más opciones tienes."
+      },
+      "policy": {
+        "q": "¿Qué es una póliza jurídica de arrendamiento?",
+        "a": "Es un instrumento legal que protege al propietario ante incumplimientos del inquilino, con respaldo jurídico desde el inicio del contrato."
+      },
+      "trial": {
+        "q": "¿Puedo resolver un conflicto sin llegar a juicio?",
+        "a": "En muchos casos sí. Evaluamos mediación, negociación o conciliación cuando son viables y convenientes para tu situación."
+      },
+      "docs": {
+        "q": "¿Qué documentos necesito para una primera asesoría?",
+        "a": "Contratos, notificaciones, identificaciones y cualquier documento relacionado con tu caso. Si no los tienes todos, te orientamos sobre lo indispensable."
+      },
+      "location": {
+        "q": "¿Atienden solo en Puebla?",
+        "a": "Nuestra sede está en Puebla y atendemos con cobertura estatal. Contáctanos para confirmar el alcance de tu asunto."
+      },
+      "contract": {
+        "q": "¿Pueden revisar un contrato antes de firmarlo?",
+        "a": "Sí. Revisamos cláusulas, riesgos y condiciones para que firmes con claridad y respaldo legal."
+      }
+    }
+  },
+  "ContactoPage": {
+    "metaTitle": "Contacto — URLEX",
+    "metaDescription": "Contáctanos para una asesoría legal. Completa el formulario y nuestro equipo te orientará.",
+    "breadcrumbCurrent": "Contacto",
+    "title": "Hablemos de tu caso",
+    "body": "Si necesitas asesoría legal, acompañamiento jurídico o apoyo para resolver un conflicto, en URLEX estamos listos para escucharte. Completa el formulario y nuestro equipo se pondrá en contacto contigo para conocer tu situación y explicarte los siguientes pasos.",
+    "submit": "Enviar solicitud",
+    "privacyNote": "Tu información es confidencial y no será compartida con terceros."
+  }
+}

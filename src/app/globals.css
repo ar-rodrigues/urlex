@@ -1,26 +1,101 @@
 @import "tailwindcss";
+@import "antd/dist/reset.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary: #144672;
+  --color-primary-hover: #0f3558;
+  --color-accent: #e7c018;
+  --color-accent-hover: #cfa910;
+  --color-accent-contrast: #030304;
+  --color-bg: #ffffff;
+  --color-bg-muted: #f7f5f1;
+  --color-bg-quote: #d6dfeb;
+  --color-text: #030304;
+  --color-text-muted: #4a4a4a;
+  --color-text-on-primary: #ffffff;
+  --color-text-on-primary-muted: rgba(247, 245, 241, 0.61);
+  --color-border: #d0cfcf;
+  --color-placeholder: #a1a1a1;
+
+  --font-family: var(--font-figtree), system-ui, sans-serif;
+  --font-family-display: var(--font-libre-baskerville), Georgia, serif;
+
+  --spacing-section: 3rem;
+  --spacing-container: 1.5rem;
+  --max-width-container: 1280px;
+  --radius-button: 12px;
+  --radius-card: 15px;
+  --radius-input: 10px;
+  --radius-form: 24px;
+
+  --background: var(--color-bg);
+  --foreground: var(--color-text);
+}
+
+/* Tablet (~800px Figma): mid gutters, avoid desktop 64px padding */
+@media (min-width: 768px) {
+  :root {
+    --spacing-container: 2rem;
+    --spacing-section: 3.5rem;
+  }
+}
+
+/* Desktop: full gutters */
+@media (min-width: 1024px) {
+  :root {
+    --spacing-container: 4rem;
+    --spacing-section: 4rem;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-family);
+  --font-serif: var(--font-family-display);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  overflow-x: clip;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  margin: 0;
+  overflow-x: clip;
+}
+
+.landing-container {
+  width: 100%;
+  max-width: var(--max-width-container);
+  margin-inline: auto;
+  padding-inline: var(--spacing-container);
+  box-sizing: border-box;
+}
+
+.landing-section {
+  padding-block: var(--spacing-section);
+}
+
+.font-display {
+  font-family: var(--font-family-display);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .motion-fade-up {
+    animation: fade-up 0.5s ease-out both;
+  }
 }
