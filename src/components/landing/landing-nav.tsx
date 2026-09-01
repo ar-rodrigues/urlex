@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Drawer } from "antd";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
-import { Link } from "@/lib/navigation";
+import { Link, usePathname } from "@/lib/navigation";
 
 const NAV_ITEMS = [
   { key: "home", href: "/" },
@@ -15,9 +16,16 @@ const NAV_ITEMS = [
   { key: "contact", href: "/contacto" },
 ] as const;
 
+const MOBILE_DRAWER_WIDTH = "min(320px, 85vw)";
+
 export function LandingNav() {
   const t = useTranslations("LandingNav");
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <header
@@ -69,26 +77,44 @@ export function LandingNav() {
         </button>
       </div>
 
-      {open ? (
-        <div className="landing-container flex flex-col gap-4 pb-6 lg:hidden">
+      <Drawer
+        open={open}
+        onClose={() => setOpen(false)}
+        placement="right"
+        size={MOBILE_DRAWER_WIDTH}
+        zIndex={40}
+        closable={false}
+        destroyOnHidden
+        mask={{ closable: true }}
+        styles={{
+          mask: { background: "rgba(3, 3, 4, 0.45)" },
+          body: {
+            padding: "var(--spacing-container)",
+            paddingTop: "calc(var(--spacing-container) + 0.5rem)",
+            background: "var(--color-primary)",
+          },
+        }}
+        classNames={{ section: "lg:hidden" }}
+      >
+        <nav className="flex flex-col gap-5" aria-label="Principal">
           {NAV_ITEMS.map(({ key, href }) => (
             <Link
               key={key}
               href={href}
-              className="text-sm font-medium uppercase"
+              className="text-sm font-medium uppercase tracking-tight transition-opacity hover:opacity-80"
               style={{ color: "var(--color-text-on-primary)" }}
               onClick={() => setOpen(false)}
             >
               {t(key)}
             </Link>
           ))}
-          <Link href="/contacto" onClick={() => setOpen(false)}>
+          <Link href="/contacto" onClick={() => setOpen(false)} className="mt-2">
             <Button variant="primary" className="w-full">
               {t("cta")}
             </Button>
           </Link>
-        </div>
-      ) : null}
+        </nav>
+      </Drawer>
     </header>
   );
 }

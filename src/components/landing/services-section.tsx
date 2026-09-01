@@ -44,7 +44,7 @@ export async function ServicesSection() {
                 className="flex h-11 w-12 items-center justify-center rounded-md"
                 style={{ background: "var(--color-primary)" }}
               >
-                <Image src={icon} alt="" width={28} height={28} />
+                <Image src={icon} alt="" width={28} height={28} className="h-7 w-auto" />
               </div>
               <div className="flex flex-col gap-2">
                 <h3
