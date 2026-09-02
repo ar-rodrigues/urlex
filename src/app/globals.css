@@ -122,3 +122,23 @@ body {
     animation: fade-up 0.5s ease-out both;
   }
 }
+
+.arrendamiento-contact-form .ant-form-item-label > label {
+  font-size: 0.875rem;
+  height: auto;
+}
+
+.arrendamiento-contact-form .ant-form-item {
+  margin-bottom: 0;
+}
+
+.arrendamiento-contact-form .ant-select-single {
+  height: 44px;
+}
+
+.arrendamiento-contact-form .ant-select-selector {
+  height: 44px !important;
+  border-radius: var(--radius-input) !important;
+  border-color: var(--color-border) !important;
+  align-items: center;
+}

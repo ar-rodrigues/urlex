@@ -740,5 +740,174 @@
     "body": "Si necesitas asesoría legal, acompañamiento jurídico o apoyo para resolver un conflicto, en URLEX estamos listos para escucharte. Completa el formulario y nuestro equipo se pondrá en contacto contigo para conocer tu situación y explicarte los siguientes pasos.",
     "submit": "Enviar solicitud",
     "privacyNote": "Tu información es confidencial y no será compartida con terceros."
+  },
+  "ArrendamientoPage": {
+    "hero": {
+      "ctaPlans": "Conocer planes",
+      "ctaAdvice": "Solicitar asesoría",
+      "badges": {
+        "experience": "+30 años de experiencia",
+        "personalized": "Atención personalizada",
+        "integral": "Acompañamiento integral"
+      }
+    },
+    "intro": {
+      "eyebrow": "¿Qué es?",
+      "title": "¿Qué es una póliza jurídica de arrendamiento?",
+      "body": "Es un servicio integral que protege al propietario desde la investigación del arrendatario hasta la elaboración del contrato y el acompañamiento legal ante cualquier incumplimiento. Con URLEX, rentas con respaldo jurídico desde el primer día.",
+      "cta": "Conocer más",
+      "features": {
+        "investigation": {
+          "title": "Investigación confiable",
+          "description": "Análisis del historial y perfil del arrendatario antes de firmar."
+        },
+        "contracts": {
+          "title": "Contratos personalizados",
+          "description": "Redacción adaptada a tu inmueble y condiciones específicas."
+        },
+        "support": {
+          "title": "Acompañamiento legal",
+          "description": "Respaldo jurídico continuo durante todo el arrendamiento."
+        },
+        "prevention": {
+          "title": "Prevención de incumplimientos",
+          "description": "Cláusulas de protección y seguimiento para evitar riesgos."
+        }
+      }
+    },
+    "banner": {
+      "title": "Tú disfruta de cobrar tus rentas, nosotros nos encargamos de lo demás.",
+      "cta": "Conocer nuestros planes"
+    },
+    "process": {
+      "eyebrow": "Cómo trabajamos",
+      "title": "Un proceso claro y seguro",
+      "body": "Te acompañamos en cada etapa para que rentes con tranquilidad y certeza jurídica.",
+      "steps": {
+        "investigation": {
+          "title": "Investigación",
+          "description": "Analizamos el perfil del arrendatario para evaluar riesgos antes de firmar."
+        },
+        "contract": {
+          "title": "Elaboración del contrato",
+          "description": "Redactamos un contrato de arrendamiento adaptado a tu inmueble y necesidades."
+        },
+        "followUp": {
+          "title": "Seguimiento",
+          "description": "Acompañamiento legal continuo ante incumplimientos o situaciones imprevistas."
+        }
+      }
+    },
+    "plans": {
+      "eyebrow": "Planes de protección",
+      "title": "Conoce nuestros planes",
+      "body": "Elige el plan que mejor se adapta a tus necesidades.",
+      "badge": "Más solicitado",
+      "scopeLabel": "Alcance de honorarios incluidos",
+      "items": {
+        "alpha": {
+          "name": "Alpha",
+          "subtitle": "Básico",
+          "scope": "Arrendamientos de vivienda",
+          "cta": "Solicitar plan Alpha"
+        },
+        "beta": {
+          "name": "Beta",
+          "subtitle": "Intermedio",
+          "scope": "Vivienda y locales comerciales pequeños",
+          "cta": "Solicitar plan Beta"
+        },
+        "gamma": {
+          "name": "Gamma",
+          "subtitle": "Completo",
+          "scope": "Vivienda, locales y oficinas",
+          "cta": "Solicitar plan Gamma"
+        }
+      },
+      "features": {
+        "contract": "Contrato de arrendamiento",
+        "investigation": "Investigación del arrendatario",
+        "legalReview": "Revisión y asesoría legal",
+        "collection": "Cobranza extrajudicial",
+        "followUp": "Seguimiento durante el arrendamiento",
+        "eviction": "Desahucio y recuperación del inmueble",
+        "representation": "Representación legal ante incumplimientos"
+      }
+    },
+    "comparison": {
+      "eyebrow": "Compara los planes",
+      "title": "Revisa la cobertura de cada plan",
+      "featureColumn": "Característica",
+      "rows": {
+        "contract": "Contrato de arrendamiento",
+        "investigation": "Investigación del arrendatario",
+        "legalReview": "Revisión y asesoría legal",
+        "collection": "Cobranza extrajudicial",
+        "followUp": "Seguimiento durante el arrendamiento",
+        "eviction": "Desahucio y recuperación del inmueble",
+        "representation": "Representación legal ante incumplimientos"
+      },
+      "scopeRow": "Alcance de honorarios incluidos",
+      "scope": {
+        "alpha": "Arrendamientos de vivienda",
+        "beta": "Vivienda y locales comerciales pequeños",
+        "gamma": "Vivienda, locales y oficinas"
+      }
+    },
+    "faq": {
+      "title": "Resolvemos tus dudas",
+      "items": {
+        "includes": {
+          "q": "¿Qué incluye la póliza?",
+          "a": "Incluye investigación del arrendatario, elaboración del contrato, asesoría legal y, según el plan, cobranza extrajudicial, seguimiento y representación ante incumplimientos."
+        },
+        "investigationTime": {
+          "q": "¿Cuánto tiempo tarda la investigación?",
+          "a": "El tiempo depende de la disponibilidad de información del arrendatario, pero generalmente se completa en pocos días hábiles para que puedas avanzar con confianza."
+        },
+        "default": {
+          "q": "¿Qué pasa si el arrendatario incumple?",
+          "a": "Según tu plan, te acompañamos con cobranza extrajudicial, negociación y, de ser necesario, representación legal para recuperar tu inmueble o los adeudos."
+        },
+        "existingTenant": {
+          "q": "¿Puedo contratar si ya tengo inquilino?",
+          "a": "Sí. Evaluamos tu situación actual y te orientamos sobre las opciones legales disponibles, incluyendo revisión del contrato vigente o regularización del arrendamiento."
+        }
+      }
+    },
+    "contact": {
+      "eyebrow": "¿Listo para rentar con tranquilidad?",
+      "title": "Protege tu inmueble y renta con confianza",
+      "body": "Permítenos ayudarte a elegir el plan que mejor se adapte a tus necesidades. Nuestro equipo está listo para asesorarte.",
+      "cta": "Solicitar asesoría",
+      "formTitle": "Solicita más información",
+      "imageAlt": "Edificio residencial moderno",
+      "fullName": "Nombre completo",
+      "fullNamePlaceholder": "Tu nombre",
+      "phone": "Teléfono / WhatsApp",
+      "phonePlaceholder": "Tu teléfono",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "tu@correo.com",
+      "propertyType": "Tipo de inmueble",
+      "propertyTypePlaceholder": "Selecciona una opción",
+      "propertyTypes": {
+        "house": "Casa",
+        "apartment": "Departamento",
+        "commercial": "Local comercial",
+        "office": "Oficina",
+        "other": "Otro"
+      },
+      "hasTenant": "¿Ya cuentas con arrendatario?",
+      "hasTenantPlaceholder": "Selecciona una opción",
+      "tenantOptions": {
+        "yes": "Sí",
+        "no": "No"
+      },
+      "submit": "Enviar solicitud",
+      "successTitle": "¡Solicitud enviada!",
+      "successBody": "Nuestro equipo se pondrá en contacto contigo pronto.",
+      "sendAnother": "Enviar otra solicitud",
+      "privacyNote": "Tu información es confidencial y no será compartida con terceros."
+    }
   }
 }
