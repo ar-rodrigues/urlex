@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/button";
-import { PageBreadcrumb } from "@/components/landing/page-breadcrumb";
+import { ContentPageHero } from "@/components/landing/content-page-hero";
 import { Link } from "@/lib/navigation";
 
 const TIMELINE_KEYS = ["1996", "2005", "2012", "2018", "2024"] as const;
@@ -12,38 +12,16 @@ export async function TrayectoriaContent() {
 
   return (
     <>
-      <section className="w-full" style={{ background: "var(--color-primary)" }}>
-        <PageBreadcrumb current={t("breadcrumbCurrent")} />
-        <div className="landing-container pb-0">
-          <div className="relative h-[200px] w-full overflow-hidden sm:h-[280px] lg:h-[360px]">
-            <Image
-              src="/images/trayectoria/hero.jpg"
-              alt={t("imageAlt")}
-              fill
-              className="object-cover"
-              sizes="100vw"
-              priority
-            />
-          </div>
-        </div>
-        <div className="landing-container flex flex-col gap-6 py-10 md:py-12">
-          <h1
-            className="font-display text-[1.75rem] font-bold leading-[1.23] tracking-[0.03em] md:text-[2.5rem]"
-            style={{ color: "var(--color-text-on-primary)" }}
-          >
-            {t("title")}
-          </h1>
-          <p
-            className="max-w-4xl text-base font-medium leading-[1.4] md:text-[1.375rem]"
-            style={{ color: "var(--color-text-on-primary)" }}
-          >
-            {t("body")}
-          </p>
-          <p className="text-base" style={{ color: "var(--color-accent)" }}>
-            {t("tagline")}
-          </p>
-        </div>
-      </section>
+      <ContentPageHero
+        breadcrumbCurrent={t("breadcrumbCurrent")}
+        variant="below"
+        imageSrc="/images/trayectoria/hero.jpg"
+        imageAlt={t("imageAlt")}
+        imageHeights="h-[200px] sm:h-[280px] lg:h-[360px]"
+        title={t("title")}
+        body={t("body")}
+        tagline={t("tagline")}
+      />
 
       <section className="landing-section w-full" style={{ background: "var(--color-bg)" }}>
         <div className="landing-container flex flex-col gap-10">

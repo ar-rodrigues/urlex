@@ -7,18 +7,38 @@ export type PracticeAreaId =
   | "laboral"
   | "licencias";
 
+export type PracticeExtraSectionId = "arrendamientoSeguro";
+
+export type PracticeLayoutVariant = "standard" | "extended";
+
 export type PracticeAreaConfig = {
   id: PracticeAreaId;
-  href: `/${PracticeAreaId}`;
+  href: `/servicios/${PracticeAreaId}`;
   heroImage: string;
   itemKeys: readonly string[];
   otherAreaIds: readonly PracticeAreaId[];
+  layoutVariant?: PracticeLayoutVariant;
+  extraSections?: readonly PracticeExtraSectionId[];
 };
+
+export const PRACTICE_AREA_IDS = [
+  "arrendamiento",
+  "familiar",
+  "mercantil",
+  "contratos",
+  "civil",
+  "laboral",
+  "licencias",
+] as const satisfies readonly PracticeAreaId[];
+
+export function isPracticeAreaId(value: string): value is PracticeAreaId {
+  return (PRACTICE_AREA_IDS as readonly string[]).includes(value);
+}
 
 export const PRACTICE_AREAS: Record<PracticeAreaId, PracticeAreaConfig> = {
   arrendamiento: {
     id: "arrendamiento",
-    href: "/arrendamiento",
+    href: "/servicios/arrendamiento",
     heroImage: "/images/arrendamiento/hero.jpg",
     itemKeys: [
       "policies",
@@ -36,10 +56,12 @@ export const PRACTICE_AREAS: Record<PracticeAreaId, PracticeAreaConfig> = {
       "laboral",
       "licencias",
     ],
+    layoutVariant: "extended",
+    extraSections: ["arrendamientoSeguro"],
   },
   familiar: {
     id: "familiar",
-    href: "/familiar",
+    href: "/servicios/familiar",
     heroImage: "/images/familiar/hero.jpg",
     itemKeys: [
       "divorces",
@@ -62,7 +84,7 @@ export const PRACTICE_AREAS: Record<PracticeAreaId, PracticeAreaConfig> = {
   },
   mercantil: {
     id: "mercantil",
-    href: "/mercantil",
+    href: "/servicios/mercantil",
     heroImage: "/images/mercantil/hero.png",
     itemKeys: [
       "debts",
@@ -85,7 +107,7 @@ export const PRACTICE_AREAS: Record<PracticeAreaId, PracticeAreaConfig> = {
   },
   contratos: {
     id: "contratos",
-    href: "/contratos",
+    href: "/servicios/contratos",
     heroImage: "/images/contratos/hero.jpg",
     itemKeys: [
       "efficacy",
@@ -106,7 +128,7 @@ export const PRACTICE_AREAS: Record<PracticeAreaId, PracticeAreaConfig> = {
   },
   civil: {
     id: "civil",
-    href: "/civil",
+    href: "/servicios/civil",
     heroImage: "/images/civil/hero.png",
     itemKeys: [
       "eviction",
@@ -131,7 +153,7 @@ export const PRACTICE_AREAS: Record<PracticeAreaId, PracticeAreaConfig> = {
   },
   laboral: {
     id: "laboral",
-    href: "/laboral",
+    href: "/servicios/laboral",
     heroImage: "/images/laboral/hero.jpg",
     itemKeys: [
       "contracts",
@@ -154,7 +176,7 @@ export const PRACTICE_AREAS: Record<PracticeAreaId, PracticeAreaConfig> = {
   },
   licencias: {
     id: "licencias",
-    href: "/licencias",
+    href: "/servicios/licencias",
     heroImage: "/images/licencias/hero.jpg",
     itemKeys: [
       "government",
@@ -175,6 +197,44 @@ export const PRACTICE_AREAS: Record<PracticeAreaId, PracticeAreaConfig> = {
     ],
   },
 };
+
+export const SERVICE_CARDS = [
+  {
+    key: "family",
+    areaId: "familiar",
+    icon: "/images/landing/icon-familia.svg",
+  },
+  {
+    key: "lease",
+    areaId: "arrendamiento",
+    icon: "/images/landing/icon-arrendamiento.svg",
+  },
+  {
+    key: "commercial",
+    areaId: "mercantil",
+    icon: "/images/landing/icon-mercantil.svg",
+  },
+  {
+    key: "contracts",
+    areaId: "contratos",
+    icon: "/images/landing/icon-contrato.svg",
+  },
+  {
+    key: "civil",
+    areaId: "civil",
+    icon: "/images/landing/icon-civil.svg",
+  },
+  {
+    key: "labor",
+    areaId: "laboral",
+    icon: "/images/landing/icon-laboral.svg",
+  },
+  {
+    key: "permits",
+    areaId: "licencias",
+    icon: "/images/landing/icon-permisos.svg",
+  },
+] as const;
 
 export const TRUST_KEYS = [
   "experience",

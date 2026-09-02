@@ -1,20 +1,18 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
+import { CONTACT_WHATSAPP_URL } from "@/lib/contact-info";
 import { Link } from "@/lib/navigation";
+import { PRACTICE_AREAS, PRACTICE_AREA_IDS } from "@/lib/practice-areas";
 
 export async function SiteFooter() {
   const t = await getTranslations("SiteFooter");
+  const tShared = await getTranslations("PracticeShared");
   const year = new Date().getFullYear();
 
-  const serviceLinks = [
-    { href: "/familiar", label: t("linkFamily") },
-    { href: "/mercantil", label: t("linkCommercial") },
-    { href: "/arrendamiento", label: t("linkLease") },
-    { href: "/contratos", label: t("linkContracts") },
-    { href: "/civil", label: t("linkCivil") },
-    { href: "/laboral", label: t("linkLabor") },
-    { href: "/licencias", label: t("linkPermits") },
-  ];
+  const serviceLinks = PRACTICE_AREA_IDS.map((id) => ({
+    href: PRACTICE_AREAS[id].href,
+    label: tShared(`areas.${id}`),
+  }));
 
   const navLinks = [
     { href: "/", label: t("linkHome") },
@@ -33,16 +31,15 @@ export async function SiteFooter() {
   return (
     <footer className="w-full" style={{ background: "var(--color-primary)" }}>
       <div className="landing-container grid grid-cols-1 gap-10 py-12 md:grid-cols-2 lg:grid-cols-4">
-        <div className="flex flex-col gap-4">
-          <div className="relative h-12 w-40">
-            <Image
-              src="/images/landing/logo.png"
-              alt={t("brand")}
-              fill
-              className="object-contain object-left"
-              sizes="160px"
-            />
-          </div>
+        <div className="flex flex-col items-start gap-4">
+          <Image
+            src="/images/landing/icon-footer.svg"
+            alt={t("brand")}
+            width={57}
+            height={45}
+            className="h-[45px] w-auto"
+            sizes="57px"
+          />
           <p className="text-sm leading-relaxed md:text-base" style={{ color: "var(--color-text-on-primary)" }}>
             {t("tagline")}
           </p>
@@ -52,16 +49,21 @@ export async function SiteFooter() {
           >
             {t("quote")}
           </p>
-          <div className="flex gap-3 pt-2">
+          <div className="flex gap-4 pt-2">
             {social.map((item) => (
               <a
                 key={item.label}
                 href="#"
                 aria-label={item.label}
-                className="flex h-9 w-9 items-center justify-center rounded-full transition-opacity hover:opacity-80"
-                style={{ background: "var(--color-accent)" }}
+                className="flex h-9 w-9 items-center justify-center transition-opacity hover:opacity-80"
               >
-                <Image src={item.src} alt="" width={18} height={18} />
+                <Image
+                  src={item.src}
+                  alt=""
+                  width={22}
+                  height={22}
+                  className="h-[22px] w-[22px] brightness-0 invert"
+                />
               </a>
             ))}
           </div>
@@ -76,7 +78,7 @@ export async function SiteFooter() {
           </h3>
           <ul className="flex flex-col gap-2 text-sm" style={{ color: "var(--color-text-on-primary)" }}>
             {serviceLinks.map((link) => (
-              <li key={link.label}>
+              <li key={link.href}>
                 <Link href={link.href} className="hover:opacity-80">
                   {link.label}
                 </Link>
@@ -110,10 +112,34 @@ export async function SiteFooter() {
           >
             {t("contactTitle")}
           </h3>
-          <ul className="flex flex-col gap-2 text-sm" style={{ color: "var(--color-text-on-primary)" }}>
-            <li>{t("address")}</li>
-            <li>{t("phone")}</li>
-            <li>{t("email")}</li>
+          <ul className="flex flex-col gap-2 text-sm leading-relaxed" style={{ color: "var(--color-text-on-primary)" }}>
+            <li>
+              {t("addressLine1")}
+              <br />
+              {t("addressLine2")}
+              <br />
+              {t("addressLine3")}
+            </li>
+            <li>
+              {t("scheduleLabel")} {t("scheduleValue")}
+            </li>
+            <li>
+              {t("whatsappLabel")}{" "}
+              <a
+                href={CONTACT_WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80"
+              >
+                {t("whatsappValue")}
+              </a>
+            </li>
+            <li>
+              {t("emailLabel")}{" "}
+              <a href={`mailto:${t("emailValue")}`} className="hover:opacity-80">
+                {t("emailValue")}
+              </a>
+            </li>
           </ul>
         </div>
       </div>

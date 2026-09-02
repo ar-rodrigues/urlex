@@ -1,7 +1,6 @@
-import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import { PageBreadcrumb } from "@/components/landing/page-breadcrumb";
 import { NosotrosFaq } from "@/components/landing/nosotros-faq";
+import { ContentPageHero } from "@/components/landing/content-page-hero";
 
 const VALUE_KEYS = ["honesty", "commitment", "clarity", "strategy"] as const;
 const TEAM_KEYS = ["luis", "juan", "maricruz"] as const;
@@ -11,32 +10,13 @@ export async function NosotrosContent() {
 
   return (
     <>
-      <section className="w-full" style={{ background: "var(--color-primary)" }}>
-        <PageBreadcrumb current={t("breadcrumbCurrent")} />
-        <div className="landing-container pb-0">
-          <div className="relative h-[220px] w-full overflow-hidden sm:h-[300px] lg:h-[420px]">
-            <Image
-              src="/images/nosotros/hero.jpg"
-              alt={t("imageAlt")}
-              fill
-              className="object-cover"
-              sizes="100vw"
-              priority
-            />
-            <div
-              className="absolute inset-x-0 bottom-0 px-6 py-6 md:px-10 md:py-8"
-              style={{ background: "var(--color-primary)" }}
-            >
-              <h1
-                className="font-display text-[1.5rem] font-bold leading-[1.2] tracking-[0.03em] md:text-[2.25rem]"
-                style={{ color: "var(--color-text-on-primary)" }}
-              >
-                {t("heroTitle")}
-              </h1>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ContentPageHero
+        breadcrumbCurrent={t("breadcrumbCurrent")}
+        variant="overlay"
+        imageSrc="/images/nosotros/hero.jpg"
+        imageAlt={t("imageAlt")}
+        title={t("heroTitle")}
+      />
 
       <section className="landing-section w-full" style={{ background: "var(--color-bg)" }}>
         <div className="landing-container grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(280px,1fr)] lg:gap-12">

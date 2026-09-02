@@ -13,7 +13,9 @@
     "contact": "Contacto",
     "cta": "Solicitar asesoría",
     "openMenu": "Abrir menú",
-    "closeMenu": "Cerrar menú"
+    "closeMenu": "Cerrar menú",
+    "expandServices": "Mostrar servicios",
+    "collapseServices": "Ocultar servicios"
   },
   "Hero": {
     "titleBefore": "Bufete jurídico en Puebla con más de",
@@ -86,6 +88,44 @@
       }
     }
   },
+  "ServiciosPage": {
+    "metaTitle": "Servicios — URLEX",
+    "metaDescription": "Conoce todas las áreas de práctica de URLEX: derecho familiar, mercantil, civil, laboral, arrendamiento seguro, contratos y permisos en Puebla.",
+    "breadcrumbCurrent": "Servicios",
+    "title": "Soluciones legales para cada etapa de tu vida y tu negocio",
+    "body": "Atendemos personas, empresas y asociaciones en las áreas legales que más impactan su día a día. Elige el servicio que necesitas para conocer cómo podemos ayudarte.",
+    "cta": "Conocer más",
+    "items": {
+      "family": {
+        "title": "Derecho Familiar",
+        "description": "Divorcios, custodia y pensiones."
+      },
+      "lease": {
+        "title": "Arrendamiento Seguro",
+        "description": "Renta con respaldo jurídico."
+      },
+      "commercial": {
+        "title": "Derecho Mercantil",
+        "description": "Protege y formaliza tu negocio."
+      },
+      "contracts": {
+        "title": "Resolución de Contratos",
+        "description": "Nulidades, rescisiones y conflictos."
+      },
+      "civil": {
+        "title": "Derecho Civil",
+        "description": "Contratos, propiedades y sociedades."
+      },
+      "labor": {
+        "title": "Derecho Laboral",
+        "description": "Protección para empresas y trabajadores."
+      },
+      "permits": {
+        "title": "Permisos y Licencias",
+        "description": "Gestión legal ante autoridades."
+      }
+    }
+  },
   "BenefitsSection": {
     "title": "¿Por qué elegir URLEX?",
     "items": {
@@ -123,7 +163,9 @@
     "message": "Describe tu situación",
     "messagePlaceholder": "Cuéntanos brevemente tu caso",
     "submit": "Solicitar asesoría legal",
-    "success": "Gracias. Hemos recibido tu solicitud.",
+    "successTitle": "Gracias.",
+    "successBody": "Hemos recibido tu solicitud.",
+    "sendAnother": "Enviar otra solicitud",
     "services": {
       "family": "Derecho Familiar",
       "lease": "Arrendamiento Seguro",
@@ -137,14 +179,20 @@
   },
   "SiteFooter": {
     "brand": "URLEX",
-    "tagline": "Bufete jurídico en Puebla. Más de 30 años protegiendo tus derechos con certeza y cercanía.",
+    "tagline": "Bufete jurídico en Puebla con más de 30 años de experiencia en consultoría, asesoría y servicios legales para personas, empresas e instituciones.",
     "quote": "“Tu tranquilidad comienza con una estrategia legal bien acompañada.”",
     "servicesTitle": "Servicios",
     "navTitle": "Navegación",
     "contactTitle": "Contacto",
-    "address": "Puebla, México",
-    "phone": "+52 (222) 000 0000",
-    "email": "contacto@urlex.mx",
+    "addressLine1": "Privada de la 37 sur #2115",
+    "addressLine2": "Col. Belisario Domínguez.",
+    "addressLine3": "Puebla, Pue",
+    "scheduleLabel": "Horario:",
+    "scheduleValue": "Lunes a viernes, 9:00 – 16:00",
+    "emailLabel": "Correo:",
+    "emailValue": "contacto.juridico@urlex.com",
+    "whatsappLabel": "Whatsapp:",
+    "whatsappValue": "+52 221 594 9683",
     "privacy": "Aviso de privacidad",
     "copyright": "© {year} URLEX. Todos los derechos reservados.",
     "socialInstagram": "Instagram",
@@ -600,11 +648,9 @@
     "addressLine2": "Col. Belisario Domínguez.",
     "addressLine3": "Puebla, Pue",
     "scheduleLabel": "Horario:",
-    "scheduleValue": "Lunes a viernes, 9:00 – 18:00",
-    "phoneLabel": "Teléfono:",
-    "phoneValue": "+52 (222) 000 0000",
+    "scheduleValue": "Lunes a viernes, 9:00 – 16:00",
     "whatsappLabel": "WhatsApp:",
-    "whatsappValue": "+52 (222) 000 0000",
+    "whatsappValue": "+52 221 594 9683",
     "emailLabel": "Correo:",
     "emailValue": "contacto.juridico@urlex.com",
     "sidebarCta": "Consulta gratuita para evaluar tu caso sin compromiso.",

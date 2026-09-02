@@ -28,7 +28,7 @@ export async function PracticeHero({ areaId }: Props) {
           </Link>
           <span style={{ color: "var(--color-accent)" }}>/</span>
           <Link
-            href="/#servicios"
+            href="/servicios"
             className="transition-opacity hover:opacity-80"
             style={{ color: "var(--color-accent)" }}
           >

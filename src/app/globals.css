@@ -94,6 +94,29 @@ body {
   }
 }
 
+@keyframes service-carousel {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.service-carousel-track {
+  animation: service-carousel 45s linear infinite;
+}
+
+.service-carousel-track.is-paused {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-carousel-track {
+    animation: none;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .motion-fade-up {
     animation: fade-up 0.5s ease-out both;
