@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { ClientsCarousel } from "@/components/landing/clients-carousel";
 
 export async function SuccessCasesSection() {
   const t = await getTranslations("SuccessCasesSection");
@@ -12,11 +13,9 @@ export async function SuccessCasesSection() {
         >
           {t("title")}
         </h2>
-        <div
-          className="h-[120px] w-full max-w-[1108px] md:h-[188px]"
-          style={{ background: "var(--color-primary)" }}
-          aria-hidden
-        />
+        <div className="w-full">
+          <ClientsCarousel />
+        </div>
       </div>
     </section>
   );

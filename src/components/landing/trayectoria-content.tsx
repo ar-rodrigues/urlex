@@ -2,6 +2,11 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/button";
 import { ContentPageHero } from "@/components/landing/content-page-hero";
+import { SuccessCasesSection } from "@/components/landing/success-cases-section";
+import {
+  TrayectoriaTimeline,
+  type TimelineItem,
+} from "@/components/landing/trayectoria-timeline";
 import { Link } from "@/lib/navigation";
 
 const TIMELINE_KEYS = ["1996", "2005", "2012", "2018", "2024"] as const;
@@ -10,6 +15,12 @@ const PROCESS_KEYS = ["1", "2", "3", "4", "5"] as const;
 export async function TrayectoriaContent() {
   const t = await getTranslations("Trayectoria");
 
+  const timelineItems: TimelineItem[] = TIMELINE_KEYS.map((key) => ({
+    year: t(`timeline.${key}.year`),
+    title: t(`timeline.${key}.title`),
+    body: t(`timeline.${key}.body`),
+  }));
+
   return (
     <>
       <ContentPageHero
@@ -17,58 +28,13 @@ export async function TrayectoriaContent() {
         variant="below"
         imageSrc="/images/trayectoria/hero.jpg"
         imageAlt={t("imageAlt")}
-        imageHeights="h-[200px] sm:h-[280px] lg:h-[360px]"
+        imageHeights="h-[280px] sm:h-[400px] lg:h-[520px]"
         title={t("title")}
         body={t("body")}
         tagline={t("tagline")}
       />
 
-      <section className="landing-section w-full" style={{ background: "var(--color-bg)" }}>
-        <div className="landing-container flex flex-col gap-10">
-          <h2
-            className="text-center font-display text-[1.75rem] font-bold md:text-[2.25rem]"
-            style={{ color: "var(--color-primary)" }}
-          >
-            {t("timelineTitle")}
-          </h2>
-          <ol className="mx-auto flex w-full max-w-3xl flex-col gap-6">
-            {TIMELINE_KEYS.map((key, index) => (
-              <li
-                key={key}
-                className="relative flex gap-4 rounded-lg border bg-white p-5 md:gap-6"
-                style={{ borderColor: "var(--color-border)" }}
-              >
-                <div
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md text-sm font-semibold"
-                  style={{
-                    background: "var(--color-primary)",
-                    color: "var(--color-text-on-primary)",
-                  }}
-                >
-                  {index + 1}
-                </div>
-                <div className="flex flex-col gap-1">
-                  <p
-                    className="text-sm font-semibold"
-                    style={{ color: "var(--color-accent)" }}
-                  >
-                    {t(`timeline.${key}.year`)}
-                  </p>
-                  <h3
-                    className="text-xl font-semibold md:text-2xl"
-                    style={{ color: "var(--color-primary)" }}
-                  >
-                    {t(`timeline.${key}.title`)}
-                  </h3>
-                  <p style={{ color: "var(--color-text-muted)" }}>
-                    {t(`timeline.${key}.body`)}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
+      <TrayectoriaTimeline title={t("timelineTitle")} items={timelineItems} />
 
       <section
         className="w-full py-12 md:py-16"
@@ -121,6 +87,8 @@ export async function TrayectoriaContent() {
           </ol>
         </div>
       </section>
+
+      <SuccessCasesSection />
 
       <section
         className="w-full py-9 md:py-12"

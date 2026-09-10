@@ -71,7 +71,7 @@ export async function ArrendamientoProcess() {
                   className="flex h-14 w-14 items-center justify-center rounded-md"
                   style={{ background: "var(--color-primary)" }}
                 >
-                  <Image src={icon} alt="" width={32} height={32} className="h-8 w-auto" />
+                  <Image src={icon} alt="" width={32} height={32} className="h-8 w-8" />
                 </div>
               </div>
 

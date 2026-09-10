@@ -117,7 +117,7 @@ export function ArrendamientoContact() {
                     alt=""
                     width={32}
                     height={32}
-                    className="h-8 w-auto"
+                    className="h-8 w-8"
                   />
                 </div>
                 <div className="flex flex-col gap-2">

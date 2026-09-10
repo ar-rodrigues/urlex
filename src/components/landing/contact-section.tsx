@@ -91,7 +91,7 @@ export function ContactSection({
                     alt=""
                     width={39}
                     height={39}
-                    className="h-10 w-auto"
+                    className="h-10 w-10"
                   />
                 </div>
                 <div className="flex flex-col gap-2">

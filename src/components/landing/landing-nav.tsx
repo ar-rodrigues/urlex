@@ -108,16 +108,20 @@ export function LandingNav() {
   return (
     <header
       className="sticky top-0 z-50 w-full"
-      style={{ background: "var(--color-primary)" }}
+      style={{
+        background: "var(--color-primary)",
+        /* Covers the 1px hairline from sticky compositing against the white body bg */
+        boxShadow: "0 1px 0 0 var(--color-primary)",
+      }}
     >
       <div className="landing-container flex items-center justify-between gap-4 py-4 md:py-6">
-        <Link href="/" className="relative block h-10 w-36 shrink-0 md:h-14 md:w-52">
+        <Link href="/" className="relative block h-12 w-44 shrink-0 md:h-20 md:w-72">
           <Image
             src="/images/landing/logo.png"
             alt={t("brand")}
             fill
             className="object-contain object-left"
-            sizes="208px"
+            sizes="288px"
             priority
           />
         </Link>

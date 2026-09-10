@@ -53,7 +53,7 @@ export async function ArrendamientoIntro() {
                 className="flex h-11 w-12 shrink-0 items-center justify-center rounded-md"
                 style={{ background: "var(--color-primary)" }}
               >
-                <Image src={icon} alt="" width={28} height={28} className="h-7 w-auto" />
+                <Image src={icon} alt="" width={28} height={28} className="h-7 w-7" />
               </div>
               <div className="flex min-w-0 flex-col gap-1">
                 <h3

@@ -147,9 +147,24 @@
       }
     }
   },
-  "SuccessCasesSection": {
-    "title": "Empresas e instituciones que confían en nosotros"
+  "HomeArrendamientoBanner": {
+    "title": "Renta tu inmueble con protección legal desde el primer día",
+    "subtitle": "Da click aquí y conoce nuestros planes de acompañamiento legal y renta con confianza",
+    "imageAlt": "Edificio residencial moderno"
   },
+  "SuccessCasesSection": {
+    "title": "Empresas e instituciones que confían en nosotros",
+    "logos": {
+      "arquitectos": "Logo Arquitectos",
+      "cyma": "Logo Cyma",
+      "espiral": "Logo Espiral",
+      "gutierrez": "Logo Gutiérrez",
+      "keiko": "Logo Keiko",
+      "transmorva": "Logo Transmorva",
+      "volkanic": "Logo Volkanic"
+    }
+  },
+
   "ContactSection": {
     "title": "Cuéntanos tu caso",
     "fullName": "Nombre completo",

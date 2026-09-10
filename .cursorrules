@@ -26,7 +26,7 @@
 - No uses valores de color literales en componentes; referencia `var(--color-*)`, `var(--spacing-*)`, etc.
 - Ant Design: personaliza con `ConfigProvider` y `cssVar: true`; alinea tokens con las variables del proyecto.
 - Ant Design v6: usa APIs actuales (`Drawer.size`, `classNames.section` / `styles.section`); no uses `width`, `classNames.content` ni `styles.content` en Drawer.
-- `next/image`: si redimensionas con CSS una sola dimensión, añade `width: auto` o `height: auto` (p. ej. `className="h-7 w-auto"`).
+- `next/image`: en iconos de contenedor cuadrado usa ambos ejes (`h-7 w-7`). Evita `w-auto` si la altura CSS coincide con el atributo `height` (dispara el warning de aspect ratio en SVGs no cuadrados).
 
 ## Patrón de componentes (Next.js App Router)
 - Prefiere **Server Components** por defecto.
