@@ -7,6 +7,7 @@
     "brand": "URLEX",
     "home": "Inicio",
     "services": "Servicios",
+    "lease": "Arrendamiento",
     "facilities": "Instalaciones",
     "trajectory": "Trayectoria",
     "about": "Nosotros",
@@ -585,6 +586,9 @@
   },
   "PageHero": {
     "breadcrumbHome": "Inicio"
+  },
+  "PageCtaBanner": {
+    "imageAlt": "Libreta URLEX con pluma"
   },
   "Trayectoria": {
     "metaTitle": "Trayectoria — URLEX",

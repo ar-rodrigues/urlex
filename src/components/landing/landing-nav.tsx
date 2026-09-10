@@ -185,6 +185,14 @@ export function LandingNav() {
             </div>
           </div>
 
+          <Link
+            href={PRACTICE_AREAS.arrendamiento.href}
+            className={navLinkClassName}
+            style={{ color: "var(--color-text-on-primary)", ...desktopNavTypography }}
+          >
+            {t("lease")}
+          </Link>
+
           {NAV_LINK_ITEMS.slice(1).map(({ key, href }) => (
             <Link
               key={key}
@@ -285,6 +293,15 @@ export function LandingNav() {
               ))}
             </div>
           </div>
+
+          <Link
+            href={PRACTICE_AREAS.arrendamiento.href}
+            className={mobileLinkClassName}
+            style={{ color: "var(--color-text-on-primary)", ...mobileNavTypography }}
+            onClick={closeDrawer}
+          >
+            {t("lease")}
+          </Link>
 
           {NAV_LINK_ITEMS.slice(1).map(({ key, href }) => (
             <Link

@@ -14,7 +14,10 @@ type Props = {
   items: TimelineItem[];
 };
 
-const SMOOTHING = 0.16;
+/** Higher = closer to 1:1 with finger scroll (less “stuck” lag). */
+const SMOOTHING = 0.55;
+/** Page-scroll distance ≈ content scroll × this (1 = same velocity). */
+const SCROLL_RATIO = 1.1;
 
 export function TrayectoriaTimeline({ title, items }: Props) {
   const [reducedMotion, setReducedMotion] = useState(false);
@@ -55,7 +58,9 @@ function ScrubTimeline({ title, items }: Props) {
   const viewportRef = useRef<HTMLDivElement>(null);
   const targetScroll = useRef(0);
   const currentScroll = useRef(0);
+  const maxScrollRef = useRef(0);
   const rafRef = useRef(0);
+  const progressRaf = useRef(0);
   const [progress, setProgress] = useState(0);
   const [maxScroll, setMaxScroll] = useState(0);
 
@@ -64,8 +69,9 @@ function ScrubTimeline({ title, items }: Props) {
     if (!viewport) return;
 
     const measure = () => {
-      const scrollable = viewport.scrollHeight - viewport.clientHeight;
-      setMaxScroll(Math.max(0, scrollable));
+      const scrollable = Math.max(0, viewport.scrollHeight - viewport.clientHeight);
+      maxScrollRef.current = scrollable;
+      setMaxScroll(scrollable);
     };
 
     measure();
@@ -87,7 +93,7 @@ function ScrubTimeline({ title, items }: Props) {
     const viewport = viewportRef.current;
     if (!track || !viewport) return;
 
-    let running = true;
+    let running = false;
 
     const readTarget = () => {
       const rect = track.getBoundingClientRect();
@@ -96,29 +102,51 @@ function ScrubTimeline({ title, items }: Props) {
         targetScroll.current = 0;
         return;
       }
-      const scrubRange = Math.max(1, scrollable - window.innerHeight * 0.25);
+      // Map almost the full track 1:1 — only a small end buffer so the last card clears.
+      const scrubRange = Math.max(1, scrollable - window.innerHeight * 0.08);
       const ratio = Math.min(1, Math.max(0, -rect.top / scrubRange));
-      targetScroll.current = ratio * maxScroll;
+      targetScroll.current = ratio * maxScrollRef.current;
     };
 
     const tick = () => {
-      if (!running) return;
-      readTarget();
       const delta = targetScroll.current - currentScroll.current;
-      if (Math.abs(delta) < 0.5) {
+      if (Math.abs(delta) < 0.35) {
         currentScroll.current = targetScroll.current;
+        running = false;
       } else {
         currentScroll.current += delta * SMOOTHING;
+        running = true;
       }
+
       viewport.scrollTop = currentScroll.current;
-      setProgress(maxScroll > 0 ? currentScroll.current / maxScroll : 0);
+
+      const nextProgress =
+        maxScrollRef.current > 0 ? currentScroll.current / maxScrollRef.current : 0;
+      cancelAnimationFrame(progressRaf.current);
+      progressRaf.current = requestAnimationFrame(() => setProgress(nextProgress));
+
+      if (running) {
+        rafRef.current = requestAnimationFrame(tick);
+      }
+    };
+
+    const onScroll = () => {
+      readTarget();
+      if (running) return;
+      running = true;
       rafRef.current = requestAnimationFrame(tick);
     };
 
-    rafRef.current = requestAnimationFrame(tick);
+    // Initial sync + scroll-driven updates (avoids perpetual rAF lag on mobile).
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
     return () => {
       running = false;
       cancelAnimationFrame(rafRef.current);
+      cancelAnimationFrame(progressRaf.current);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
     };
   }, [maxScroll]);
 
@@ -127,13 +155,22 @@ function ScrubTimeline({ title, items }: Props) {
     Math.round(progress * Math.max(items.length - 1, 0)),
   );
 
+  // Track length ≈ viewport + content overflow → finger scroll ≈ timeline scroll.
+  const trackHeightPx =
+    typeof window === "undefined"
+      ? undefined
+      : Math.round(window.innerHeight + maxScroll * SCROLL_RATIO + window.innerHeight * 0.15);
+
   return (
     <section
       ref={trackRef}
       className="relative w-full"
       style={{
         background: "var(--color-bg)",
-        height: `${Math.max(items.length, 2) * 120}dvh`,
+        height:
+          maxScroll > 0 && trackHeightPx
+            ? `${trackHeightPx}px`
+            : `${Math.max(items.length, 2) * 70}dvh`,
       }}
     >
       <div className="sticky top-[5.5rem] flex h-[calc(100dvh-5.5rem)] flex-col overflow-hidden md:top-[8rem] md:h-[calc(100dvh-8rem)]">
@@ -145,7 +182,6 @@ function ScrubTimeline({ title, items }: Props) {
             {title}
           </h2>
 
-          {/* Inner scroll container: page scroll drives scrollTop */}
           <div
             ref={viewportRef}
             className="relative w-full overflow-hidden h-[min(420px,calc(100dvh-5.5rem-8rem))] md:h-[min(560px,calc(100dvh-8rem-10rem))]"
@@ -188,8 +224,8 @@ function MobileList({
       {items.map((item, index) => (
         <li
           key={item.year}
-          className="relative flex items-start gap-4 pr-10 transition-opacity duration-500"
           style={{ opacity: index === activeIndex ? 1 : 0.35 }}
+          className="relative flex items-start gap-4 pr-10 transition-opacity duration-300"
         >
           <TimelineCard {...item} />
           <TimelineNode
@@ -221,7 +257,7 @@ function DesktopList({
         return (
           <li
             key={item.year}
-            className={`relative flex items-center transition-opacity duration-500 ${
+            className={`relative flex items-center transition-opacity duration-300 ${
               isLeft ? "justify-start" : "justify-end"
             }`}
             style={{ opacity: isActive ? 1 : 0.4 }}

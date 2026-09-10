@@ -1,13 +1,11 @@
-import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import { Button } from "@/components/ui/button";
 import { ContentPageHero } from "@/components/landing/content-page-hero";
+import { PageCtaBanner } from "@/components/landing/page-cta-banner";
 import { SuccessCasesSection } from "@/components/landing/success-cases-section";
 import {
   TrayectoriaTimeline,
   type TimelineItem,
 } from "@/components/landing/trayectoria-timeline";
-import { Link } from "@/lib/navigation";
 
 const TIMELINE_KEYS = ["1996", "2005", "2012", "2018", "2024"] as const;
 const PROCESS_KEYS = ["1", "2", "3", "4", "5"] as const;
@@ -90,41 +88,11 @@ export async function TrayectoriaContent() {
 
       <SuccessCasesSection />
 
-      <section
-        className="w-full py-9 md:py-12"
-        style={{ background: "var(--color-accent)" }}
-      >
-        <div className="landing-container flex flex-col items-center gap-6 text-center">
-          <div
-            className="flex h-[60px] w-16 items-center justify-center overflow-hidden rounded-md border bg-white"
-            style={{ borderColor: "var(--color-accent)" }}
-          >
-            <Image
-              src="/images/shared/icon-question.svg"
-              alt=""
-              width={45}
-              height={45}
-            />
-          </div>
-          <div className="flex max-w-4xl flex-col gap-1">
-            <h2
-              className="font-display text-[1.5rem] font-semibold leading-normal md:text-[1.75rem]"
-              style={{ color: "var(--color-bg-muted)" }}
-            >
-              {t("ctaTitle")}
-            </h2>
-            <p
-              className="text-lg font-semibold md:text-2xl"
-              style={{ color: "var(--color-bg-muted)" }}
-            >
-              {t("ctaSubtitle")}
-            </p>
-          </div>
-          <Link href="/contacto">
-            <Button variant="onAccent">{t("ctaButton")}</Button>
-          </Link>
-        </div>
-      </section>
+      <PageCtaBanner
+        title={t("ctaTitle")}
+        subtitle={t("ctaSubtitle")}
+        buttonLabel={t("ctaButton")}
+      />
     </>
   );
 }
