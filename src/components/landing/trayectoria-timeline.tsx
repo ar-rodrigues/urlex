@@ -138,14 +138,16 @@ function ScrubTimeline({ title, items }: Props) {
     };
 
     // Initial sync + scroll-driven updates (avoids perpetual rAF lag on mobile).
+    // Capture on document so we still receive events if a nested scrollport
+    // (e.g. body) is the one that actually scrolls.
     onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+    document.addEventListener("scroll", onScroll, { passive: true, capture: true });
     window.addEventListener("resize", onScroll);
     return () => {
       running = false;
       cancelAnimationFrame(rafRef.current);
       cancelAnimationFrame(progressRaf.current);
-      window.removeEventListener("scroll", onScroll);
+      document.removeEventListener("scroll", onScroll, { capture: true });
       window.removeEventListener("resize", onScroll);
     };
   }, [maxScroll]);

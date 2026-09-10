@@ -55,8 +55,20 @@
   --font-serif: var(--font-family-display);
 }
 
+/*
+  Clip horizontal overflow without creating a body scrollport.
+  `overflow-x: hidden` on both html and body makes overflow-y compute to
+  `auto`, so the page scrolls on <body> while window.scrollY stays 0 —
+  which breaks sticky scrub timelines that listen to window scroll.
+*/
 html {
-  overflow-x: hidden;
+  overflow-x: clip;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -64,7 +76,7 @@ body {
   color: var(--color-text);
   font-family: var(--font-family);
   margin: 0;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .landing-container {
