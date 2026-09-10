@@ -1,7 +1,13 @@
 {
   "Metadata": {
+    "applicationName": "URLEX",
+    "siteName": "URLEX",
     "title": "URLEX — Bufete jurídico en Puebla",
-    "description": "Bufete jurídico en Puebla con más de 30 años protegiendo tus derechos. Asesoría legal personalizada para personas, empresas e instituciones."
+    "titleTemplate": "%s | URLEX",
+    "description": "Bufete jurídico en Puebla con más de 30 años protegiendo tus derechos. Asesoría legal personalizada para personas, empresas e instituciones.",
+    "keywords": "URLEX, bufete jurídico, abogado Puebla, derecho familiar, derecho mercantil, derecho civil, derecho laboral, arrendamiento seguro, contratos, permisos y licencias",
+    "openGraphLocale": "es_MX",
+    "openGraphImageAlt": "URLEX — Bufete jurídico en Puebla"
   },
   "LandingNav": {
     "brand": "URLEX",
@@ -90,7 +96,7 @@
     }
   },
   "ServiciosPage": {
-    "metaTitle": "Servicios — URLEX",
+    "metaTitle": "Servicios",
     "metaDescription": "Conoce todas las áreas de práctica de URLEX: derecho familiar, mercantil, civil, laboral, arrendamiento seguro, contratos y permisos en Puebla.",
     "breadcrumbCurrent": "Servicios",
     "title": "Soluciones legales para cada etapa de tu vida y tu negocio",
@@ -253,7 +259,7 @@
   },
   "Practice": {
     "arrendamiento": {
-      "metaTitle": "Arrendamiento Seguro — URLEX",
+      "metaTitle": "Arrendamiento Seguro",
       "metaDescription": "Renta tu inmueble con protección legal. Pólizas jurídicas, revisión y elaboración de contratos de arrendamiento en Puebla.",
       "breadcrumbHome": "Inicio",
       "breadcrumbServices": "Servicios",
@@ -261,7 +267,7 @@
       "title": "Renta tu inmueble con protección legal desde el primer día",
       "body": "Rentar un inmueble sin respaldo legal puede exponer al propietario a incumplimientos, ocupaciones prolongadas o pérdidas difíciles de recuperar. En URLEX ofrecemos asesoría y pólizas jurídicas de arrendamiento para que rentes con seguridad, claridad y protección.",
       "practiceArea": "Área de Práctica · Arrendamiento Seguro",
-      "imageAlt": "Asesoría inmobiliaria y contrato de arrendamiento",
+      "imageAlt": "Asesor inmobiliario mostrando un departamento a una pareja interesada",
       "subtitle": "Nuestro servicio previene conflictos entre arrendador y arrendatario, protege el patrimonio del propietario y formaliza acuerdos con el respaldo legal que da certeza a ambas partes.",
       "items": {
         "policies": {
@@ -294,7 +300,7 @@
       "ctaButton": "Proteger mi inmueble"
     },
     "familiar": {
-      "metaTitle": "Derecho Familiar — URLEX",
+      "metaTitle": "Derecho Familiar",
       "metaDescription": "Asesoría y representación en derecho familiar en Puebla: divorcios, custodia, pensiones y más.",
       "breadcrumbHome": "Inicio",
       "breadcrumbServices": "Servicios",
@@ -343,7 +349,7 @@
       "ctaButton": "Solicitar asesoría familiar"
     },
     "mercantil": {
-      "metaTitle": "Derecho Mercantil — URLEX",
+      "metaTitle": "Derecho Mercantil",
       "metaDescription": "Asesoría mercantil en Puebla: contratos, sociedades, marcas, cobro de deudas y más.",
       "breadcrumbHome": "Inicio",
       "breadcrumbServices": "Servicios",
@@ -392,7 +398,7 @@
       "ctaButton": "Solicitar asesoría mercantil"
     },
     "contratos": {
-      "metaTitle": "Resolución de Contratos — URLEX",
+      "metaTitle": "Resolución de Contratos",
       "metaDescription": "Soluciones legales ante conflictos contractuales: nulidad, rescisión, obligaciones y terminación de contratos en Puebla.",
       "breadcrumbHome": "Inicio",
       "breadcrumbServices": "Servicios",
@@ -433,7 +439,7 @@
       "ctaButton": "Revisar mi contrato"
     },
     "civil": {
-      "metaTitle": "Derecho Civil — URLEX",
+      "metaTitle": "Derecho Civil",
       "metaDescription": "Asesoría civil integral en Puebla: contratos, propiedad, posesión, asociaciones y conflictos entre particulares.",
       "breadcrumbHome": "Inicio",
       "breadcrumbServices": "Servicios",
@@ -490,7 +496,7 @@
       "ctaButton": "Solicitar asesoría civil"
     },
     "laboral": {
-      "metaTitle": "Derecho Laboral — URLEX",
+      "metaTitle": "Derecho Laboral",
       "metaDescription": "Asesoría laboral en Puebla para empresas y trabajadores: contratos, terminaciones, conciliación y prevención de demandas.",
       "breadcrumbHome": "Inicio",
       "breadcrumbServices": "Servicios",
@@ -539,7 +545,7 @@
       "ctaButton": "Recibir asesoría laboral"
     },
     "licencias": {
-      "metaTitle": "Permisos y Licencias — URLEX",
+      "metaTitle": "Permisos y Licencias",
       "metaDescription": "Gestión legal de permisos, licencias y trámites ante autoridades en Puebla.",
       "breadcrumbHome": "Inicio",
       "breadcrumbServices": "Servicios",
@@ -591,7 +597,7 @@
     "imageAlt": "Libreta URLEX con pluma"
   },
   "Trayectoria": {
-    "metaTitle": "Trayectoria — URLEX",
+    "metaTitle": "Trayectoria",
     "metaDescription": "Más de 30 años de experiencia jurídica en Puebla. Conoce la trayectoria de URLEX.",
     "breadcrumbCurrent": "Trayectoria",
     "title": "30 años de experiencia jurídica en Puebla que respaldan cada estrategia",
@@ -655,7 +661,7 @@
     "ctaButton": "Solicitar asesoría legal"
   },
   "Instalaciones": {
-    "metaTitle": "Instalaciones — URLEX",
+    "metaTitle": "Instalaciones",
     "metaDescription": "Conoce nuestras instalaciones en Puebla: un espacio profesional diseñado para tu tranquilidad.",
     "breadcrumbCurrent": "Instalaciones",
     "title": "Un espacio profesional diseñado para tu tranquilidad",
@@ -677,7 +683,7 @@
     "mapTitle": "Ubicación"
   },
   "Nosotros": {
-    "metaTitle": "Nosotros — URLEX",
+    "metaTitle": "Nosotros",
     "metaDescription": "Conoce al equipo de URLEX: más de 30 años protegiendo derechos en Puebla.",
     "breadcrumbCurrent": "Nosotros",
     "heroTitle": "Un equipo legal comprometido con tu tranquilidad y tus derechos",
@@ -752,7 +758,7 @@
     }
   },
   "ContactoPage": {
-    "metaTitle": "Contacto — URLEX",
+    "metaTitle": "Contacto",
     "metaDescription": "Contáctanos para una asesoría legal. Completa el formulario y nuestro equipo te orientará.",
     "breadcrumbCurrent": "Contacto",
     "title": "Hablemos de tu caso",
@@ -763,18 +769,13 @@
   "ArrendamientoPage": {
     "hero": {
       "ctaPlans": "Conocer planes",
-      "ctaAdvice": "Solicitar asesoría",
-      "badges": {
-        "experience": "+30 años de experiencia",
-        "personalized": "Atención personalizada",
-        "integral": "Acompañamiento integral"
-      }
+      "ctaAdvice": "Solicitar asesoría"
     },
     "intro": {
       "eyebrow": "¿Qué es?",
       "title": "¿Qué es una póliza jurídica de arrendamiento?",
-      "body": "Es un servicio integral que protege al propietario desde la investigación del arrendatario hasta la elaboración del contrato y el acompañamiento legal ante cualquier incumplimiento. Con URLEX, rentas con respaldo jurídico desde el primer día.",
-      "cta": "Conocer más",
+      "body": "Es una herramienta legal que te permite arrendar tu inmueble a través de servicios y estrategias jurídicas que te dan certeza y tranquilidad durante todo el proceso de arrendamiento.",
+      "cta": "Conocer más →",
       "features": {
         "investigation": {
           "title": "Investigación confiable",
@@ -820,37 +821,42 @@
     "plans": {
       "eyebrow": "Planes de protección",
       "title": "Conoce nuestros planes",
-      "body": "Elige el plan que mejor se adapta a tus necesidades.",
+      "body": "Elige el nivel de protección jurídica que mejor se adapte a tus necesidades y al tipo de arrendamiento.",
       "badge": "Más solicitado",
       "scopeLabel": "Alcance de honorarios incluidos",
       "items": {
         "alpha": {
           "name": "Alpha",
           "subtitle": "Básico",
-          "scope": "Arrendamientos de vivienda",
+          "scope": "Hasta presentación de la demanda (conciliación judicial)",
           "cta": "Solicitar plan Alpha"
         },
         "beta": {
           "name": "Beta",
           "subtitle": "Intermedio",
-          "scope": "Vivienda y locales comerciales pequeños",
+          "scope": "Hasta la sentencia de primera instancia",
           "cta": "Solicitar plan Beta"
         },
         "gamma": {
           "name": "Gamma",
           "subtitle": "Completo",
-          "scope": "Vivienda, locales y oficinas",
+          "scope": "Todo el proceso judicial (salvo peritajes)",
           "cta": "Solicitar plan Gamma"
         }
       },
       "features": {
         "contract": "Contrato de arrendamiento",
-        "investigation": "Investigación del arrendatario",
-        "legalReview": "Revisión y asesoría legal",
+        "investigation": "Investigación del arrendatario y fiador",
+        "advice": "Asesoría personalizada durante tu contrato",
+        "mediation": "Mediación entre las partes",
+        "notifications": "Notificaciones al arrendatario y fiador",
         "collection": "Cobranza extrajudicial",
-        "followUp": "Seguimiento durante el arrendamiento",
-        "eviction": "Desahucio y recuperación del inmueble",
-        "representation": "Representación legal ante incumplimientos"
+        "includesAlpha": "Todo lo incluido en ALPHA",
+        "propertyDelivery": "Entrega de inmueble en vía judicial",
+        "servicesRecovery": "Recuperación y pago de servicios en vía judicial",
+        "rentRecovery": "Recuperación de pagos de rentas vencidas en vía judicial",
+        "includesBeta": "Todo lo incluido en BETA",
+        "preferentialAdvice": "Asesoría gratuita y precio preferencial para otros asuntos legales"
       }
     },
     "comparison": {
@@ -859,18 +865,21 @@
       "featureColumn": "Característica",
       "rows": {
         "contract": "Contrato de arrendamiento",
-        "investigation": "Investigación del arrendatario",
-        "legalReview": "Revisión y asesoría legal",
+        "investigation": "Investigación del arrendatario y fiador",
+        "advice": "Asesoría personalizada durante tu contrato",
+        "mediation": "Mediación entre las partes",
+        "notifications": "Notificaciones al arrendatario y fiador",
         "collection": "Cobranza extrajudicial",
-        "followUp": "Seguimiento durante el arrendamiento",
-        "eviction": "Desahucio y recuperación del inmueble",
-        "representation": "Representación legal ante incumplimientos"
+        "propertyDelivery": "Entrega de inmueble en vía judicial",
+        "servicesRecovery": "Recuperación y pago de servicios en vía judicial",
+        "rentRecovery": "Recuperación de pagos de rentas vencidas en vía judicial",
+        "preferentialAdvice": "Asesoría gratuita y precio preferencial para otros asuntos legales"
       },
       "scopeRow": "Alcance de honorarios incluidos",
       "scope": {
-        "alpha": "Arrendamientos de vivienda",
-        "beta": "Vivienda y locales comerciales pequeños",
-        "gamma": "Vivienda, locales y oficinas"
+        "alpha": "Hasta presentación de la demanda (conciliación judicial)",
+        "beta": "Hasta la sentencia de primera instancia",
+        "gamma": "Todo el proceso judicial (salvo peritajes)"
       }
     },
     "faq": {

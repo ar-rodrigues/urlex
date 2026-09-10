@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { buildPageMetadata } from "@/lib/page-metadata";
 
 export const CONTENT_PAGE_NAMESPACES = {
   instalaciones: "Instalaciones",
@@ -19,8 +20,8 @@ export async function generateContentMetadata(
     namespace: CONTENT_PAGE_NAMESPACES[pageId],
   });
 
-  return {
+  return buildPageMetadata({
     title: t("metaTitle"),
     description: t("metaDescription"),
-  };
+  });
 }

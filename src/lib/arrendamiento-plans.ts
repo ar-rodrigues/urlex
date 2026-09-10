@@ -10,42 +10,43 @@ export const ARRENDAMIENTO_INTRO_FEATURES = [
 ] as const;
 
 export const ARRENDAMIENTO_PROCESS_STEPS = [
-  { key: "investigation", icon: "/images/landing/icon-preventiva.svg" },
-  { key: "contract", icon: "/images/landing/icon-contrato.svg" },
-  { key: "followUp", icon: "/images/landing/icon-integral.svg" },
+  { key: "investigation" },
+  { key: "contract" },
+  { key: "followUp" },
 ] as const;
 
 export const ARRENDAMIENTO_PLAN_FEATURES: Record<
   ArrendamientoPlanId,
   readonly string[]
 > = {
-  alpha: ["contract", "investigation", "legalReview"],
+  alpha: [
+    "contract",
+    "investigation",
+    "advice",
+    "mediation",
+    "notifications",
+    "collection",
+  ],
   beta: [
-    "contract",
-    "investigation",
-    "legalReview",
-    "collection",
-    "followUp",
+    "includesAlpha",
+    "propertyDelivery",
+    "servicesRecovery",
+    "rentRecovery",
   ],
-  gamma: [
-    "contract",
-    "investigation",
-    "legalReview",
-    "collection",
-    "followUp",
-    "eviction",
-    "representation",
-  ],
+  gamma: ["includesBeta", "preferentialAdvice"],
 };
 
 export const ARRENDAMIENTO_COMPARISON_ROWS = [
   { key: "contract", alpha: true, beta: true, gamma: true },
   { key: "investigation", alpha: true, beta: true, gamma: true },
-  { key: "legalReview", alpha: true, beta: true, gamma: true },
-  { key: "collection", alpha: false, beta: true, gamma: true },
-  { key: "followUp", alpha: false, beta: true, gamma: true },
-  { key: "eviction", alpha: false, beta: false, gamma: true },
-  { key: "representation", alpha: false, beta: false, gamma: true },
+  { key: "advice", alpha: true, beta: true, gamma: true },
+  { key: "mediation", alpha: true, beta: true, gamma: true },
+  { key: "notifications", alpha: true, beta: true, gamma: true },
+  { key: "collection", alpha: true, beta: true, gamma: true },
+  { key: "propertyDelivery", alpha: false, beta: true, gamma: true },
+  { key: "servicesRecovery", alpha: false, beta: true, gamma: true },
+  { key: "rentRecovery", alpha: false, beta: true, gamma: true },
+  { key: "preferentialAdvice", alpha: false, beta: false, gamma: true },
 ] as const;
 
 export const ARRENDAMIENTO_FAQ_KEYS = [
@@ -53,12 +54,6 @@ export const ARRENDAMIENTO_FAQ_KEYS = [
   "investigationTime",
   "default",
   "existingTenant",
-] as const;
-
-export const ARRENDAMIENTO_TRUST_BADGES = [
-  "experience",
-  "personalized",
-  "integral",
 ] as const;
 
 export const ARRENDAMIENTO_PROPERTY_TYPES = [

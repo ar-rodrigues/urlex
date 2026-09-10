@@ -1,35 +1,13 @@
-import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import {
   ARRENDAMIENTO_COMPARISON_ROWS,
   ARRENDAMIENTO_PLAN_IDS,
 } from "@/lib/arrendamiento-plans";
+import { PlanCheckIcon } from "@/components/landing/plan-check-icon";
 
 function CheckCell({ included }: { included: boolean }) {
   if (included) {
-    return (
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="mx-auto"
-        aria-hidden
-      >
-        <path
-          d="M12 2L4 6V12C4 17.55 7.84 22.74 12 24C16.16 22.74 20 17.55 20 12V6L12 2Z"
-          fill="var(--color-accent)"
-        />
-        <path
-          d="M9.5 12L11.5 14L15 10.5"
-          stroke="var(--color-primary)"
-          strokeWidth="1.4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    );
+    return <PlanCheckIcon size={24} className="mx-auto" />;
   }
 
   return (
@@ -43,20 +21,26 @@ function CheckCell({ included }: { included: boolean }) {
 
 export async function ArrendamientoComparison() {
   const t = await getTranslations("ArrendamientoPage.comparison");
+  const tPlans = await getTranslations("ArrendamientoPage.plans");
 
   return (
     <section
       className="landing-section w-full"
       style={{ background: "var(--color-bg-muted)" }}
     >
-      <div className="landing-container flex flex-col items-center gap-8 md:gap-10">
-        <div className="flex max-w-2xl flex-col items-center gap-4 text-center">
-          <p
-            className="text-sm font-semibold uppercase tracking-wider"
-            style={{ color: "var(--color-accent)" }}
-          >
-            {t("eyebrow")}
-          </p>
+      <div className="landing-container flex flex-col gap-8 md:gap-10">
+        <div className="flex max-w-2xl flex-col items-start gap-2 text-left">
+          <div className="inline-flex items-center gap-3 text-sm font-semibold uppercase leading-none tracking-wider">
+            <span style={{ color: "var(--color-primary)" }}>{t("eyebrow")}</span>
+            <span
+              className="inline-block h-[2px] w-8 shrink-0"
+              style={{
+                background: "var(--color-accent)",
+                transform: "translateY(-0.12em)",
+              }}
+              aria-hidden
+            />
+          </div>
           <h2
             className="font-display text-[1.75rem] font-bold leading-[1.15] tracking-tight md:text-[2.25rem]"
             style={{ color: "var(--color-primary)" }}
@@ -81,10 +65,15 @@ export async function ArrendamientoComparison() {
                 {ARRENDAMIENTO_PLAN_IDS.map((planId) => (
                   <th
                     key={planId}
-                    className="px-4 py-4 text-center text-base font-semibold md:px-6"
+                    className="px-4 py-4 text-center md:px-6"
                     style={{ color: "var(--color-text-on-primary)" }}
                   >
-                    {planId.charAt(0).toUpperCase() + planId.slice(1)}
+                    <span className="block text-base font-semibold">
+                      {tPlans(`items.${planId}.name`)}
+                    </span>
+                    <span className="block text-sm font-medium opacity-80">
+                      {tPlans(`items.${planId}.subtitle`)}
+                    </span>
                   </th>
                 ))}
               </tr>

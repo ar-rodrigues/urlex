@@ -6,6 +6,7 @@ import { PracticeHero } from "@/components/landing/practice-hero";
 import { PracticeServices } from "@/components/landing/practice-services";
 import type { PracticeAreaId } from "@/lib/practice-areas";
 import { PRACTICE_AREAS } from "@/lib/practice-areas";
+import { buildPageMetadata } from "@/lib/page-metadata";
 
 type Props = {
   areaId: PracticeAreaId;
@@ -20,10 +21,10 @@ export async function generatePracticeMetadata(
     namespace: `Practice.${areaId}`,
   });
 
-  return {
+  return buildPageMetadata({
     title: t("metaTitle"),
     description: t("metaDescription"),
-  };
+  });
 }
 
 export function PracticePage({ areaId }: Props) {

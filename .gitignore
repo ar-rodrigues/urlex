@@ -42,3 +42,6 @@ next-env.d.ts
 
 # Cursor IDE (local)
 .cursor/
+
+# Design reference assets (not used by the site; safe to delete)
+/guide/
