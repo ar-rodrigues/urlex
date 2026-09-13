@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { NosotrosFaq } from "@/components/landing/nosotros-faq";
 import { ContentPageHero } from "@/components/landing/content-page-hero";
+import { Reveal, RevealStagger, REVEAL_STEP } from "@/components/ui/reveal";
 
 const VALUES = [
   { key: "honesty", icon: "/images/nosotros/icon-honestidad.svg" },
@@ -35,50 +36,58 @@ export async function NosotrosContent() {
       <section className="landing-section w-full" style={{ background: "var(--color-bg)" }}>
         <div className="landing-container grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(280px,1fr)] lg:gap-12">
           <div className="flex flex-col gap-4">
-            <h2
-              className="font-display text-[1.75rem] font-bold md:text-[2.25rem]"
-              style={{ color: "var(--color-primary)" }}
-            >
-              {t("historyTitle")}
-            </h2>
-            <p
-              className="text-base leading-[1.5] md:text-lg"
-              style={{ color: "var(--color-text-muted)" }}
-            >
-              {t("historyBody")}
-            </p>
+            <Reveal>
+              <h2
+                className="font-display text-[1.75rem] font-bold md:text-[2.25rem]"
+                style={{ color: "var(--color-primary)" }}
+              >
+                {t("historyTitle")}
+              </h2>
+            </Reveal>
+            <Reveal delay={REVEAL_STEP}>
+              <p
+                className="text-base leading-[1.5] md:text-lg"
+                style={{ color: "var(--color-text-muted)" }}
+              >
+                {t("historyBody")}
+              </p>
+            </Reveal>
           </div>
-          <aside
-            className="rounded-lg p-6"
-            style={{ background: "var(--color-primary)" }}
-          >
-            <h3
-              className="mb-3 text-sm font-semibold uppercase tracking-wide"
-              style={{ color: "var(--color-accent)" }}
+          <Reveal delay={REVEAL_STEP * 2}>
+            <aside
+              className="rounded-lg p-6"
+              style={{ background: "var(--color-primary)" }}
             >
-              {t("missionTitle")}
-            </h3>
-            <p
-              className="text-base leading-[1.5]"
-              style={{ color: "var(--color-text-on-primary)" }}
-            >
-              {t("missionBody")}
-            </p>
-          </aside>
+              <h3
+                className="mb-3 text-sm font-semibold uppercase tracking-wide"
+                style={{ color: "var(--color-accent)" }}
+              >
+                {t("missionTitle")}
+              </h3>
+              <p
+                className="text-base leading-[1.5]"
+                style={{ color: "var(--color-text-on-primary)" }}
+              >
+                {t("missionBody")}
+              </p>
+            </aside>
+          </Reveal>
         </div>
       </section>
 
       <section className="landing-section w-full" style={{ background: "var(--color-bg)" }}>
         <div className="landing-container flex flex-col gap-8">
-          <h2
-            className="font-display text-[1.75rem] font-bold md:text-[2.25rem]"
-            style={{ color: "var(--color-text)" }}
-          >
-            {t("whyTitle")}
-          </h2>
-          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+          <Reveal>
+            <h2
+              className="font-display text-[1.75rem] font-bold md:text-[2.25rem]"
+              style={{ color: "var(--color-text)" }}
+            >
+              {t("whyTitle")}
+            </h2>
+          </Reveal>
+          <RevealStagger className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
             {VALUES.map(({ key, icon }) => (
-              <li
+              <div
                 key={key}
                 className="flex flex-col gap-4 rounded-[var(--radius-card)] border p-5 md:p-6"
                 style={{
@@ -112,23 +121,25 @@ export async function NosotrosContent() {
                     {t(`values.${key}.body`)}
                   </p>
                 </div>
-              </li>
+              </div>
             ))}
-          </ul>
+          </RevealStagger>
         </div>
       </section>
 
       <section className="landing-section w-full" style={{ background: "var(--color-bg)" }}>
         <div className="landing-container flex flex-col gap-8 md:gap-10">
-          <h2
-            className="text-center font-display text-[1.75rem] font-bold md:text-[2.25rem]"
-            style={{ color: "var(--color-text)" }}
-          >
-            {t("teamTitle")}
-          </h2>
-          <ul className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
+          <Reveal>
+            <h2
+              className="text-center font-display text-[1.75rem] font-bold md:text-[2.25rem]"
+              style={{ color: "var(--color-text)" }}
+            >
+              {t("teamTitle")}
+            </h2>
+          </Reveal>
+          <RevealStagger className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
             {TEAM_KEYS.map((key) => (
-              <li
+              <div
                 key={key}
                 className="flex flex-col items-center gap-3 rounded-[var(--radius-card)] border px-6 py-8 text-center"
                 style={{ borderColor: "var(--color-border)" }}
@@ -164,9 +175,9 @@ export async function NosotrosContent() {
                     {t(`team.${key}.bio`)}
                   </p>
                 </div>
-              </li>
+              </div>
             ))}
-          </ul>
+          </RevealStagger>
         </div>
       </section>
 

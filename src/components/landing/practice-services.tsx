@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "@/lib/navigation";
 import type { PracticeAreaId } from "@/lib/practice-areas";
 import { PRACTICE_AREAS, TRUST_KEYS } from "@/lib/practice-areas";
+import { Reveal, RevealStagger, REVEAL_STEP } from "@/components/ui/reveal";
 
 type Props = {
   areaId: PracticeAreaId;
@@ -19,23 +20,27 @@ export async function PracticeServices({ areaId }: Props) {
       <div className="mx-auto grid max-w-[var(--max-width-container)] grid-cols-1 lg:grid-cols-[minmax(0,1.7fr)_minmax(300px,1fr)]">
         <div className="flex flex-col gap-8 px-[var(--spacing-container)] py-[var(--spacing-section)] md:gap-12 lg:pr-8">
           <div className="flex max-w-3xl flex-col gap-4">
-            <h2
-              className="font-display text-[1.75rem] leading-[1.15] tracking-tight md:leading-[33px]"
-              style={{ color: "var(--color-primary)" }}
-            >
-              {tShared("howTitle")}
-            </h2>
-            <p
-              className="text-base font-medium leading-[1.4] md:text-[1.375rem]"
-              style={{ color: "var(--color-text-muted)" }}
-            >
-              {t("subtitle")}
-            </p>
+            <Reveal>
+              <h2
+                className="font-display text-[1.75rem] leading-[1.15] tracking-tight md:leading-[33px]"
+                style={{ color: "var(--color-primary)" }}
+              >
+                {tShared("howTitle")}
+              </h2>
+            </Reveal>
+            <Reveal delay={REVEAL_STEP}>
+              <p
+                className="text-base font-medium leading-[1.4] md:text-[1.375rem]"
+                style={{ color: "var(--color-text-muted)" }}
+              >
+                {t("subtitle")}
+              </p>
+            </Reveal>
           </div>
 
-          <ul className="flex flex-col gap-4">
+          <RevealStagger className="flex flex-col gap-4">
             {area.itemKeys.map((key) => (
-              <li
+              <div
                 key={key}
                 className="flex min-w-0 gap-3 rounded-lg border bg-white p-4 shadow-[0_4px_8px_rgba(0,0,0,0.04)] sm:gap-4"
                 style={{ borderColor: "var(--color-border)" }}
@@ -65,85 +70,91 @@ export async function PracticeServices({ areaId }: Props) {
                     {t(`items.${key}.description`)}
                   </p>
                 </div>
-              </li>
+              </div>
             ))}
-          </ul>
+          </RevealStagger>
         </div>
 
         <aside className="flex flex-col gap-8 px-[var(--spacing-container)] py-[var(--spacing-section)] lg:bg-white lg:pl-8 lg:pr-[var(--spacing-container)]">
-          <div
-            className="flex flex-col items-center gap-4 rounded-lg p-4 text-center"
-            style={{ background: "var(--color-primary)" }}
-          >
-            <p
-              className="text-lg font-medium leading-[1.4] tracking-tight md:text-[1.375rem]"
-              style={{ color: "var(--color-border)" }}
+          <Reveal>
+            <div
+              className="flex flex-col items-center gap-0 rounded-lg px-4 pb-6 pt-6 text-center"
+              style={{ background: "var(--color-primary)" }}
             >
-              {tShared("sidebarCta")}
-            </p>
-            <Link href="/contacto">
-              <Button variant="muted">{tShared("sidebarCtaButton")}</Button>
-            </Link>
-          </div>
+              <p
+                className="text-lg font-medium leading-[1.4] tracking-tight md:text-[1.375rem]"
+                style={{ color: "var(--color-border)" }}
+              >
+                {tShared("sidebarCta")}
+              </p>
+              <Link href="/contacto" className="-mt-1">
+                <Button variant="muted">{tShared("sidebarCtaButton")}</Button>
+              </Link>
+            </div>
+          </Reveal>
 
-          <div className="flex flex-col gap-6">
-            <h3
-              className="text-xl font-semibold leading-[1.15] tracking-tight md:text-2xl"
-              style={{ color: "var(--color-primary)" }}
-            >
-              {tShared("otherAreasTitle")}
-            </h3>
-            <ul className="flex flex-col">
-              {area.otherAreaIds.map((id) => (
-                <li key={id}>
-                  <Link
-                    href={PRACTICE_AREAS[id].href}
-                    className="flex items-center justify-between gap-3 border-b py-4 transition-opacity hover:opacity-80"
-                    style={{ borderColor: "var(--color-border)" }}
+          <Reveal delay={REVEAL_STEP}>
+            <div className="flex flex-col gap-6">
+              <h3
+                className="text-xl font-semibold leading-[1.15] tracking-tight md:text-2xl"
+                style={{ color: "var(--color-primary)" }}
+              >
+                {tShared("otherAreasTitle")}
+              </h3>
+              <ul className="flex flex-col">
+                {area.otherAreaIds.map((id) => (
+                  <li key={id}>
+                    <Link
+                      href={PRACTICE_AREAS[id].href}
+                      className="flex items-center justify-between gap-3 border-b py-4 transition-opacity hover:opacity-80"
+                      style={{ borderColor: "var(--color-border)" }}
+                    >
+                      <span
+                        className="text-lg font-medium leading-[1.4] tracking-tight md:text-[1.375rem]"
+                        style={{ color: "var(--color-text-muted)" }}
+                      >
+                        {tShared(`areas.${id}`)}
+                      </span>
+                      <Image
+                        src="/images/shared/icon-arrow.svg"
+                        alt=""
+                        width={30}
+                        height={14}
+                        className="shrink-0"
+                      />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+
+          <Reveal delay={REVEAL_STEP * 2}>
+            <div className="flex flex-col gap-4">
+              <h3
+                className="text-xl font-semibold leading-[1.15] tracking-tight md:text-2xl"
+                style={{ color: "var(--color-primary)" }}
+              >
+                {tShared("trustTitle")}
+              </h3>
+              <ul className="flex flex-col gap-2">
+                {TRUST_KEYS.map((key) => (
+                  <li
+                    key={key}
+                    className="flex items-start gap-3 text-base"
+                    style={{ color: "var(--color-text-muted)" }}
                   >
                     <span
-                      className="text-lg font-medium leading-[1.4] tracking-tight md:text-[1.375rem]"
-                      style={{ color: "var(--color-text-muted)" }}
-                    >
-                      {tShared(`areas.${id}`)}
-                    </span>
-                    <Image
-                      src="/images/shared/icon-arrow.svg"
-                      alt=""
-                      width={30}
-                      height={14}
-                      className="shrink-0"
+                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full"
+                      style={{ background: "var(--color-primary)" }}
+                      aria-hidden
                     />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="flex flex-col gap-4">
-            <h3
-              className="text-xl font-semibold leading-[1.15] tracking-tight md:text-2xl"
-              style={{ color: "var(--color-primary)" }}
-            >
-              {tShared("trustTitle")}
-            </h3>
-            <ul className="flex flex-col gap-2">
-              {TRUST_KEYS.map((key) => (
-                <li
-                  key={key}
-                  className="flex items-start gap-3 text-base"
-                  style={{ color: "var(--color-text-muted)" }}
-                >
-                  <span
-                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full"
-                    style={{ background: "var(--color-primary)" }}
-                    aria-hidden
-                  />
-                  {tShared(`trust.${key}`)}
-                </li>
-              ))}
-            </ul>
-          </div>
+                    {tShared(`trust.${key}`)}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
         </aside>
       </div>
     </section>

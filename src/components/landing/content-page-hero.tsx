@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { PageBreadcrumb } from "@/components/landing/page-breadcrumb";
+import { HeroReveal, HERO_STEP, HERO_IMAGE_DELAY } from "@/components/ui/reveal";
 
 type Props = {
   breadcrumbCurrent: string;
@@ -28,7 +29,11 @@ export function ContentPageHero({
 
       {variant !== "breadcrumb-only" && imageSrc && imageAlt && (
         <div className="landing-container pb-0">
-          <div className={`relative w-full overflow-hidden ${imageHeights}`}>
+          <HeroReveal
+            scale
+            delay={HERO_IMAGE_DELAY}
+            className={`relative w-full overflow-hidden ${imageHeights}`}
+          >
             <Image
               src={imageSrc}
               alt={imageAlt}
@@ -42,40 +47,48 @@ export function ContentPageHero({
                 className="absolute inset-x-0 bottom-0 px-6 py-6 md:px-10 md:py-8"
                 style={{ background: "var(--color-primary)" }}
               >
-                <h1
-                  className="font-display text-[1.5rem] font-bold leading-[1.2] tracking-[0.03em] md:text-[2.25rem]"
-                  style={{ color: "var(--color-text-on-primary)" }}
-                >
-                  {title}
-                </h1>
+                <HeroReveal delay={HERO_IMAGE_DELAY + HERO_STEP}>
+                  <h1
+                    className="font-display text-[1.5rem] font-bold leading-[1.2] tracking-[0.03em] md:text-[2.25rem]"
+                    style={{ color: "var(--color-text-on-primary)" }}
+                  >
+                    {title}
+                  </h1>
+                </HeroReveal>
               </div>
             )}
-          </div>
+          </HeroReveal>
         </div>
       )}
 
       {variant === "below" && (title || body || tagline) && (
         <div className="landing-container flex flex-col gap-6 py-10 md:py-12">
           {title && (
-            <h1
-              className="font-display text-[1.75rem] font-bold leading-[1.23] tracking-[0.03em] md:text-[2.5rem]"
-              style={{ color: "var(--color-text-on-primary)" }}
-            >
-              {title}
-            </h1>
+            <HeroReveal delay={HERO_STEP}>
+              <h1
+                className="font-display text-[1.75rem] font-bold leading-[1.23] tracking-[0.03em] md:text-[2.5rem]"
+                style={{ color: "var(--color-text-on-primary)" }}
+              >
+                {title}
+              </h1>
+            </HeroReveal>
           )}
           {body && (
-            <p
-              className="max-w-4xl text-base font-medium leading-[1.4] md:text-[1.375rem]"
-              style={{ color: "var(--color-text-on-primary)" }}
-            >
-              {body}
-            </p>
+            <HeroReveal delay={HERO_STEP * 2}>
+              <p
+                className="max-w-4xl text-base font-medium leading-[1.4] md:text-[1.375rem]"
+                style={{ color: "var(--color-text-on-primary)" }}
+              >
+                {body}
+              </p>
+            </HeroReveal>
           )}
           {tagline && (
-            <p className="text-base" style={{ color: "var(--color-accent)" }}>
-              {tagline}
-            </p>
+            <HeroReveal delay={HERO_STEP * 3}>
+              <p className="text-base" style={{ color: "var(--color-accent)" }}>
+                {tagline}
+              </p>
+            </HeroReveal>
           )}
         </div>
       )}

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/lib/navigation";
+import { Reveal, REVEAL_STEP, REVEAL_IMAGE_DELAY } from "@/components/ui/reveal";
 
 export async function HomeArrendamientoBanner() {
   const t = await getTranslations("HomeArrendamientoBanner");
@@ -31,24 +32,33 @@ export async function HomeArrendamientoBanner() {
           />
 
           <div className="relative z-10 flex flex-col gap-0.5 px-6 py-8 md:gap-1 md:px-10 md:py-10 lg:max-w-2xl">
-            <h2
-              className="font-display text-[1.75rem] font-bold leading-[1.23] tracking-[0.03em] md:text-[2.125rem] lg:text-[2.5rem]"
-              style={{
-                color: "var(--color-text-on-primary)",
-                fontFamily: "var(--font-family-display)",
-              }}
-            >
-              {t("title")}
-            </h2>
-            <p
-              className="text-sm font-medium leading-[1.45] md:text-base lg:text-lg"
-              style={{ color: "var(--color-text-on-primary)" }}
-            >
-              {t("subtitle")}
-            </p>
+            <Reveal>
+              <h2
+                className="font-display text-[1.75rem] font-bold leading-[1.23] tracking-[0.03em] md:text-[2.125rem] lg:text-[2.5rem]"
+                style={{
+                  color: "var(--color-text-on-primary)",
+                  fontFamily: "var(--font-family-display)",
+                }}
+              >
+                {t("title")}
+              </h2>
+            </Reveal>
+            <Reveal delay={REVEAL_STEP}>
+              <p
+                className="text-sm font-medium leading-[1.45] md:text-base lg:text-lg"
+                style={{ color: "var(--color-text-on-primary)" }}
+              >
+                {t("subtitle")}
+              </p>
+            </Reveal>
           </div>
 
-          <div className="relative z-10 flex h-full min-h-[10rem] items-end justify-end md:min-h-full">
+          <Reveal
+            delay={REVEAL_IMAGE_DELAY}
+            from="right"
+            scale
+            className="relative z-10 flex h-full min-h-[10rem] items-end justify-end md:min-h-full"
+          >
             <Image
               src="/images/landing/banner-arrendamiento-building.webp"
               alt={t("imageAlt")}
@@ -58,7 +68,7 @@ export async function HomeArrendamientoBanner() {
               className="h-auto w-full max-w-md object-contain object-bottom md:max-w-none md:translate-x-2 lg:translate-x-4"
               priority={false}
             />
-          </div>
+          </Reveal>
         </Link>
       </div>
     </section>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { Reveal, REVEAL_STEP } from "@/components/ui/reveal";
 
 const FAQ_KEYS = [
   "when",
@@ -22,63 +23,67 @@ export function NosotrosFaq() {
       style={{ background: "var(--color-bg)" }}
     >
       <div className="landing-container flex flex-col items-center gap-8">
-        <h2
-          className="font-display text-[1.75rem] font-bold md:text-[2.25rem]"
-          style={{ color: "var(--color-primary)" }}
-        >
-          {t("faqTitle")}
-        </h2>
+        <Reveal>
+          <h2
+            className="font-display text-[1.75rem] font-bold md:text-[2.25rem]"
+            style={{ color: "var(--color-primary)" }}
+          >
+            {t("faqTitle")}
+          </h2>
+        </Reveal>
         {/*
           min-height ≈ closed rows + gaps + one answer, so opening a question
           reuses reserved space instead of pushing the footer.
         */}
-        <ul className="flex min-h-[34rem] w-full max-w-4xl flex-col gap-4 md:min-h-[32rem]">
-          {FAQ_KEYS.map((key) => {
-            const isOpen = open === key;
+        <Reveal delay={REVEAL_STEP} className="w-full max-w-4xl">
+          <ul className="flex min-h-[34rem] w-full flex-col gap-4 md:min-h-[32rem]">
+            {FAQ_KEYS.map((key) => {
+              const isOpen = open === key;
 
-            return (
-              <li key={key}>
-                <button
-                  type="button"
-                  className="flex w-full cursor-pointer flex-col rounded-lg px-5 py-4 text-left transition-opacity hover:opacity-90"
-                  style={{ background: "var(--color-bg-muted)" }}
-                  aria-expanded={isOpen}
-                  onClick={() => setOpen(isOpen ? null : key)}
-                >
-                  <span className="flex w-full items-center justify-between gap-4">
-                    <span
-                      className="text-base font-medium md:text-lg"
-                      style={{ color: "var(--color-primary)" }}
-                    >
-                      {t(`faq.${key}.q`)}
-                    </span>
-                    <span
-                      className="shrink-0 text-xl leading-none"
-                      style={{ color: "var(--color-primary)" }}
-                      aria-hidden
-                    >
-                      {isOpen ? "−" : "+"}
-                    </span>
-                  </span>
-                  <span
-                    className={`grid transition-[grid-template-rows] duration-300 ease-out ${
-                      isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-                    }`}
+              return (
+                <li key={key}>
+                  <button
+                    type="button"
+                    className="flex w-full cursor-pointer flex-col rounded-lg px-5 py-4 text-left transition-opacity hover:opacity-90"
+                    style={{ background: "var(--color-bg-muted)" }}
+                    aria-expanded={isOpen}
+                    onClick={() => setOpen(isOpen ? null : key)}
                   >
-                    <span className="overflow-hidden">
+                    <span className="flex w-full items-center justify-between gap-4">
                       <span
-                        className="mt-3 block text-base"
-                        style={{ color: "var(--color-text-muted)" }}
+                        className="text-base font-medium md:text-lg"
+                        style={{ color: "var(--color-primary)" }}
                       >
-                        {t(`faq.${key}.a`)}
+                        {t(`faq.${key}.q`)}
+                      </span>
+                      <span
+                        className="shrink-0 text-xl leading-none"
+                        style={{ color: "var(--color-primary)" }}
+                        aria-hidden
+                      >
+                        {isOpen ? "−" : "+"}
                       </span>
                     </span>
-                  </span>
-                </button>
-              </li>
-            );
-          })}
-        </ul>
+                    <span
+                      className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+                        isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                      }`}
+                    >
+                      <span className="overflow-hidden">
+                        <span
+                          className="mt-3 block text-base"
+                          style={{ color: "var(--color-text-muted)" }}
+                        >
+                          {t(`faq.${key}.a`)}
+                        </span>
+                      </span>
+                    </span>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </Reveal>
       </div>
     </section>
   );

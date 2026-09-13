@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
+import { Reveal, RevealStagger } from "@/components/ui/reveal";
 
 const BENEFITS = [
   { key: "trajectory", icon: "/images/landing/icon-trayectoria.svg" },
@@ -18,18 +19,24 @@ export async function BenefitsSection() {
       style={{ background: "var(--color-bg-muted)" }}
     >
       <div className="landing-container flex flex-col items-center gap-10 md:gap-12">
-        <h2
-          className="font-display text-center text-[1.75rem] font-bold leading-[1.1] tracking-[0.03em] md:text-[2.25rem]"
-          style={{ color: "var(--color-text)" }}
-        >
-          {t("title")}
-        </h2>
+        <Reveal>
+          <h2
+            className="font-display text-center text-[1.75rem] font-bold leading-[1.1] tracking-[0.03em] md:text-[2.25rem]"
+            style={{ color: "var(--color-text)" }}
+          >
+            {t("title")}
+          </h2>
+        </Reveal>
 
-        <ul className="grid w-full max-w-[1096px] grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8">
+        <RevealStagger
+          stagger={0.12}
+          scale
+          className="grid w-full max-w-[1096px] grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8"
+        >
           {BENEFITS.map(({ key, icon }) => (
-            <li
+            <div
               key={key}
-              className="flex flex-col gap-2 rounded-2xl border border-black/10 bg-white p-8 shadow-[0_4px_8px_rgba(0,0,0,0.03)]"
+              className="flex flex-col gap-2 rounded-2xl border border-black/10 bg-white p-8 shadow-[0_4px_8px_rgba(0,0,0,0.03)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)]"
             >
               <div className="flex items-center gap-4">
                 <div
@@ -51,9 +58,9 @@ export async function BenefitsSection() {
               >
                 {t(`items.${key}.description`)}
               </p>
-            </li>
+            </div>
           ))}
-        </ul>
+        </RevealStagger>
       </div>
     </section>
   );

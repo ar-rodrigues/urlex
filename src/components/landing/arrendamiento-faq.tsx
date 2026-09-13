@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { ARRENDAMIENTO_FAQ_KEYS } from "@/lib/arrendamiento-plans";
+import { Reveal, REVEAL_STEP } from "@/components/ui/reveal";
 
 export function ArrendamientoFaq() {
   const t = useTranslations("ArrendamientoPage.faq");
@@ -14,16 +15,19 @@ export function ArrendamientoFaq() {
       style={{ background: "var(--color-bg)" }}
     >
       <div className="landing-container flex flex-col items-center gap-8 pb-[var(--spacing-section)]">
-        <h2
-          className="font-display text-[1.75rem] font-bold md:text-[2.25rem]"
-          style={{ color: "var(--color-primary)" }}
-        >
-          {t("title")}
-        </h2>
+        <Reveal>
+          <h2
+            className="font-display text-[1.75rem] font-bold md:text-[2.25rem]"
+            style={{ color: "var(--color-primary)" }}
+          >
+            {t("title")}
+          </h2>
+        </Reveal>
         {/*
           min-height ≈ closed rows + gaps + one answer, so opening a question
           reuses reserved space instead of pushing the section below.
         */}
+        <Reveal delay={REVEAL_STEP} className="w-full">
         <ul className="grid min-h-[26rem] w-full grid-cols-1 content-start items-start gap-4 md:min-h-[16rem] md:grid-cols-2">
           {ARRENDAMIENTO_FAQ_KEYS.map((key) => {
             const isOpen = open === key;
@@ -74,6 +78,7 @@ export function ArrendamientoFaq() {
             );
           })}
         </ul>
+        </Reveal>
       </div>
     </section>
   );

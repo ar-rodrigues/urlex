@@ -368,7 +368,7 @@ function TimelineCard({ year, body }: TimelineItem) {
           <Image
             src="/images/landing/icon-trayectoria.svg"
             alt=""
-            width={22}
+            width={20}
             height={20}
             className="h-5 w-5"
           />

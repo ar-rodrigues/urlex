@@ -4,6 +4,7 @@ import {
   ARRENDAMIENTO_PLAN_IDS,
 } from "@/lib/arrendamiento-plans";
 import { PlanCheckIcon } from "@/components/landing/plan-check-icon";
+import { Reveal, REVEAL_STEP } from "@/components/ui/reveal";
 
 function CheckCell({ included }: { included: boolean }) {
   if (included) {
@@ -30,25 +31,30 @@ export async function ArrendamientoComparison() {
     >
       <div className="landing-container flex flex-col gap-8 md:gap-10">
         <div className="flex max-w-2xl flex-col items-start gap-2 text-left">
-          <div className="inline-flex items-center gap-3 text-sm font-semibold uppercase leading-none tracking-wider">
-            <span style={{ color: "var(--color-primary)" }}>{t("eyebrow")}</span>
-            <span
-              className="inline-block h-[2px] w-8 shrink-0"
-              style={{
-                background: "var(--color-accent)",
-                transform: "translateY(-0.12em)",
-              }}
-              aria-hidden
-            />
-          </div>
-          <h2
-            className="font-display text-[1.75rem] font-bold leading-[1.15] tracking-tight md:text-[2.25rem]"
-            style={{ color: "var(--color-primary)" }}
-          >
-            {t("title")}
-          </h2>
+          <Reveal>
+            <div className="inline-flex items-center gap-3 text-sm font-semibold uppercase leading-none tracking-wider">
+              <span style={{ color: "var(--color-primary)" }}>{t("eyebrow")}</span>
+              <span
+                className="inline-block h-[2px] w-8 shrink-0"
+                style={{
+                  background: "var(--color-accent)",
+                  transform: "translateY(-0.12em)",
+                }}
+                aria-hidden
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={REVEAL_STEP}>
+            <h2
+              className="font-display text-[1.75rem] font-bold leading-[1.15] tracking-tight md:text-[2.25rem]"
+              style={{ color: "var(--color-primary)" }}
+            >
+              {t("title")}
+            </h2>
+          </Reveal>
         </div>
 
+        <Reveal delay={REVEAL_STEP * 2}>
         <div
           className="w-full overflow-x-auto rounded-2xl border"
           style={{ borderColor: "var(--color-border)" }}
@@ -129,6 +135,7 @@ export async function ArrendamientoComparison() {
             </tbody>
           </table>
         </div>
+        </Reveal>
       </div>
     </section>
   );

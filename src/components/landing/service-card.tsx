@@ -17,7 +17,7 @@ export function ServiceCard({
   cta,
   href,
   icon,
-  className = "flex w-[280px] shrink-0 flex-col gap-7 rounded-[var(--radius-card)] bg-white p-4 shadow-[0_4px_8px_rgba(0,0,0,0.12)] md:w-[293px]",
+  className = "flex w-[280px] shrink-0 flex-col gap-7 rounded-[var(--radius-card)] bg-white p-4 shadow-[0_4px_8px_rgba(0,0,0,0.12)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_12px_24px_rgba(0,0,0,0.14)] md:w-[293px]",
 }: Props) {
   return (
     <article className={className}>

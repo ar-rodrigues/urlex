@@ -161,10 +161,21 @@ body {
   padding-inline: 32px;
   border-radius: var(--radius-button);
   box-shadow: none;
+  transform: translateZ(0);
   transition:
     background-color 0.2s ease,
     border-color 0.2s ease,
-    color 0.2s ease;
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ui-btn.ant-btn:hover:not(:disabled):not(.ant-btn-disabled),
+  .ui-btn.ant-btn:focus-visible:not(:disabled):not(.ant-btn-disabled) {
+    transform: scale(1.04);
+    box-shadow: 0 10px 22px color-mix(in srgb, var(--color-text) 18%, transparent);
+  }
 }
 
 .ui-btn--primary.ant-btn {

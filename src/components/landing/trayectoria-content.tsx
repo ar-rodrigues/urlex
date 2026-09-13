@@ -6,6 +6,7 @@ import {
   TrayectoriaTimeline,
   type TimelineItem,
 } from "@/components/landing/trayectoria-timeline";
+import { Reveal, RevealStagger } from "@/components/ui/reveal";
 
 const TIMELINE_KEYS = ["1975", "1994", "1997", "2020"] as const;
 const PROCESS_KEYS = ["1", "2", "3", "4", "5"] as const;
@@ -38,15 +39,17 @@ export async function TrayectoriaContent() {
         style={{ background: "var(--color-bg-muted)" }}
       >
         <div className="landing-container flex flex-col gap-10">
-          <h2
-            className="text-center font-display text-[1.75rem] font-bold md:text-[2.25rem]"
-            style={{ color: "var(--color-primary)" }}
-          >
-            {t("processTitle")}
-          </h2>
-          <ol className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          <Reveal>
+            <h2
+              className="text-center font-display text-[1.75rem] font-bold md:text-[2.25rem]"
+              style={{ color: "var(--color-primary)" }}
+            >
+              {t("processTitle")}
+            </h2>
+          </Reveal>
+          <RevealStagger className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {PROCESS_KEYS.map((key) => (
-              <li key={key} className="flex flex-col items-center gap-3 text-center">
+              <div key={key} className="flex flex-col items-center gap-3 text-center">
                 <span
                   className="flex h-12 w-12 items-center justify-center rounded-full text-lg font-semibold"
                   style={{
@@ -65,9 +68,9 @@ export async function TrayectoriaContent() {
                 <p className="text-sm" style={{ color: "var(--color-text-muted)" }}>
                   {t(`process.${key}.body`)}
                 </p>
-              </li>
+              </div>
             ))}
-          </ol>
+          </RevealStagger>
         </div>
       </section>
 

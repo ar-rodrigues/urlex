@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { PrivacyConsentCheckbox } from "@/components/landing/privacy-consent-checkbox";
 import { Button } from "@/components/ui/button";
+import { Reveal, REVEAL_STEP, REVEAL_IMAGE_DELAY } from "@/components/ui/reveal";
 import {
   ARRENDAMIENTO_PROPERTY_TYPES,
   ARRENDAMIENTO_TENANT_OPTIONS,
@@ -93,42 +94,55 @@ export function ArrendamientoContact() {
 
         <div className="landing-container relative z-10 grid grid-cols-1 items-center gap-8 py-12 lg:grid-cols-[minmax(0,1fr)_minmax(280px,1.1fr)_minmax(320px,400px)] lg:gap-4 lg:py-14 xl:gap-6">
           <div className="flex max-w-lg flex-col gap-5 lg:py-4">
-            <p
-              className="text-sm font-semibold uppercase tracking-wider"
-              style={{ color: "var(--color-accent)" }}
-            >
-              {t("eyebrow")}
-            </p>
-            <h2
-              className="font-display text-[1.75rem] font-bold leading-[1.15] tracking-tight md:text-[2.25rem]"
-              style={{ color: "var(--color-text-on-primary)" }}
-            >
-              {t("title")}
-            </h2>
-            <p
-              className="text-base font-medium leading-[1.45] md:text-lg"
-              style={{ color: "var(--color-text-on-primary-muted)" }}
-            >
-              {t("body")}
-            </p>
-            <a href="#contacto-arrendamiento" className="w-fit">
-              <Button
-                variant="primary"
-                style={{
-                  height: 48,
-                  paddingInline: 28,
-                  fontSize: 16,
-                }}
+            <Reveal>
+              <p
+                className="text-sm font-semibold uppercase tracking-wider"
+                style={{ color: "var(--color-accent)" }}
               >
-                <span className="flex items-center gap-2">
-                  {t("cta")}
-                  <span aria-hidden>→</span>
-                </span>
-              </Button>
-            </a>
+                {t("eyebrow")}
+              </p>
+            </Reveal>
+            <Reveal delay={REVEAL_STEP}>
+              <h2
+                className="font-display text-[1.75rem] font-bold leading-[1.15] tracking-tight md:text-[2.25rem]"
+                style={{ color: "var(--color-text-on-primary)" }}
+              >
+                {t("title")}
+              </h2>
+            </Reveal>
+            <Reveal delay={REVEAL_STEP * 2}>
+              <p
+                className="text-base font-medium leading-[1.45] md:text-lg"
+                style={{ color: "var(--color-text-on-primary-muted)" }}
+              >
+                {t("body")}
+              </p>
+            </Reveal>
+            <Reveal delay={REVEAL_STEP * 3}>
+              <a href="#contacto-arrendamiento" className="w-fit">
+                <Button
+                  variant="primary"
+                  style={{
+                    height: 48,
+                    paddingInline: 28,
+                    fontSize: 16,
+                  }}
+                >
+                  <span className="flex items-center gap-2">
+                    {t("cta")}
+                    <span aria-hidden>→</span>
+                  </span>
+                </Button>
+              </a>
+            </Reveal>
           </div>
 
-          <div className="relative order-3 h-80 w-full lg:order-none lg:hidden">
+          <Reveal
+            delay={REVEAL_IMAGE_DELAY}
+            scale
+            from="right"
+            className="relative order-3 h-80 w-full lg:order-none lg:hidden"
+          >
             <Image
               src={CONTACT_IMAGE}
               alt={t("imageAlt")}
@@ -137,9 +151,14 @@ export function ArrendamientoContact() {
               sizes="90vw"
               priority={false}
             />
-          </div>
+          </Reveal>
 
-          <div className="pointer-events-none relative order-none hidden min-h-[520px] overflow-visible lg:block lg:-mr-10 xl:-mr-6">
+          <Reveal
+            delay={REVEAL_IMAGE_DELAY}
+            scale
+            from="right"
+            className="pointer-events-none relative order-none hidden min-h-[520px] overflow-visible lg:block lg:-mr-10 xl:-mr-6"
+          >
             <Image
               src={CONTACT_IMAGE}
               alt={t("imageAlt")}
@@ -148,10 +167,14 @@ export function ArrendamientoContact() {
               sizes="45vw"
               priority={false}
             />
-          </div>
+          </Reveal>
 
+          <Reveal
+            delay={REVEAL_STEP * 2}
+            className="relative z-10 order-2 w-full max-w-[400px] justify-self-center lg:order-none lg:justify-self-end"
+          >
           <div
-            className="relative z-10 order-2 w-full max-w-[400px] justify-self-center bg-white px-5 py-6 shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:px-6 md:py-7 lg:order-none lg:justify-self-end"
+            className="w-full bg-white px-5 py-6 shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:px-6 md:py-7"
             style={{ borderRadius: "var(--radius-form)" }}
           >
               {submitted ? (
@@ -310,6 +333,7 @@ export function ArrendamientoContact() {
                 </>
               )}
             </div>
+          </Reveal>
         </div>
       </div>
     </section>

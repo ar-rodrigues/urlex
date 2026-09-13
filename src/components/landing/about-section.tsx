@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
+import { Reveal, REVEAL_IMAGE_DELAY } from "@/components/ui/reveal";
 
 export async function AboutSection() {
   const t = await getTranslations("AboutSection");
@@ -7,7 +8,7 @@ export async function AboutSection() {
   return (
     <section id="nosotros" className="landing-section w-full" style={{ background: "var(--color-bg)" }}>
       <div className="landing-container flex flex-col items-stretch gap-8 lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
-        <div className="flex min-w-0 flex-1 flex-col gap-6">
+        <Reveal className="flex min-w-0 flex-1 flex-col gap-6">
           <h2
             className="font-display text-[1.75rem] font-bold leading-[1.15] tracking-[0.03em] md:text-[2rem] lg:text-[2.25rem]"
             style={{ color: "var(--color-text)" }}
@@ -36,9 +37,14 @@ export async function AboutSection() {
               {t("quote")}
             </p>
           </blockquote>
-        </div>
+        </Reveal>
 
-        <div className="relative mx-auto h-[240px] w-full max-w-md shrink-0 overflow-hidden sm:h-[280px] lg:mx-0 lg:h-[268px] lg:w-[min(38%,400px)] lg:max-w-none">
+        <Reveal
+          delay={REVEAL_IMAGE_DELAY}
+          from="right"
+          scale
+          className="relative mx-auto h-[240px] w-full max-w-md shrink-0 overflow-hidden sm:h-[280px] lg:mx-0 lg:h-[268px] lg:w-[min(38%,400px)] lg:max-w-none"
+        >
           <Image
             src="/images/landing/about.jpg"
             alt={t("imageAlt")}
@@ -46,7 +52,7 @@ export async function AboutSection() {
             className="object-cover"
             sizes="(max-width: 1023px) 100vw, 400px"
           />
-        </div>
+        </Reveal>
       </div>
     </section>
   );

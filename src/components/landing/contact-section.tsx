@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { PrivacyConsentCheckbox } from "@/components/landing/privacy-consent-checkbox";
 import { Button } from "@/components/ui/button";
+import { Reveal, REVEAL_STEP } from "@/components/ui/reveal";
 import { submitContactForm } from "@/lib/submit-contact";
 
 type ContactValues = {
@@ -86,21 +87,24 @@ export function ContactSection({
     >
       <div className="landing-container flex flex-col items-center gap-6 md:gap-8">
         {hideTitle ? null : (
-          <h2
-            className="font-display text-center text-[1.75rem] font-bold leading-[1.23] tracking-[0.03em] md:text-[2.5rem]"
-            style={{ color: "var(--color-text)" }}
-          >
-            {t("title")}
-          </h2>
+          <Reveal>
+            <h2
+              className="font-display text-center text-[1.75rem] font-bold leading-[1.23] tracking-[0.03em] md:text-[2.5rem]"
+              style={{ color: "var(--color-text)" }}
+            >
+              {t("title")}
+            </h2>
+          </Reveal>
         )}
 
-        <div
-          className="w-full max-w-[842px] bg-white px-4 py-8 md:px-8 md:py-12"
-          style={{
-            borderRadius: "var(--radius-form)",
-            border: hideTitle ? "1px solid var(--color-accent)" : undefined,
-          }}
-        >
+        <Reveal delay={hideTitle ? 0 : REVEAL_STEP} className="w-full max-w-[842px]">
+          <div
+            className="w-full bg-white px-4 py-8 md:px-8 md:py-12"
+            style={{
+              borderRadius: "var(--radius-form)",
+              border: hideTitle ? "1px solid var(--color-accent)" : undefined,
+            }}
+          >
           <div className="mx-auto w-full max-w-[786px]">
             {submitted ? (
               <div
@@ -261,7 +265,8 @@ export function ContactSection({
               </Form>
             )}
           </div>
-        </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
