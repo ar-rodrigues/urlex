@@ -1,9 +1,23 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { NosotrosFaq } from "@/components/landing/nosotros-faq";
 import { ContentPageHero } from "@/components/landing/content-page-hero";
 
-const VALUE_KEYS = ["honesty", "commitment", "clarity", "strategy"] as const;
-const TEAM_KEYS = ["luis", "juan", "maricruz"] as const;
+const VALUES = [
+  { key: "honesty", icon: "/images/nosotros/icon-honestidad.svg" },
+  { key: "commitment", icon: "/images/nosotros/icon-compromiso.svg" },
+  { key: "clarity", icon: "/images/nosotros/icon-claridad.svg" },
+  { key: "strategy", icon: "/images/nosotros/icon-estrategia.svg" },
+] as const;
+
+const TEAM_KEYS = [
+  "hector",
+  "luis",
+  "juan",
+  "maricruz",
+  "emiliano",
+  "joanna",
+] as const;
 
 export async function NosotrosContent() {
   const t = await getTranslations("Nosotros");
@@ -54,32 +68,50 @@ export async function NosotrosContent() {
         </div>
       </section>
 
-      <section
-        className="landing-section w-full"
-        style={{ background: "var(--color-bg-muted)" }}
-      >
+      <section className="landing-section w-full" style={{ background: "var(--color-bg)" }}>
         <div className="landing-container flex flex-col gap-8">
           <h2
-            className="text-center font-display text-[1.75rem] font-bold md:text-[2.25rem]"
-            style={{ color: "var(--color-primary)" }}
+            className="font-display text-[1.75rem] font-bold md:text-[2.25rem]"
+            style={{ color: "var(--color-text)" }}
           >
             {t("whyTitle")}
           </h2>
-          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {VALUE_KEYS.map((key) => (
+          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+            {VALUES.map(({ key, icon }) => (
               <li
                 key={key}
-                className="rounded-[var(--radius-card)] bg-white p-5"
+                className="flex flex-col gap-4 rounded-[var(--radius-card)] border p-5 md:p-6"
+                style={{
+                  background: "var(--color-bg-muted)",
+                  borderColor: "var(--color-border)",
+                }}
               >
-                <h3
-                  className="mb-2 text-xl font-semibold"
-                  style={{ color: "var(--color-primary)" }}
+                <div
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md"
+                  style={{ background: "var(--color-accent)" }}
                 >
-                  {t(`values.${key}.title`)}
-                </h3>
-                <p style={{ color: "var(--color-text-muted)" }}>
-                  {t(`values.${key}.body`)}
-                </p>
+                  <Image
+                    src={icon}
+                    alt=""
+                    width={28}
+                    height={28}
+                    className="h-7 w-7"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h3
+                    className="text-xl font-semibold leading-tight"
+                    style={{ color: "var(--color-primary)" }}
+                  >
+                    {t(`values.${key}.title`)}
+                  </h3>
+                  <p
+                    className="text-base leading-[1.5]"
+                    style={{ color: "var(--color-text-muted)" }}
+                  >
+                    {t(`values.${key}.body`)}
+                  </p>
+                </div>
               </li>
             ))}
           </ul>
@@ -87,45 +119,51 @@ export async function NosotrosContent() {
       </section>
 
       <section className="landing-section w-full" style={{ background: "var(--color-bg)" }}>
-        <div className="landing-container flex flex-col gap-8">
+        <div className="landing-container flex flex-col gap-8 md:gap-10">
           <h2
             className="text-center font-display text-[1.75rem] font-bold md:text-[2.25rem]"
-            style={{ color: "var(--color-primary)" }}
+            style={{ color: "var(--color-text)" }}
           >
             {t("teamTitle")}
           </h2>
-          <ul className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
             {TEAM_KEYS.map((key) => (
               <li
                 key={key}
-                className="flex flex-col gap-3 rounded-lg border p-5"
+                className="flex flex-col items-center gap-3 rounded-[var(--radius-card)] border px-6 py-8 text-center"
                 style={{ borderColor: "var(--color-border)" }}
               >
-                <div
-                  className="flex h-14 w-14 items-center justify-center rounded-full text-xl font-semibold"
-                  style={{
-                    background: "var(--color-bg-muted)",
-                    color: "var(--color-primary)",
-                  }}
-                  aria-hidden
-                >
-                  {t(`team.${key}.name`).charAt(0)}
-                </div>
+                <Image
+                  src="/images/nosotros/icon-persona.svg"
+                  alt=""
+                  width={72}
+                  height={72}
+                  className="h-[72px] w-[72px]"
+                />
                 <h3
-                  className="font-display text-xl font-bold leading-tight"
+                  className="font-display text-xl font-bold leading-tight md:text-[1.375rem]"
                   style={{ color: "var(--color-primary)" }}
                 >
                   {t(`team.${key}.name`)}
                 </h3>
-                <p
-                  className="text-sm font-semibold uppercase tracking-wide"
-                  style={{ color: "var(--color-accent)" }}
-                >
-                  {t(`team.${key}.role`)}
-                </p>
-                <p style={{ color: "var(--color-text-muted)" }}>
-                  {t(`team.${key}.bio`)}
-                </p>
+                <div className="flex w-full flex-col items-center gap-3">
+                  <p
+                    className="text-xs font-semibold uppercase tracking-[0.06em]"
+                    style={{ color: "var(--color-accent)" }}
+                  >
+                    {t(`team.${key}.role`)}
+                  </p>
+                  <hr
+                    className="w-full border-0 border-t"
+                    style={{ borderColor: "var(--color-border)" }}
+                  />
+                  <p
+                    className="text-sm leading-[1.5] md:text-base"
+                    style={{ color: "var(--color-text-muted)" }}
+                  >
+                    {t(`team.${key}.bio`)}
+                  </p>
+                </div>
               </li>
             ))}
           </ul>

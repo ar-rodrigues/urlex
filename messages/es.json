@@ -606,33 +606,23 @@
     "imageAlt": "Despacho jurídico profesional",
     "timelineTitle": "Nuestra trayectoria",
     "timeline": {
-      "1996": {
-        "year": "1996",
-        "title": "Fundación de URLEX",
-        "body": "Nace en Puebla con el propósito de brindar asesoría legal cercana, clara y estratégica."
+      "1975": {
+        "year": "1975",
+        "body": "Leopoldo Uribe García Fundador de URLEX y del bufete jurídico de la BUAP, donde se ofrece asesoría y defensa legal a personas de bajos recursos, creía que el acceso a una buena en materia jurídica no era un lujo, sino un derecho."
       },
-      "2005": {
-        "year": "2005",
-        "title": "Expansión de áreas de práctica",
-        "body": "Ampliamos nuestra atención a empresas, asociaciones e instituciones con servicios especializados."
+      "1994": {
+        "year": "1994",
+        "body": "Héctor Leopoldo Uribe Pacheco, expande y posiciona URLEX en la ciudad de Puebla."
       },
-      "2012": {
-        "year": "2012",
-        "title": "Fortalecimiento institucional",
-        "body": "Consolidamos alianzas y procesos para acompañar casos de mayor complejidad con el mismo criterio cercano."
+      "1997": {
+        "year": "1997",
+        "body": "Luis Ignacio Sánchez Castañeda, se incorpora al equipo de trabajo, trayendo su experiencia en materia electoral y en derecho notarial."
       },
-      "2018": {
-        "year": "2018",
-        "title": "Enfoque preventivo",
-        "body": "Impulsamos asesoría preventiva para reducir riesgos legales antes de que se conviertan en conflictos."
-      },
-      "2024": {
-        "year": "2024",
-        "title": "Más de tres décadas",
-        "body": "Seguimos acompañando a Puebla con experiencia acumulada, resultados y compromiso profesional."
+      "2020": {
+        "year": "2020",
+        "body": "Emiliano Uribe Carrera, se une al legado de su abuelo y padre para formar parte del despacho jurídico, incorporando el proyecto de Arrendamiento Seguro."
       }
     },
-    "experienceTitle": "Experiencia que respalda cada estrategia legal",
     "processTitle": "Así acompañamos tu caso",
     "process": {
       "1": {
@@ -680,8 +670,10 @@
     "emailValue": "contacto.juridico@urlex.com",
     "sidebarCta": "Consulta gratuita para evaluar tu caso sin compromiso.",
     "sidebarCtaButton": "Agendar consulta",
-    "mapTitle": "Ubicación"
+    "mapTitle": "Ubicación de URLEX en Puebla",
+    "mapOpenExternal": "Abrir ubicación en Google Maps"
   },
+
   "Nosotros": {
     "metaTitle": "Nosotros",
     "metaDescription": "Conoce al equipo de URLEX: más de 30 años protegiendo derechos en Puebla.",
@@ -713,20 +705,35 @@
     },
     "teamTitle": "Las personas detrás de tu estrategia legal",
     "team": {
+      "hector": {
+        "name": "Lic. Héctor Leopoldo Uribe Pacheco",
+        "role": "Socio director general",
+        "bio": "Responsable de la dirección estratégica del bufete, asesoría legal de alto nivel y seguimiento de casos clave para clientes institucionales y empresariales."
+      },
       "luis": {
         "name": "Lic. Luis Ignacio Sánchez Castañeda",
         "role": "Socio fundador",
-        "bio": "Responsable de la dirección estratégica del despacho jurídico, representación legal, coordinación y seguimiento de clientes institucionales y empresariales."
+        "bio": "Responsable de la dirección estratégica del Despacho Jurídico, representación legal, coordinación y seguimiento de clientes institucionales y empresariales."
       },
       "juan": {
         "name": "Lic. Juan Manuel Bonilla Godínez",
         "role": "Socio director",
-        "bio": "Responsable de coordinar trámites notariales y administrativos ante dependencias gubernamentales y notarías públicas, garantizando legalidad y continuidad operativa."
+        "bio": "Responsable de garantizar la legalidad y continuidad operativa mediante gestiones notariales y trámites administrativos."
       },
       "maricruz": {
         "name": "Lic. Maricruz Vázquez López",
-        "role": "Socia directora",
-        "bio": "Responsable de la gestión integral ante Ayuntamiento y Gobierno del Estado para la obtención de licencias, uso de suelo, regularización de obras y cumplimiento normativo vigente."
+        "role": "Socio director",
+        "bio": "Responsable de la gestión integral ante Ayuntamiento y Gobierno del Estado, para garantizar el cumplimiento normativo vigente."
+      },
+      "emiliano": {
+        "name": "Lic. Emiliano Uribe Carrera",
+        "role": "Socio director | Arrendamiento Seguro",
+        "bio": "Responsable de la dirección estratégica de Arrendamiento Seguro, asesoría legal de alto nivel y seguimiento de casos clave para clientes institucionales y empresariales."
+      },
+      "joanna": {
+        "name": "Lic. Joanna Porras Villalva",
+        "role": "Asociada junior",
+        "bio": "Abogada encargada del seguimiento a casos civiles, mercantiles, administrativos, familiares y laborales."
       }
     },
     "faqTitle": "Preguntas frecuentes",

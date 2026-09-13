@@ -1,6 +1,10 @@
 import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/button";
-import { CONTACT_WHATSAPP_URL } from "@/lib/contact-info";
+import {
+  CONTACT_MAP_EMBED_URL,
+  CONTACT_MAP_EXTERNAL_URL,
+  CONTACT_WHATSAPP_URL,
+} from "@/lib/contact-info";
 import { Link } from "@/lib/navigation";
 
 export async function ContactSidebar() {
@@ -74,14 +78,25 @@ export async function ContactSidebar() {
         </div>
 
         <div
-          className="flex min-h-[320px] items-center justify-center rounded-lg"
+          className="relative min-h-[320px] overflow-hidden rounded-lg lg:min-h-full"
           style={{ background: "var(--color-bg-muted)" }}
-          role="img"
-          aria-label={t("mapTitle")}
         >
-          <p className="px-6 text-center" style={{ color: "var(--color-text-muted)" }}>
-            {t("mapTitle")}
-          </p>
+          <iframe
+            title={t("mapTitle")}
+            src={CONTACT_MAP_EMBED_URL}
+            className="absolute inset-0 h-full w-full border-0"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
+          <a
+            href={CONTACT_MAP_EXTERNAL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="sr-only"
+          >
+            {t("mapOpenExternal")}
+          </a>
         </div>
       </div>
     </section>

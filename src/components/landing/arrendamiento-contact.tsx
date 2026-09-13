@@ -112,7 +112,7 @@ export function ArrendamientoContact() {
             />
           </div>
 
-          <div className="relative order-none hidden min-h-[520px] overflow-visible lg:block lg:-mr-10 xl:-mr-6">
+          <div className="pointer-events-none relative order-none hidden min-h-[520px] overflow-visible lg:block lg:-mr-10 xl:-mr-6">
             <Image
               src={CONTACT_IMAGE}
               alt={t("imageAlt")}

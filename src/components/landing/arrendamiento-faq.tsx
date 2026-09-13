@@ -10,7 +10,7 @@ export function ArrendamientoFaq() {
 
   return (
     <section
-      className="w-full pt-[var(--spacing-section)]"
+      className="relative z-10 w-full pt-[var(--spacing-section)]"
       style={{ background: "var(--color-bg)" }}
     >
       <div className="landing-container flex flex-col items-center gap-8 pb-[var(--spacing-section)]">
@@ -20,14 +20,19 @@ export function ArrendamientoFaq() {
         >
           {t("title")}
         </h2>
-        <ul className="grid w-full grid-cols-1 gap-4 md:grid-cols-2">
+        {/*
+          min-height ≈ closed rows + gaps + one answer, so opening a question
+          reuses reserved space instead of pushing the section below.
+        */}
+        <ul className="grid min-h-[26rem] w-full grid-cols-1 content-start items-start gap-4 md:min-h-[16rem] md:grid-cols-2">
           {ARRENDAMIENTO_FAQ_KEYS.map((key) => {
             const isOpen = open === key;
+
             return (
               <li key={key}>
                 <button
                   type="button"
-                  className="flex w-full items-center justify-between gap-4 rounded-lg border px-5 py-4 text-left transition-opacity hover:opacity-90"
+                  className="flex w-full cursor-pointer flex-col rounded-lg border px-5 py-4 text-left transition-opacity hover:opacity-90"
                   style={{
                     background: "var(--color-bg)",
                     borderColor: "var(--color-border)",
@@ -35,28 +40,36 @@ export function ArrendamientoFaq() {
                   aria-expanded={isOpen}
                   onClick={() => setOpen(isOpen ? null : key)}
                 >
-                  <span
-                    className="text-base font-medium md:text-lg"
-                    style={{ color: "var(--color-primary)" }}
-                  >
-                    {t(`items.${key}.q`)}
+                  <span className="flex w-full items-center justify-between gap-4">
+                    <span
+                      className="text-base font-medium md:text-lg"
+                      style={{ color: "var(--color-primary)" }}
+                    >
+                      {t(`items.${key}.q`)}
+                    </span>
+                    <span
+                      className="shrink-0 text-xl leading-none"
+                      style={{ color: "var(--color-primary)" }}
+                      aria-hidden
+                    >
+                      {isOpen ? "−" : "+"}
+                    </span>
                   </span>
                   <span
-                    className="shrink-0 text-xl leading-none"
-                    style={{ color: "var(--color-primary)" }}
-                    aria-hidden
+                    className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+                      isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                    }`}
                   >
-                    {isOpen ? "−" : "+"}
+                    <span className="overflow-hidden">
+                      <span
+                        className="mt-3 block text-base"
+                        style={{ color: "var(--color-text-muted)" }}
+                      >
+                        {t(`items.${key}.a`)}
+                      </span>
+                    </span>
                   </span>
                 </button>
-                {isOpen ? (
-                  <p
-                    className="px-5 py-3 text-base"
-                    style={{ color: "var(--color-text-muted)" }}
-                  >
-                    {t(`items.${key}.a`)}
-                  </p>
-                ) : null}
               </li>
             );
           })}

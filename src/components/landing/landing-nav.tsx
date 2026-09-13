@@ -17,7 +17,7 @@ const NAV_LINK_ITEMS = [
 ] as const;
 
 const MOBILE_DRAWER_WIDTH = "min(320px, 85vw)";
-const MOBILE_HEADER_OFFSET = "5.5rem";
+const MOBILE_HEADER_OFFSET = "5rem";
 
 /** Explicit typography overrides antd reset `button { font-size: inherit; text-transform: none }`. */
 const desktopNavTypography: CSSProperties = {
@@ -106,27 +106,30 @@ export function LandingNav() {
   }));
 
   return (
+    <>
     <header
-      className="sticky top-0 z-50 w-full"
+      className="fixed inset-x-0 top-0 z-50 w-full"
       style={{
         background: "var(--color-primary)",
-        /* Covers the 1px hairline from sticky compositing against the white body bg */
         boxShadow: "0 1px 0 0 var(--color-primary)",
       }}
     >
       <div className="landing-container flex items-center justify-between gap-4 py-4 md:py-6">
-        <Link href="/" className="relative block h-12 w-44 shrink-0 md:h-20 md:w-72">
+        <Link
+          href="/"
+          className="relative block h-12 w-44 shrink-0 md:h-16 md:w-56 xl:h-20 xl:w-72"
+        >
           <Image
             src="/images/landing/logo.png"
             alt={t("brand")}
             fill
             className="object-contain object-left"
-            sizes="288px"
+            sizes="(min-width: 1280px) 288px, (min-width: 768px) 224px, 176px"
             priority
           />
         </Link>
 
-        <nav className="hidden items-center gap-5 lg:flex xl:gap-7" aria-label="Principal">
+        <nav className="hidden items-center gap-5 xl:flex 2xl:gap-7" aria-label="Principal">
           <Link
             href="/"
             className={navLinkClassName}
@@ -211,7 +214,7 @@ export function LandingNav() {
 
         <button
           type="button"
-          className="flex h-10 w-10 items-center justify-center rounded-lg lg:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-lg xl:hidden"
           style={{
             color: "var(--color-text-on-primary)",
             border: "1px solid var(--color-text-on-primary-muted)",
@@ -245,7 +248,7 @@ export function LandingNav() {
             overflowY: "auto",
           },
         }}
-        classNames={{ section: "lg:hidden" }}
+        classNames={{ section: "xl:hidden" }}
       >
         <nav className="flex flex-col gap-5" aria-label="Principal">
           <Link
@@ -323,5 +326,8 @@ export function LandingNav() {
         </nav>
       </Drawer>
     </header>
+    {/* Matches header height so page content is not covered by position:fixed */}
+    <div aria-hidden className="h-[5rem] shrink-0 md:h-[7rem] xl:h-[8rem]" />
+    </>
   );
 }

@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 
 export type TimelineItem = {
   year: string;
-  title: string;
   body: string;
 };
 
@@ -55,6 +54,7 @@ function StaticTimeline({ title, items }: Props) {
 
 function ScrubTimeline({ title, items }: Props) {
   const trackRef = useRef<HTMLElement>(null);
+  const stickyRef = useRef<HTMLDivElement>(null);
   const viewportRef = useRef<HTMLDivElement>(null);
   const targetScroll = useRef(0);
   const currentScroll = useRef(0);
@@ -90,21 +90,26 @@ function ScrubTimeline({ title, items }: Props) {
 
   useEffect(() => {
     const track = trackRef.current;
+    const sticky = stickyRef.current;
     const viewport = viewportRef.current;
-    if (!track || !viewport) return;
+    if (!track || !sticky || !viewport) return;
 
     let running = false;
 
     const readTarget = () => {
-      const rect = track.getBoundingClientRect();
+      const trackRect = track.getBoundingClientRect();
+      const stickyTop = Number.parseFloat(getComputedStyle(sticky).top) || 0;
+      // Start when the title sits under the nav and only a sliver of the blue
+      // tagline remains visible above it.
+      const scrolled = stickyTop - trackRect.top;
       const scrollable = track.offsetHeight - window.innerHeight;
       if (scrollable <= 0) {
         targetScroll.current = 0;
         return;
       }
-      // Map almost the full track 1:1 — only a small end buffer so the last card clears.
-      const scrubRange = Math.max(1, scrollable - window.innerHeight * 0.08);
-      const ratio = Math.min(1, Math.max(0, -rect.top / scrubRange));
+      // Finish scrub as the track ends — keep only a tiny buffer so the last card clears.
+      const scrubRange = Math.max(1, scrollable - window.innerHeight * 0.02);
+      const ratio = Math.min(1, Math.max(0, scrolled / scrubRange));
       targetScroll.current = ratio * maxScrollRef.current;
     };
 
@@ -161,7 +166,7 @@ function ScrubTimeline({ title, items }: Props) {
   const trackHeightPx =
     typeof window === "undefined"
       ? undefined
-      : Math.round(window.innerHeight + maxScroll * SCROLL_RATIO + window.innerHeight * 0.15);
+      : Math.round(window.innerHeight + maxScroll * SCROLL_RATIO + window.innerHeight * 0.04);
 
   return (
     <section
@@ -175,20 +180,26 @@ function ScrubTimeline({ title, items }: Props) {
             : `${Math.max(items.length, 2) * 70}dvh`,
       }}
     >
-      <div className="sticky top-[5.5rem] flex h-[calc(100dvh-5.5rem)] flex-col overflow-hidden md:top-[8rem] md:h-[calc(100dvh-8rem)]">
-        <div className="landing-container flex h-full flex-col gap-5 pb-6 pt-5 md:gap-8 md:pb-10 md:pt-8">
-          <h2
-            className="shrink-0 text-center font-display text-[1.75rem] font-bold md:text-[2.25rem]"
-            style={{ color: "var(--color-primary)" }}
-          >
-            {title}
-          </h2>
+      {/* Title scrolls with the blue hero — only the timeline viewport sticks. */}
+      <div className="landing-container pt-5 md:pt-8">
+        <h2
+          className="text-center font-display text-[1.75rem] font-bold md:text-[2.25rem]"
+          style={{ color: "var(--color-primary)" }}
+        >
+          {title}
+        </h2>
+      </div>
 
+      <div
+        ref={stickyRef}
+        className="sticky top-[5rem] flex flex-col overflow-hidden md:top-[7rem] xl:top-[8rem]"
+      >
+        <div className="landing-container flex flex-col pb-4 pt-5 md:pb-6 md:pt-8">
           <div
             ref={viewportRef}
-            className="relative w-full overflow-hidden h-[min(420px,calc(100dvh-5.5rem-8rem))] md:h-[min(560px,calc(100dvh-8rem-10rem))]"
+            className="relative w-full overflow-hidden h-[min(480px,calc(100dvh-5rem-4rem))] md:h-[min(600px,calc(100dvh-7rem-5rem))] xl:h-[min(600px,calc(100dvh-8rem-5rem))]"
           >
-            <div className="pb-8 md:pb-12">
+            <div className="pb-4 md:pb-6">
               <div className="md:hidden">
                 <MobileList
                   items={items}
@@ -221,7 +232,7 @@ function MobileList({
   progress: number;
 }) {
   return (
-    <ol className="relative mx-auto flex w-full max-w-xl flex-col gap-8">
+    <ol className="relative mx-auto flex w-full max-w-xl flex-col gap-8 pt-16 md:pt-20">
       <TimelineRail progress={progress} side="right" />
       {items.map((item, index) => (
         <li
@@ -250,7 +261,7 @@ function DesktopList({
   progress: number;
 }) {
   return (
-    <ol className="relative mx-auto flex w-full max-w-5xl flex-col gap-12">
+    <ol className="relative mx-auto flex w-full max-w-5xl flex-col gap-12 pt-16 md:pt-24">
       <TimelineRail progress={progress} side="center" />
       {items.map((item, index) => {
         const isLeft = index % 2 === 0;
@@ -307,8 +318,8 @@ function TimelineRail({
         aria-hidden
         className={
           isCenter
-            ? "absolute top-6 bottom-6 left-1/2 w-px -translate-x-1/2"
-            : "absolute top-3 bottom-3 right-[11px] w-px"
+            ? "absolute top-0 bottom-6 left-1/2 w-px -translate-x-1/2"
+            : "absolute top-0 bottom-3 right-[11px] w-px"
         }
         style={{ background: "var(--color-border)" }}
       />
@@ -316,8 +327,8 @@ function TimelineRail({
         aria-hidden
         className={
           isCenter
-            ? "absolute top-6 left-1/2 w-px origin-top -translate-x-1/2"
-            : "absolute top-3 right-[11px] w-px origin-top"
+            ? "absolute top-0 left-1/2 w-px origin-top -translate-x-1/2"
+            : "absolute top-0 right-[11px] w-px origin-top"
         }
         style={{
           background: "var(--color-primary)",
@@ -347,7 +358,7 @@ function TimelineNode({
   );
 }
 
-function TimelineCard({ year, title, body }: TimelineItem) {
+function TimelineCard({ year, body }: TimelineItem) {
   return (
     <article
       className="w-full max-w-md rounded-2xl border bg-white p-5 shadow-sm md:p-6"
@@ -370,9 +381,6 @@ function TimelineCard({ year, title, body }: TimelineItem) {
           {year}
         </p>
       </div>
-      <h3 className="mb-1 text-lg font-semibold" style={{ color: "var(--color-primary)" }}>
-        {title}
-      </h3>
       <p className="text-sm leading-relaxed" style={{ color: "var(--color-text-muted)" }}>
         {body}
       </p>

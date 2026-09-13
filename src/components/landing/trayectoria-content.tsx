@@ -7,7 +7,7 @@ import {
   type TimelineItem,
 } from "@/components/landing/trayectoria-timeline";
 
-const TIMELINE_KEYS = ["1996", "2005", "2012", "2018", "2024"] as const;
+const TIMELINE_KEYS = ["1975", "1994", "1997", "2020"] as const;
 const PROCESS_KEYS = ["1", "2", "3", "4", "5"] as const;
 
 export async function TrayectoriaContent() {
@@ -15,7 +15,6 @@ export async function TrayectoriaContent() {
 
   const timelineItems: TimelineItem[] = TIMELINE_KEYS.map((key) => ({
     year: t(`timeline.${key}.year`),
-    title: t(`timeline.${key}.title`),
     body: t(`timeline.${key}.body`),
   }));
 
@@ -33,20 +32,6 @@ export async function TrayectoriaContent() {
       />
 
       <TrayectoriaTimeline title={t("timelineTitle")} items={timelineItems} />
-
-      <section
-        className="w-full py-12 md:py-16"
-        style={{ background: "var(--color-primary)" }}
-      >
-        <div className="landing-container">
-          <h2
-            className="mx-auto max-w-4xl text-center font-display text-[1.5rem] font-bold md:text-[2rem]"
-            style={{ color: "var(--color-text-on-primary)" }}
-          >
-            {t("experienceTitle")}
-          </h2>
-        </div>
-      </section>
 
       <section
         className="landing-section w-full"
