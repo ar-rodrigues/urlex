@@ -56,8 +56,10 @@ export async function Hero() {
             alt={t("imageAlt")}
             fill
             className="object-cover"
-            sizes="(max-width: 1023px) 100vw, 400px"
+            sizes="(max-width: 640px) 100vw, (max-width: 1023px) 90vw, 400px"
+            quality={70}
             priority
+            fetchPriority="high"
           />
         </HeroReveal>
       </div>

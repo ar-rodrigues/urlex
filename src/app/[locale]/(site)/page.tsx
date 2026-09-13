@@ -1,13 +1,36 @@
 import dynamic from "next/dynamic";
 import { setRequestLocale } from "next-intl/server";
 import { AboutSection } from "@/components/landing/about-section";
-import { BenefitsSection } from "@/components/landing/benefits-section";
 import { Hero } from "@/components/landing/hero";
-import { HomeArrendamientoBanner } from "@/components/landing/home-arrendamiento-banner";
 import { ServicesSection } from "@/components/landing/services-section";
-import { StatsSection } from "@/components/landing/stats-section";
-import { SuccessCasesSection } from "@/components/landing/success-cases-section";
 
+/** Below-fold: defer client JS (motion / forms) until after first paint. */
+const StatsSection = dynamic(
+  () =>
+    import("@/components/landing/stats-section").then((mod) => mod.StatsSection),
+  { ssr: true },
+);
+const HomeArrendamientoBanner = dynamic(
+  () =>
+    import("@/components/landing/home-arrendamiento-banner").then(
+      (mod) => mod.HomeArrendamientoBanner,
+    ),
+  { ssr: true },
+);
+const BenefitsSection = dynamic(
+  () =>
+    import("@/components/landing/benefits-section").then(
+      (mod) => mod.BenefitsSection,
+    ),
+  { ssr: true },
+);
+const SuccessCasesSection = dynamic(
+  () =>
+    import("@/components/landing/success-cases-section").then(
+      (mod) => mod.SuccessCasesSection,
+    ),
+  { ssr: true },
+);
 const ContactSection = dynamic(
   () =>
     import("@/components/landing/contact-section").then(

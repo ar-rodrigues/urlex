@@ -8,7 +8,7 @@ import { SOCIAL_SHARE_IMAGE } from "@/lib/page-metadata";
 import "../globals.css";
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://urlex.com";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.urlex.com.mx";
 
 const figtree = Figtree({
   variable: "--font-figtree",
