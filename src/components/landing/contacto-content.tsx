@@ -30,11 +30,7 @@ export async function ContactoContent() {
         </div>
       </section>
 
-      <ContactSection
-        hideTitle
-        submitLabel={t("submit")}
-        privacyNote={t("privacyNote")}
-      />
+      <ContactSection hideTitle submitLabel={t("submit")} />
 
       <ContactSidebar />
     </>

@@ -99,8 +99,7 @@ function ScrubTimeline({ title, items }: Props) {
     const readTarget = () => {
       const trackRect = track.getBoundingClientRect();
       const stickyTop = Number.parseFloat(getComputedStyle(sticky).top) || 0;
-      // Start when the title sits under the nav and only a sliver of the blue
-      // tagline remains visible above it.
+      // Start when the sticky panel (title + timeline) locks under the fixed nav.
       const scrolled = stickyTop - trackRect.top;
       const scrollable = track.offsetHeight - window.innerHeight;
       if (scrollable <= 0) {
@@ -180,24 +179,21 @@ function ScrubTimeline({ title, items }: Props) {
             : `${Math.max(items.length, 2) * 70}dvh`,
       }}
     >
-      {/* Title scrolls with the blue hero — only the timeline viewport sticks. */}
-      <div className="landing-container pt-5 md:pt-8">
-        <h2
-          className="text-center font-display text-[1.75rem] font-bold md:text-[2.25rem]"
-          style={{ color: "var(--color-primary)" }}
-        >
-          {title}
-        </h2>
-      </div>
-
       <div
         ref={stickyRef}
         className="sticky top-[5rem] flex flex-col overflow-hidden md:top-[7rem] xl:top-[8rem]"
       >
-        <div className="landing-container flex flex-col pb-4 pt-5 md:pb-6 md:pt-8">
+        <div className="landing-container flex flex-col gap-5 pb-4 pt-5 md:gap-8 md:pb-6 md:pt-8">
+          <h2
+            className="shrink-0 text-center font-display text-[1.75rem] font-bold md:text-[2.25rem]"
+            style={{ color: "var(--color-primary)" }}
+          >
+            {title}
+          </h2>
+
           <div
             ref={viewportRef}
-            className="relative w-full overflow-hidden h-[min(480px,calc(100dvh-5rem-4rem))] md:h-[min(600px,calc(100dvh-7rem-5rem))] xl:h-[min(600px,calc(100dvh-8rem-5rem))]"
+            className="relative w-full overflow-hidden h-[min(420px,calc(100dvh-5rem-8rem))] md:h-[min(520px,calc(100dvh-7rem-10rem))] xl:h-[min(560px,calc(100dvh-8rem-10rem))]"
           >
             <div className="pb-4 md:pb-6">
               <div className="md:hidden">

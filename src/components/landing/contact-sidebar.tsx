@@ -67,7 +67,7 @@ export async function ContactSidebar() {
           >
             <p
               className="text-lg font-medium leading-[1.4] md:text-[1.375rem]"
-              style={{ color: "var(--color-border)" }}
+              style={{ color: "var(--color-text-on-primary)" }}
             >
               {t("sidebarCta")}
             </p>

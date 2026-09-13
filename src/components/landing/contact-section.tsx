@@ -4,7 +4,9 @@ import { Form, Input, Select } from "antd";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
+import { PrivacyConsentCheckbox } from "@/components/landing/privacy-consent-checkbox";
 import { Button } from "@/components/ui/button";
+import { submitContactForm } from "@/lib/submit-contact";
 
 type ContactValues = {
   fullName: string;
@@ -12,6 +14,7 @@ type ContactValues = {
   email: string;
   service: string;
   message: string;
+  privacyConsent: boolean;
   website?: string;
 };
 
@@ -29,18 +32,39 @@ const SERVICE_OPTIONS = [
 export function ContactSection({
   hideTitle = false,
   submitLabel,
-  privacyNote,
 }: {
   hideTitle?: boolean;
   submitLabel?: string;
-  privacyNote?: string;
 } = {}) {
   const t = useTranslations("ContactSection");
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const [form] = Form.useForm<ContactValues>();
 
-  const handleFinish = (values: ContactValues) => {
+  const handleFinish = async (values: ContactValues) => {
     if (values.website) {
+      return;
+    }
+
+    setSubmitting(true);
+    setSubmitError(false);
+
+    const result = await submitContactForm({
+      formType: "general",
+      fullName: values.fullName,
+      phone: values.phone,
+      email: values.email,
+      service: values.service,
+      message: values.message,
+      privacyConsent: values.privacyConsent,
+      website: values.website,
+    });
+
+    setSubmitting(false);
+
+    if (!result.ok) {
+      setSubmitError(true);
       return;
     }
 
@@ -50,6 +74,7 @@ export function ContactSection({
 
   const handleSendAnother = () => {
     setSubmitted(false);
+    setSubmitError(false);
     form.resetFields();
   };
 
@@ -211,15 +236,27 @@ export function ContactSection({
                 />
               </Form.Item>
 
+              <PrivacyConsentCheckbox className="!mb-4" />
+
+              {submitError ? (
+                <p
+                  className="mb-3 text-center text-sm"
+                  role="alert"
+                  style={{ color: "var(--color-primary)" }}
+                >
+                  {t("submitError")}
+                </p>
+              ) : null}
+
               <div className="flex flex-col items-center gap-3 pt-2">
-                <Button variant="secondaryLight" htmlType="submit">
+                <Button
+                  variant="secondaryLight"
+                  htmlType="submit"
+                  loading={submitting}
+                  disabled={submitting}
+                >
                   {submitLabel ?? t("submit")}
                 </Button>
-                {privacyNote ? (
-                  <p className="text-center text-sm" style={{ color: "var(--color-placeholder)" }}>
-                    {privacyNote}
-                  </p>
-                ) : null}
               </div>
               </Form>
             )}

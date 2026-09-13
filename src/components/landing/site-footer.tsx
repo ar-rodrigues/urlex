@@ -152,9 +152,13 @@ export async function SiteFooter() {
         }}
       >
         <p>{t("copyright", { year })}</p>
-        <a href="#" className="hover:opacity-80" style={{ color: "var(--color-text-on-primary)" }}>
+        <Link
+          href="/aviso-de-privacidad"
+          className="hover:opacity-80"
+          style={{ color: "var(--color-text-on-primary)" }}
+        >
           {t("privacy")}
-        </a>
+        </Link>
       </div>
     </footer>
   );

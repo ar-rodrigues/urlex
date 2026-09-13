@@ -185,6 +185,7 @@
     "message": "Describe tu situación",
     "messagePlaceholder": "Cuéntanos brevemente tu caso",
     "submit": "Solicitar asesoría legal",
+    "submitError": "No pudimos enviar tu solicitud. Inténtalo de nuevo en unos minutos.",
     "successTitle": "Gracias.",
     "successBody": "Hemos recibido tu solicitud.",
     "sendAnother": "Enviar otra solicitud",
@@ -770,8 +771,40 @@
     "breadcrumbCurrent": "Contacto",
     "title": "Hablemos de tu caso",
     "body": "Si necesitas asesoría legal, acompañamiento jurídico o apoyo para resolver un conflicto, en URLEX estamos listos para escucharte. Completa el formulario y nuestro equipo se pondrá en contacto contigo para conocer tu situación y explicarte los siguientes pasos.",
-    "submit": "Enviar solicitud",
-    "privacyNote": "Tu información es confidencial y no será compartida con terceros."
+    "submit": "Enviar solicitud"
+  },
+  "PrivacyConsent": {
+    "label": "He leído y acepto el <privacy>Aviso de Privacidad</privacy>.",
+    "required": "Debes aceptar el Aviso de Privacidad para continuar."
+  },
+  "AvisoPrivacidad": {
+    "metaTitle": "Aviso de Privacidad",
+    "metaDescription": "Conoce cómo URLEX trata tus datos personales conforme a la LFPDPPP.",
+    "breadcrumbCurrent": "Aviso de Privacidad",
+    "title": "Aviso de Privacidad",
+    "lastUpdated": "Última actualización: mayo 2026",
+    "sections": {
+      "controller": {
+        "title": "Responsable",
+        "body": "URLEX, con domicilio en Privada de la 37 sur #2115, Col. Belisario Domínguez, Puebla, Pue, es responsable del tratamiento de sus datos personales recabados a través de este sitio web y formularios de contacto."
+      },
+      "data": {
+        "title": "Datos que recabamos",
+        "body": "Nombre completo, teléfono, correo electrónico, servicio de interés, tipo de inmueble (cuando aplique), información sobre arrendamiento (cuando aplique) y el mensaje que usted proporcione voluntariamente."
+      },
+      "purpose": {
+        "title": "Finalidad",
+        "body": "Atender su solicitud de información, cotización o servicios legales, así como dar seguimiento relacionado con la asesoría y los servicios de URLEX."
+      },
+      "arco": {
+        "title": "Derechos ARCO",
+        "body": "Usted puede solicitar acceso, rectificación, cancelación u oposición al tratamiento de sus datos escribiendo a contacto.juridico@urlex.com."
+      },
+      "transfer": {
+        "title": "Transferencia de datos",
+        "body": "No transferimos sus datos a terceros sin su consentimiento, salvo las excepciones previstas en la LFPDPPP."
+      }
+    }
   },
   "ArrendamientoPage": {
     "hero": {
@@ -939,10 +972,10 @@
         "no": "No"
       },
       "submit": "Enviar solicitud",
+      "submitError": "No pudimos enviar tu solicitud. Inténtalo de nuevo en unos minutos.",
       "successTitle": "¡Solicitud enviada!",
       "successBody": "Nuestro equipo se pondrá en contacto contigo pronto.",
-      "sendAnother": "Enviar otra solicitud",
-      "privacyNote": "Tu información es confidencial y no será compartida con terceros."
+      "sendAnother": "Enviar otra solicitud"
     }
   }
 }

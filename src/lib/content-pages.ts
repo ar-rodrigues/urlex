@@ -7,6 +7,7 @@ export const CONTENT_PAGE_NAMESPACES = {
   trayectoria: "Trayectoria",
   nosotros: "Nosotros",
   contacto: "ContactoPage",
+  avisoPrivacidad: "AvisoPrivacidad",
 } as const;
 
 export type ContentPageId = keyof typeof CONTENT_PAGE_NAMESPACES;

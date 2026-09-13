@@ -4,11 +4,13 @@ import { Form, Input, Select } from "antd";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
+import { PrivacyConsentCheckbox } from "@/components/landing/privacy-consent-checkbox";
 import { Button } from "@/components/ui/button";
 import {
   ARRENDAMIENTO_PROPERTY_TYPES,
   ARRENDAMIENTO_TENANT_OPTIONS,
 } from "@/lib/arrendamiento-plans";
+import { submitContactForm } from "@/lib/submit-contact";
 
 const CONTACT_IMAGE = "/images/landing/banner-arrendamiento-building.webp";
 
@@ -24,16 +26,40 @@ type ContactValues = {
   email: string;
   propertyType: string;
   hasTenant: string;
+  privacyConsent: boolean;
   website?: string;
 };
 
 export function ArrendamientoContact() {
   const t = useTranslations("ArrendamientoPage.contact");
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const [form] = Form.useForm<ContactValues>();
 
-  const handleFinish = (values: ContactValues) => {
+  const handleFinish = async (values: ContactValues) => {
     if (values.website) {
+      return;
+    }
+
+    setSubmitting(true);
+    setSubmitError(false);
+
+    const result = await submitContactForm({
+      formType: "arrendamiento",
+      fullName: values.fullName,
+      phone: values.phone,
+      email: values.email,
+      propertyType: values.propertyType,
+      hasTenant: values.hasTenant,
+      privacyConsent: values.privacyConsent,
+      website: values.website,
+    });
+
+    setSubmitting(false);
+
+    if (!result.ok) {
+      setSubmitError(true);
       return;
     }
 
@@ -43,6 +69,7 @@ export function ArrendamientoContact() {
 
   const handleSendAnother = () => {
     setSubmitted(false);
+    setSubmitError(false);
     form.resetFields();
   };
 
@@ -246,7 +273,7 @@ export function ArrendamientoContact() {
                     <Form.Item
                       name="hasTenant"
                       label={t("hasTenant")}
-                      className="!mb-4"
+                      className="!mb-3"
                       rules={[{ required: true, message: t("hasTenant") }]}
                     >
                       <Select
@@ -258,7 +285,25 @@ export function ArrendamientoContact() {
                       />
                     </Form.Item>
 
-                    <Button variant="onAccent" htmlType="submit" className="w-full">
+                    <PrivacyConsentCheckbox className="!mb-4" />
+
+                    {submitError ? (
+                      <p
+                        className="mb-3 text-center text-sm"
+                        role="alert"
+                        style={{ color: "var(--color-primary)" }}
+                      >
+                        {t("submitError")}
+                      </p>
+                    ) : null}
+
+                    <Button
+                      variant="onAccent"
+                      htmlType="submit"
+                      className="w-full"
+                      loading={submitting}
+                      disabled={submitting}
+                    >
                       {t("submit")}
                     </Button>
                   </Form>
