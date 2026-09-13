@@ -152,23 +152,6 @@ function ArrendamientoContactInner() {
             delay={HERO_STEP * 2 + REVEAL_IMAGE_DELAY}
             scale
             from="right"
-            className="relative order-3 h-80 w-full lg:order-none lg:hidden"
-          >
-            <Image
-              src={CONTACT_IMAGE}
-              alt={t("imageAlt")}
-              fill
-              className="origin-bottom object-contain object-bottom opacity-95"
-              sizes="90vw"
-              priority={false}
-            />
-          </Reveal>
-
-          <Reveal
-            emphasis
-            delay={HERO_STEP * 2 + REVEAL_IMAGE_DELAY}
-            scale
-            from="right"
             className="pointer-events-none relative order-none hidden min-h-[520px] overflow-visible lg:block lg:-mr-10 xl:-mr-6"
           >
             <Image
@@ -181,11 +164,31 @@ function ArrendamientoContactInner() {
             />
           </Reveal>
 
-          <FormReveal
-            delay={HERO_STEP * 2}
-            from="right"
-            className="relative z-10 order-2 w-full max-w-[400px] justify-self-center lg:order-none lg:justify-self-end"
-          >
+          {/* Mobile: image layered behind the form */}
+          <div className="relative order-2 w-full max-w-[400px] justify-self-center pb-36 lg:contents lg:pb-0">
+            <Reveal
+              emphasis
+              delay={HERO_STEP * 2 + REVEAL_IMAGE_DELAY}
+              scale
+              from="right"
+              className="pointer-events-none absolute inset-x-[-16%] bottom-0 h-96 lg:hidden"
+              aria-hidden
+            >
+              <Image
+                src={CONTACT_IMAGE}
+                alt=""
+                fill
+                className="origin-bottom object-contain object-bottom opacity-95"
+                sizes="90vw"
+                priority={false}
+              />
+            </Reveal>
+
+            <FormReveal
+              delay={HERO_STEP * 2}
+              from="right"
+              className="relative z-10 w-full lg:max-w-[400px] lg:justify-self-end"
+            >
           <div
             className="w-full bg-white px-5 py-6 shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:px-6 md:py-7"
             style={{ borderRadius: "var(--radius-form)" }}
@@ -347,7 +350,8 @@ function ArrendamientoContactInner() {
                 </Form>
               )}
             </div>
-          </FormReveal>
+            </FormReveal>
+          </div>
         </div>
       </div>
     </section>
