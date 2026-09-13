@@ -154,3 +154,91 @@ body {
   border-color: var(--color-border) !important;
   align-items: center;
 }
+
+/* —— UI Button variants (hover states from brand design) —— */
+.ui-btn.ant-btn {
+  height: 43px;
+  padding-inline: 32px;
+  border-radius: var(--radius-button);
+  box-shadow: none;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.ui-btn--primary.ant-btn {
+  background: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+  color: var(--color-accent-contrast) !important;
+  font-weight: 600;
+}
+
+.ui-btn--primary.ant-btn:hover,
+.ui-btn--primary.ant-btn:focus-visible {
+  background: var(--color-bg-muted) !important;
+  border-color: var(--color-bg-muted) !important;
+  color: var(--color-text) !important;
+}
+
+.ui-btn--secondary.ant-btn {
+  background: transparent !important;
+  border-color: var(--color-text-on-primary) !important;
+  color: var(--color-text-on-primary) !important;
+  font-weight: 500;
+}
+
+.ui-btn--secondary.ant-btn:hover,
+.ui-btn--secondary.ant-btn:focus-visible {
+  background: rgba(255, 255, 255, 0.18) !important;
+  border-color: var(--color-text-on-primary) !important;
+  color: var(--color-text-on-primary) !important;
+}
+
+.ui-btn--secondaryLight.ant-btn {
+  height: 48px;
+  background: transparent !important;
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary) !important;
+  font-weight: 600;
+}
+
+.ui-btn--secondaryLight.ant-btn:hover,
+.ui-btn--secondaryLight.ant-btn:focus-visible {
+  background: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: var(--color-text-on-primary) !important;
+}
+
+.ui-btn--onAccent.ant-btn {
+  background: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: var(--color-text-on-primary) !important;
+  font-weight: 600;
+}
+
+.ui-btn--onAccent.ant-btn:hover,
+.ui-btn--onAccent.ant-btn:focus-visible {
+  background: var(--color-bg) !important;
+  border-color: var(--color-bg) !important;
+  color: var(--color-text) !important;
+}
+
+.ui-btn--muted.ant-btn {
+  background: var(--color-bg-muted) !important;
+  border-color: var(--color-bg-muted) !important;
+  color: var(--color-text) !important;
+  font-weight: 600;
+}
+
+.ui-btn--muted.ant-btn:hover,
+.ui-btn--muted.ant-btn:focus-visible {
+  background: rgba(255, 255, 255, 0.18) !important;
+  border-color: var(--color-text-on-primary) !important;
+  color: var(--color-text-on-primary) !important;
+}
+
+.ui-btn.ant-btn:disabled,
+.ui-btn.ant-btn.ant-btn-disabled {
+  opacity: 0.5;
+}
