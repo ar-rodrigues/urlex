@@ -103,20 +103,21 @@ export function LandingNav() {
         className="fixed inset-x-0 top-0 z-50 w-full"
         style={{
           background: "var(--color-primary)",
-          boxShadow: "0 1px 0 0 var(--color-primary)",
+          boxShadow:
+            "0 20px 48px color-mix(in srgb, var(--color-primary) 28%, transparent), 0 8px 20px color-mix(in srgb, var(--color-text) 14%, transparent)",
         }}
       >
-        <div className="landing-container flex items-center justify-between gap-4 py-4 md:py-6">
+        <div className="landing-container flex items-center justify-between gap-4 py-3 md:py-6">
           <Link
             href="/"
-            className="relative block h-12 w-44 shrink-0 md:h-16 md:w-56 xl:h-20 xl:w-72"
+            className="relative block h-[4.5rem] w-64 shrink-0 md:h-16 md:w-56 xl:h-20 xl:w-72"
           >
             <Image
               src="/images/landing/logo.png"
               alt={t("brand")}
               fill
               className="object-contain object-left"
-              sizes="(min-width: 1280px) 288px, (min-width: 768px) 224px, 176px"
+              sizes="(min-width: 1280px) 288px, (min-width: 768px) 224px, 256px"
               priority
             />
           </Link>
@@ -255,7 +256,7 @@ export function LandingNav() {
       {/* Matches header height so page content is not covered by position:fixed */}
       <div
         aria-hidden
-        className="h-[5rem] shrink-0 md:h-[7rem] xl:h-[8rem]"
+        className="h-[6rem] shrink-0 md:h-[7rem] xl:h-[8rem]"
       />
     </>
   );
