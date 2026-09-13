@@ -213,7 +213,7 @@
     "scheduleLabel": "Horario:",
     "scheduleValue": "Lunes a viernes, 9:00 – 16:00",
     "emailLabel": "Correo:",
-    "emailValue": "contacto.juridico@urlex.com",
+    "emailValue": "contacto.juridico@urlex.com.mx",
     "whatsappLabel": "Whatsapp:",
     "whatsappValue": "+52 221 594 9683",
     "privacy": "Aviso de privacidad",
@@ -668,7 +668,7 @@
     "whatsappLabel": "WhatsApp:",
     "whatsappValue": "+52 221 594 9683",
     "emailLabel": "Correo:",
-    "emailValue": "contacto.juridico@urlex.com",
+    "emailValue": "contacto.juridico@urlex.com.mx",
     "sidebarCta": "Consulta gratuita para evaluar tu caso sin compromiso.",
     "sidebarCtaButton": "Agendar consulta",
     "mapTitle": "Ubicación de URLEX en Puebla",
@@ -798,7 +798,7 @@
       },
       "arco": {
         "title": "Derechos ARCO",
-        "body": "Usted puede solicitar acceso, rectificación, cancelación u oposición al tratamiento de sus datos escribiendo a contacto.juridico@urlex.com."
+        "body": "Usted puede solicitar acceso, rectificación, cancelación u oposición al tratamiento de sus datos escribiendo a contacto.juridico@urlex.com.mx."
       },
       "transfer": {
         "title": "Transferencia de datos",
