@@ -34,7 +34,7 @@ export async function ServiceCardsGrid({
   }
 
   return (
-    <div className="-mx-2 flex gap-6 overflow-x-auto px-2 pb-4 pt-2 [scrollbar-width:thin]">
+    <div className="-mx-2 flex items-stretch gap-6 overflow-x-auto px-2 pb-4 pt-2 [scrollbar-width:thin]">
       {cards}
     </div>
   );

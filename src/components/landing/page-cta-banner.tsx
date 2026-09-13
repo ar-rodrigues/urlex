@@ -2,7 +2,11 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/lib/navigation";
-import { Reveal, REVEAL_STEP, REVEAL_IMAGE_DELAY } from "@/components/ui/reveal";
+import {
+  Reveal,
+  HERO_STEP,
+  REVEAL_IMAGE_DELAY,
+} from "@/components/ui/reveal";
 
 type Props = {
   title: string;
@@ -22,7 +26,7 @@ export async function PageCtaBanner({ title, subtitle, buttonLabel }: Props) {
       <div className="landing-container relative z-10 flex h-full flex-col items-start justify-center gap-4 py-8 md:gap-5 md:py-10 lg:max-w-none lg:py-0 lg:pr-[42%]">
         <div className="flex w-full max-w-xl flex-col items-start gap-2.5 md:gap-3 lg:max-w-2xl">
           <div className="flex flex-col gap-0.5 md:gap-1">
-            <Reveal>
+            <Reveal emphasis from="left">
               <h2
                 className="font-display text-[1.375rem] font-bold leading-[1.2] tracking-tight md:text-[1.75rem] lg:text-[2rem]"
                 style={{
@@ -33,7 +37,7 @@ export async function PageCtaBanner({ title, subtitle, buttonLabel }: Props) {
                 {title}
               </h2>
             </Reveal>
-            <Reveal delay={REVEAL_STEP}>
+            <Reveal emphasis from="left" delay={HERO_STEP}>
               <p
                 className="text-base font-medium leading-[1.35] md:text-lg lg:text-xl"
                 style={{ color: "var(--color-primary)" }}
@@ -43,10 +47,11 @@ export async function PageCtaBanner({ title, subtitle, buttonLabel }: Props) {
             </Reveal>
           </div>
 
-          <Reveal delay={REVEAL_STEP * 2}>
+          <Reveal emphasis from="left" delay={HERO_STEP * 2}>
             <Link href="/contacto">
               <Button
                 variant="onAccent"
+                className="whitespace-nowrap"
                 style={{
                   boxShadow: "0 8px 20px rgba(3, 3, 4, 0.22)",
                 }}
@@ -59,7 +64,8 @@ export async function PageCtaBanner({ title, subtitle, buttonLabel }: Props) {
       </div>
 
       <Reveal
-        delay={REVEAL_IMAGE_DELAY}
+        emphasis
+        delay={HERO_STEP * 2 + REVEAL_IMAGE_DELAY}
         scale
         from="right"
         className="pointer-events-none absolute bottom-0 hidden translate-y-[45%] lg:block"

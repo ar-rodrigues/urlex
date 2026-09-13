@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/button";
-import { Reveal, REVEAL_STEP } from "@/components/ui/reveal";
+import { Reveal, HERO_STEP } from "@/components/ui/reveal";
 
 export async function ArrendamientoBanner() {
   const t = await getTranslations("ArrendamientoPage.banner");
@@ -18,7 +18,7 @@ export async function ArrendamientoBanner() {
             borderRadius: "var(--radius-card)",
           }}
         >
-          <Reveal>
+          <Reveal emphasis>
             <p
               className="max-w-2xl font-display text-2xl font-bold leading-[1.2] tracking-tight md:text-3xl"
               style={{ color: "var(--color-primary)" }}
@@ -26,11 +26,12 @@ export async function ArrendamientoBanner() {
               {t("title")}
             </p>
           </Reveal>
-          <Reveal delay={REVEAL_STEP}>
+          <Reveal emphasis delay={HERO_STEP}>
             <a href="#planes" className="shrink-0">
               <Button
                 variant="onAccent"
                 size="large"
+                className="whitespace-nowrap"
                 style={{
                   height: 52,
                   paddingInline: 40,

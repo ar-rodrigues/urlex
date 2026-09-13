@@ -29,10 +29,13 @@ type RevealProps = {
    * HERO_IMAGE_DELAY so images don't beat nearby text.
    */
   scale?: boolean;
+  /** Larger travel + longer duration for banner / contact bands. */
+  emphasis?: boolean;
 };
 
 /** Fire as soon as the block nears the viewport — avoid empty “waiting” gaps. */
 const viewport = { once: true, amount: 0.08, margin: "0px 0px 20% 0px" } as const;
+const viewportEmphasis = { once: true, amount: 0.28 } as const;
 
 const OFFSET = 28;
 const DURATION = 0.55;
@@ -78,9 +81,22 @@ export function Reveal({
   style,
   from = "up",
   scale = false,
+  emphasis = false,
 }: RevealProps) {
   const reduceMotion = useReducedMotion();
-  const resolvedDelay = mediaDelay(delay, REVEAL_IMAGE_DELAY, scale);
+  const offset = emphasis ? HERO_OFFSET : OFFSET;
+  const duration = scale
+    ? emphasis
+      ? 1
+      : MEDIA_DURATION
+    : emphasis
+      ? HERO_DURATION
+      : DURATION;
+  const resolvedDelay = mediaDelay(
+    delay,
+    emphasis ? 0.22 : REVEAL_IMAGE_DELAY,
+    scale,
+  );
 
   if (reduceMotion) {
     return (
@@ -94,12 +110,12 @@ export function Reveal({
     <motion.div
       className={className}
       style={style}
-      initial={scale ? mediaInitial() : textInitial(from, OFFSET)}
+      initial={scale ? mediaInitial() : textInitial(from, offset)}
       whileInView={scale ? mediaAnimate() : { opacity: 1, y: 0, x: 0 }}
-      viewport={viewport}
+      viewport={emphasis ? viewportEmphasis : viewport}
       transition={{
-        duration: scale ? MEDIA_DURATION : DURATION,
-        ease: scale ? HERO_EASE : [0.22, 1, 0.36, 1],
+        duration,
+        ease: scale || emphasis ? HERO_EASE : [0.22, 1, 0.36, 1],
         delay: resolvedDelay,
       }}
     >
@@ -188,5 +204,119 @@ export function RevealStagger({
         </motion.div>
       ))}
     </div>
+  );
+}
+
+const FORM_OFFSET = 40;
+const FORM_DURATION = 0.75;
+const FORM_FIELD_STAGGER = 0.08;
+
+const formFieldVariants = {
+  hidden: { opacity: 0, y: 18 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
+  },
+} as const;
+
+/**
+ * Stronger entrance for contact form cards (slide + soft scale).
+ * Pair with FormRevealBody to stagger fields inside the same timeline.
+ * Use `playOnMount` for above-the-fold forms (e.g. /contacto) so the
+ * entrance isn't skipped during page fade-in.
+ */
+export function FormReveal({
+  children,
+  className,
+  delay = 0,
+  style,
+  from = "up",
+  playOnMount = false,
+}: RevealProps & { playOnMount?: boolean }) {
+  const reduceMotion = useReducedMotion();
+
+  if (reduceMotion) {
+    return (
+      <div className={className} style={style}>
+        {children}
+      </div>
+    );
+  }
+
+  const variants = {
+    hidden: {
+      opacity: 0,
+      y: from === "up" ? FORM_OFFSET : 0,
+      x: from === "left" ? -FORM_OFFSET : from === "right" ? FORM_OFFSET : 0,
+      scale: 0.94,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      x: 0,
+      scale: 1,
+      transition: {
+        duration: FORM_DURATION,
+        ease: HERO_EASE,
+        delay,
+      },
+    },
+  } as const;
+
+  return (
+    <motion.div
+      className={className}
+      style={style}
+      initial="hidden"
+      {...(playOnMount
+        ? { animate: "show" as const }
+        : {
+            whileInView: "show" as const,
+            viewport: { once: true, amount: 0.2 },
+          })}
+      variants={variants}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+type FormRevealBodyProps = {
+  children: React.ReactNode;
+  className?: string;
+};
+
+/** Staggers form title / fields / CTA once FormReveal enters view. */
+export function FormRevealBody({ children, className }: FormRevealBodyProps) {
+  const reduceMotion = useReducedMotion();
+  const items = Children.toArray(children);
+
+  if (reduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
+  return (
+    <motion.div
+      className={className}
+      variants={{
+        hidden: {},
+        show: {
+          transition: {
+            staggerChildren: FORM_FIELD_STAGGER,
+            delayChildren: 0.2,
+          },
+        },
+      }}
+    >
+      {items.map((child, index) => (
+        <motion.div
+          key={isValidElement(child) && child.key != null ? String(child.key) : index}
+          variants={formFieldVariants}
+        >
+          {child}
+        </motion.div>
+      ))}
+    </motion.div>
   );
 }

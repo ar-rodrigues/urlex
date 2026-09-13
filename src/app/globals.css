@@ -156,12 +156,20 @@ body {
 }
 
 /* —— UI Button variants (hover states from brand design) —— */
-.ui-btn.ant-btn {
+.ui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   height: 52px;
   padding-inline: 40px;
   border-radius: var(--radius-button);
+  border-width: 1px;
+  border-style: solid;
+  font-family: var(--font-family);
   font-size: 15px;
+  line-height: 1;
   letter-spacing: 0.02em;
+  cursor: pointer;
   box-shadow: none;
   transform: translateZ(0);
   transition:
@@ -173,84 +181,84 @@ body {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .ui-btn.ant-btn:hover:not(:disabled):not(.ant-btn-disabled),
-  .ui-btn.ant-btn:focus-visible:not(:disabled):not(.ant-btn-disabled) {
+  .ui-btn:hover:not(:disabled),
+  .ui-btn:focus-visible:not(:disabled) {
     transform: scale(1.04);
     box-shadow: 0 10px 22px color-mix(in srgb, var(--color-text) 18%, transparent);
   }
 }
 
-.ui-btn--primary.ant-btn {
-  background: var(--color-accent) !important;
-  border-color: var(--color-accent) !important;
-  color: var(--color-accent-contrast) !important;
+.ui-btn--primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-accent-contrast);
   font-weight: 600;
 }
 
-.ui-btn--primary.ant-btn:hover,
-.ui-btn--primary.ant-btn:focus-visible {
-  background: var(--color-bg) !important;
-  border-color: var(--color-bg) !important;
-  color: var(--color-text) !important;
+.ui-btn--primary:hover,
+.ui-btn--primary:focus-visible {
+  background: var(--color-bg);
+  border-color: var(--color-bg);
+  color: var(--color-text);
 }
 
-.ui-btn--secondary.ant-btn {
-  background: transparent !important;
-  border-color: var(--color-text-on-primary) !important;
-  color: var(--color-text-on-primary) !important;
+.ui-btn--secondary {
+  background: transparent;
+  border-color: var(--color-text-on-primary);
+  color: var(--color-text-on-primary);
   font-weight: 500;
 }
 
-.ui-btn--secondary.ant-btn:hover,
-.ui-btn--secondary.ant-btn:focus-visible {
-  background: rgba(255, 255, 255, 0.18) !important;
-  border-color: var(--color-text-on-primary) !important;
-  color: var(--color-text-on-primary) !important;
+.ui-btn--secondary:hover,
+.ui-btn--secondary:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: var(--color-text-on-primary);
+  color: var(--color-text-on-primary);
 }
 
-.ui-btn--secondaryLight.ant-btn {
-  background: transparent !important;
-  border-color: var(--color-primary) !important;
-  color: var(--color-primary) !important;
+.ui-btn--secondaryLight {
+  background: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
   font-weight: 600;
 }
 
-.ui-btn--secondaryLight.ant-btn:hover,
-.ui-btn--secondaryLight.ant-btn:focus-visible {
-  background: var(--color-primary) !important;
-  border-color: var(--color-primary) !important;
-  color: var(--color-text-on-primary) !important;
+.ui-btn--secondaryLight:hover,
+.ui-btn--secondaryLight:focus-visible {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-text-on-primary);
 }
 
-.ui-btn--onAccent.ant-btn {
-  background: var(--color-primary) !important;
-  border-color: var(--color-primary) !important;
-  color: var(--color-text-on-primary) !important;
+.ui-btn--onAccent {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-text-on-primary);
   font-weight: 600;
 }
 
-.ui-btn--onAccent.ant-btn:hover,
-.ui-btn--onAccent.ant-btn:focus-visible {
-  background: var(--color-bg) !important;
-  border-color: var(--color-bg) !important;
-  color: var(--color-primary) !important;
+.ui-btn--onAccent:hover,
+.ui-btn--onAccent:focus-visible {
+  background: var(--color-bg);
+  border-color: var(--color-bg);
+  color: var(--color-primary);
 }
 
-.ui-btn--muted.ant-btn {
-  background: var(--color-bg) !important;
-  border-color: var(--color-bg) !important;
-  color: var(--color-text) !important;
+.ui-btn--muted {
+  background: var(--color-bg);
+  border-color: var(--color-bg);
+  color: var(--color-text);
   font-weight: 600;
 }
 
-.ui-btn--muted.ant-btn:hover,
-.ui-btn--muted.ant-btn:focus-visible {
-  background: rgba(255, 255, 255, 0.18) !important;
-  border-color: var(--color-text-on-primary) !important;
-  color: var(--color-text-on-primary) !important;
+.ui-btn--muted:hover,
+.ui-btn--muted:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: var(--color-text-on-primary);
+  color: var(--color-text-on-primary);
 }
 
-.ui-btn.ant-btn:disabled,
-.ui-btn.ant-btn.ant-btn-disabled {
+.ui-btn:disabled {
   opacity: 0.5;
+  cursor: not-allowed;
 }

@@ -5,8 +5,9 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { PrivacyConsentCheckbox } from "@/components/landing/privacy-consent-checkbox";
+import { AntdProvider } from "@/components/providers/antd-provider";
 import { Button } from "@/components/ui/button";
-import { Reveal, REVEAL_STEP } from "@/components/ui/reveal";
+import { Reveal, FormReveal, FormRevealBody, HERO_STEP, REVEAL_STEP } from "@/components/ui/reveal";
 import { submitContactForm } from "@/lib/submit-contact";
 
 type ContactValues = {
@@ -31,6 +32,20 @@ const SERVICE_OPTIONS = [
 ] as const;
 
 export function ContactSection({
+  hideTitle = false,
+  submitLabel,
+}: {
+  hideTitle?: boolean;
+  submitLabel?: string;
+} = {}) {
+  return (
+    <AntdProvider>
+      <ContactSectionInner hideTitle={hideTitle} submitLabel={submitLabel} />
+    </AntdProvider>
+  );
+}
+
+function ContactSectionInner({
   hideTitle = false,
   submitLabel,
 }: {
@@ -87,7 +102,7 @@ export function ContactSection({
     >
       <div className="landing-container flex flex-col items-center gap-6 md:gap-8">
         {hideTitle ? null : (
-          <Reveal>
+          <Reveal emphasis>
             <h2
               className="font-display text-center text-[1.75rem] font-bold leading-[1.23] tracking-[0.03em] md:text-[2.5rem]"
               style={{ color: "var(--color-text)" }}
@@ -97,7 +112,12 @@ export function ContactSection({
           </Reveal>
         )}
 
-        <Reveal delay={hideTitle ? 0 : REVEAL_STEP} className="w-full max-w-[842px]">
+        <FormReveal
+          playOnMount={hideTitle}
+          delay={hideTitle ? HERO_STEP * 2 : REVEAL_STEP}
+          from="up"
+          className="w-full max-w-[842px]"
+        >
           <div
             className="w-full bg-white px-4 py-8 md:px-8 md:py-12"
             style={{
@@ -158,6 +178,7 @@ export function ContactSection({
                 </Form.Item>
               </div>
 
+              <FormRevealBody>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <Form.Item
                   name="fullName"
@@ -262,11 +283,12 @@ export function ContactSection({
                   {submitLabel ?? t("submit")}
                 </Button>
               </div>
+              </FormRevealBody>
               </Form>
             )}
           </div>
           </div>
-        </Reveal>
+        </FormReveal>
       </div>
     </section>
   );

@@ -33,17 +33,22 @@ export function ServiceCardsCarousel() {
       }}
     >
       <div
-        className={`service-carousel-track flex w-max gap-6 py-2${paused ? " is-paused" : ""}`}
+        className={`service-carousel-track flex w-max items-stretch gap-6 py-2${paused ? " is-paused" : ""}`}
       >
         {loopedCards.map((card, index) => (
-          <ServiceCard
+          <div
             key={`${card.key}-${index}`}
-            title={card.title}
-            description={card.description}
-            cta={t("cta")}
-            href={card.href}
-            icon={card.icon}
-          />
+            className="flex w-[280px] shrink-0 md:w-[293px]"
+          >
+            <ServiceCard
+              title={card.title}
+              description={card.description}
+              cta={t("cta")}
+              href={card.href}
+              icon={card.icon}
+              className="flex h-full w-full flex-col gap-7 rounded-[var(--radius-card)] bg-white p-4 shadow-[0_4px_8px_rgba(0,0,0,0.12)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_12px_24px_rgba(0,0,0,0.14)]"
+            />
+          </div>
         ))}
       </div>
     </div>

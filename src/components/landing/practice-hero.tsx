@@ -45,7 +45,7 @@ export async function PracticeHero({ areaId }: Props) {
       </div>
 
       <div className="landing-container flex flex-col items-stretch gap-8 pb-10 lg:flex-row lg:items-center lg:gap-12 lg:pb-12 xl:gap-16">
-        <div className="flex min-w-0 flex-1 flex-col gap-5 lg:gap-6">
+        <div className="order-2 flex min-w-0 flex-1 flex-col gap-5 lg:order-1 lg:gap-6">
           <HeroReveal delay={HERO_STEP}>
             <h1
               className="font-display text-[1.75rem] font-bold leading-[1.15] tracking-[0.03em] md:text-[2rem] lg:text-[2.25rem]"
@@ -73,7 +73,7 @@ export async function PracticeHero({ areaId }: Props) {
           delay={HERO_IMAGE_DELAY}
           from="right"
           scale
-          className="relative h-[220px] w-full shrink-0 overflow-hidden rounded-lg sm:h-[280px] lg:h-[321px] lg:w-[min(42%,498px)]"
+          className="relative order-1 h-[220px] w-full shrink-0 overflow-hidden rounded-lg sm:h-[280px] lg:order-2 lg:h-[321px] lg:w-[min(42%,498px)]"
         >
           <Image
             src={area.heroImage}

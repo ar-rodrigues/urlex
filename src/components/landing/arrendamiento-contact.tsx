@@ -5,8 +5,9 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { PrivacyConsentCheckbox } from "@/components/landing/privacy-consent-checkbox";
+import { AntdProvider } from "@/components/providers/antd-provider";
 import { Button } from "@/components/ui/button";
-import { Reveal, REVEAL_STEP, REVEAL_IMAGE_DELAY } from "@/components/ui/reveal";
+import { Reveal, FormReveal, FormRevealBody, HERO_STEP, REVEAL_IMAGE_DELAY } from "@/components/ui/reveal";
 import {
   ARRENDAMIENTO_PROPERTY_TYPES,
   ARRENDAMIENTO_TENANT_OPTIONS,
@@ -32,6 +33,14 @@ type ContactValues = {
 };
 
 export function ArrendamientoContact() {
+  return (
+    <AntdProvider>
+      <ArrendamientoContactInner />
+    </AntdProvider>
+  );
+}
+
+function ArrendamientoContactInner() {
   const t = useTranslations("ArrendamientoPage.contact");
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -94,7 +103,7 @@ export function ArrendamientoContact() {
 
         <div className="landing-container relative z-10 grid grid-cols-1 items-center gap-8 py-12 lg:grid-cols-[minmax(0,1fr)_minmax(280px,1.1fr)_minmax(320px,400px)] lg:gap-4 lg:py-14 xl:gap-6">
           <div className="flex max-w-lg flex-col gap-5 lg:py-4">
-            <Reveal>
+            <Reveal emphasis from="left">
               <p
                 className="text-sm font-semibold uppercase tracking-wider"
                 style={{ color: "var(--color-accent)" }}
@@ -102,7 +111,7 @@ export function ArrendamientoContact() {
                 {t("eyebrow")}
               </p>
             </Reveal>
-            <Reveal delay={REVEAL_STEP}>
+            <Reveal emphasis from="left" delay={HERO_STEP}>
               <h2
                 className="font-display text-[1.75rem] font-bold leading-[1.15] tracking-tight md:text-[2.25rem]"
                 style={{ color: "var(--color-text-on-primary)" }}
@@ -110,7 +119,7 @@ export function ArrendamientoContact() {
                 {t("title")}
               </h2>
             </Reveal>
-            <Reveal delay={REVEAL_STEP * 2}>
+            <Reveal emphasis from="left" delay={HERO_STEP * 2}>
               <p
                 className="text-base font-medium leading-[1.45] md:text-lg"
                 style={{ color: "var(--color-text-on-primary-muted)" }}
@@ -118,10 +127,11 @@ export function ArrendamientoContact() {
                 {t("body")}
               </p>
             </Reveal>
-            <Reveal delay={REVEAL_STEP * 3}>
+            <Reveal emphasis from="left" delay={HERO_STEP * 3}>
               <a href="#contacto-arrendamiento" className="w-fit">
                 <Button
                   variant="primary"
+                  className="whitespace-nowrap"
                   style={{
                     height: 48,
                     paddingInline: 28,
@@ -138,7 +148,8 @@ export function ArrendamientoContact() {
           </div>
 
           <Reveal
-            delay={REVEAL_IMAGE_DELAY}
+            emphasis
+            delay={HERO_STEP * 2 + REVEAL_IMAGE_DELAY}
             scale
             from="right"
             className="relative order-3 h-80 w-full lg:order-none lg:hidden"
@@ -154,7 +165,8 @@ export function ArrendamientoContact() {
           </Reveal>
 
           <Reveal
-            delay={REVEAL_IMAGE_DELAY}
+            emphasis
+            delay={HERO_STEP * 2 + REVEAL_IMAGE_DELAY}
             scale
             from="right"
             className="pointer-events-none relative order-none hidden min-h-[520px] overflow-visible lg:block lg:-mr-10 xl:-mr-6"
@@ -169,8 +181,9 @@ export function ArrendamientoContact() {
             />
           </Reveal>
 
-          <Reveal
-            delay={REVEAL_STEP * 2}
+          <FormReveal
+            delay={HERO_STEP * 2}
+            from="right"
             className="relative z-10 order-2 w-full max-w-[400px] justify-self-center lg:order-none lg:justify-self-end"
           >
           <div
@@ -214,28 +227,29 @@ export function ArrendamientoContact() {
                   </Button>
                 </div>
               ) : (
-                <>
-                  <h3
-                    className="mb-4 font-display text-xl font-bold"
-                    style={{ color: "var(--color-primary)" }}
+                <Form
+                  form={form}
+                  layout="vertical"
+                  requiredMark={false}
+                  onFinish={handleFinish}
+                  className="arrendamiento-contact-form relative w-full"
+                >
+                  <div
+                    className="pointer-events-none absolute -left-[9999px] h-0 w-0 overflow-hidden opacity-0"
+                    aria-hidden
                   >
-                    {t("formTitle")}
-                  </h3>
-                  <Form
-                    form={form}
-                    layout="vertical"
-                    requiredMark={false}
-                    onFinish={handleFinish}
-                    className="arrendamiento-contact-form relative w-full"
-                  >
-                    <div
-                      className="pointer-events-none absolute -left-[9999px] h-0 w-0 overflow-hidden opacity-0"
-                      aria-hidden
+                    <Form.Item name="website" noStyle>
+                      <Input tabIndex={-1} autoComplete="off" />
+                    </Form.Item>
+                  </div>
+
+                  <FormRevealBody>
+                    <h3
+                      className="mb-4 font-display text-xl font-bold"
+                      style={{ color: "var(--color-primary)" }}
                     >
-                      <Form.Item name="website" noStyle>
-                        <Input tabIndex={-1} autoComplete="off" />
-                      </Form.Item>
-                    </div>
+                      {t("formTitle")}
+                    </h3>
 
                     <Form.Item
                       name="fullName"
@@ -329,11 +343,11 @@ export function ArrendamientoContact() {
                     >
                       {t("submit")}
                     </Button>
-                  </Form>
-                </>
+                  </FormRevealBody>
+                </Form>
               )}
             </div>
-          </Reveal>
+          </FormReveal>
         </div>
       </div>
     </section>

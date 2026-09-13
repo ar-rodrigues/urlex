@@ -1,7 +1,11 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/lib/navigation";
-import { Reveal, REVEAL_STEP, REVEAL_IMAGE_DELAY } from "@/components/ui/reveal";
+import {
+  Reveal,
+  HERO_STEP,
+  REVEAL_IMAGE_DELAY,
+} from "@/components/ui/reveal";
 
 export async function HomeArrendamientoBanner() {
   const t = await getTranslations("HomeArrendamientoBanner");
@@ -32,7 +36,7 @@ export async function HomeArrendamientoBanner() {
           />
 
           <div className="relative z-10 flex flex-col gap-0.5 px-6 py-8 md:gap-1 md:px-10 md:py-10 lg:max-w-2xl">
-            <Reveal>
+            <Reveal emphasis from="left">
               <h2
                 className="font-display text-[1.75rem] font-bold leading-[1.23] tracking-[0.03em] md:text-[2.125rem] lg:text-[2.5rem]"
                 style={{
@@ -43,7 +47,7 @@ export async function HomeArrendamientoBanner() {
                 {t("title")}
               </h2>
             </Reveal>
-            <Reveal delay={REVEAL_STEP}>
+            <Reveal emphasis from="left" delay={HERO_STEP}>
               <p
                 className="text-sm font-medium leading-[1.45] md:text-base lg:text-lg"
                 style={{ color: "var(--color-text-on-primary)" }}
@@ -54,7 +58,8 @@ export async function HomeArrendamientoBanner() {
           </div>
 
           <Reveal
-            delay={REVEAL_IMAGE_DELAY}
+            emphasis
+            delay={HERO_STEP + REVEAL_IMAGE_DELAY}
             from="right"
             scale
             className="relative z-10 flex h-full min-h-[10rem] items-end justify-end md:min-h-full"

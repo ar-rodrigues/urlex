@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { ProcessStepBadge } from "@/components/landing/process-step-badge";
 import { ARRENDAMIENTO_PROCESS_STEPS } from "@/lib/arrendamiento-plans";
 import { Reveal, RevealStagger, REVEAL_STEP } from "@/components/ui/reveal";
 
@@ -51,9 +52,15 @@ export async function ArrendamientoProcess() {
           </Reveal>
         </div>
 
-        <RevealStagger className="grid w-full max-w-4xl grid-cols-1 gap-10 md:grid-cols-3 md:gap-4">
+        <RevealStagger
+          scale
+          className="grid w-full max-w-4xl grid-cols-1 gap-10 md:grid-cols-3 md:items-stretch md:gap-4"
+        >
           {ARRENDAMIENTO_PROCESS_STEPS.map(({ key }, index) => (
-            <div key={key} className="relative flex h-full flex-col items-center gap-4 text-center">
+            <div
+              key={key}
+              className="relative flex h-full flex-col items-center gap-4 text-center"
+            >
               {index < ARRENDAMIENTO_PROCESS_STEPS.length - 1 ? (
                 <span
                   className="absolute left-[calc(50%+28px)] top-7 hidden h-px md:block"
@@ -65,19 +72,11 @@ export async function ArrendamientoProcess() {
                 />
               ) : null}
 
-              <span
-                className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full font-display text-lg font-bold"
-                style={{
-                  background: "var(--color-primary)",
-                  color: "var(--color-text-on-primary)",
-                }}
-              >
-                {String(index + 1).padStart(2, "0")}
-              </span>
+              <ProcessStepBadge index={index} />
 
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-1 flex-col gap-2">
                 <h3
-                  className="font-display text-lg font-bold md:text-xl"
+                  className="font-display text-lg font-bold md:min-h-[3.25rem] md:text-xl"
                   style={{ color: "var(--color-primary)" }}
                 >
                   {t(`steps.${key}.title`)}
