@@ -53,7 +53,7 @@ export async function ArrendamientoProcess() {
 
         <RevealStagger className="grid w-full max-w-4xl grid-cols-1 gap-10 md:grid-cols-3 md:gap-4">
           {ARRENDAMIENTO_PROCESS_STEPS.map(({ key }, index) => (
-            <div key={key} className="relative flex flex-col items-center gap-4 text-center">
+            <div key={key} className="relative flex h-full flex-col items-center gap-4 text-center">
               {index < ARRENDAMIENTO_PROCESS_STEPS.length - 1 ? (
                 <span
                   className="absolute left-[calc(50%+28px)] top-7 hidden h-px md:block"

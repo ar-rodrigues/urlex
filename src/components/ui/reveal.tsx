@@ -174,6 +174,7 @@ export function RevealStagger({
       {items.map((child, index) => (
         <motion.div
           key={isValidElement(child) && child.key != null ? String(child.key) : index}
+          className="h-full"
           initial={{ opacity: 0, y: OFFSET, scale: scale ? 0.96 : 1 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={viewport}

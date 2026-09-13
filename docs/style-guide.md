@@ -90,9 +90,13 @@ Patrón de sección:
 
 ### Botones
 
-- **Primary (accent):** fondo `--color-accent`, texto `--color-accent-contrast`, radio 12px. CTA principal.
-- **Secondary (outline claro):** borde blanco + texto blanco sobre navy.
-- **Secondary (outline oscuro):** borde `--color-primary` + texto primary sobre fondos claros.
+- Tamaño base: altura 52px, padding horizontal 40px, texto 15px, radio `--radius-button`.
+- Hover: escala ligera (`1.04`) + sombra suave; colores según variante (ver Figma).
+- **Primary (accent):** fondo `--color-accent` → hover blanco; texto negro. CTA principal.
+- **Secondary (outline claro):** borde blanco + texto blanco sobre navy → hover fill translúcido.
+- **Muted (sólido claro):** fondo blanco sobre navy → hover fill translúcido + texto blanco.
+- **Secondary (outline oscuro):** borde `--color-primary` + texto primary → hover navy + texto blanco.
+- **On accent:** fondo navy sobre amarillo → hover blanco + texto primary.
 - **Ghost / texto:** solo para acciones terciarias.
 
 Usar el wrapper `src/components/ui/button.tsx` con variantes; no inventar estilos ad hoc.
@@ -127,7 +131,7 @@ Usar el wrapper `src/components/ui/button.tsx` con variantes; no inventar estilo
 Máximo 2–3 motions intencionales:
 
 1. Fade/slide suave al entrar secciones (opcional, ~300–500ms).
-2. Hover de botones (color accent-hover / opacity).
+2. Hover de botones (escala ligera + sombra + cambio de color).
 3. Scroll horizontal del carrusel de servicios.
 
 Evitar parallax agresivo, particles y animaciones decorativas sin propósito.

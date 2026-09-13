@@ -89,7 +89,7 @@ export async function NosotrosContent() {
             {VALUES.map(({ key, icon }) => (
               <div
                 key={key}
-                className="flex flex-col gap-4 rounded-[var(--radius-card)] border p-5 md:p-6"
+                className="flex h-full flex-col gap-4 rounded-[var(--radius-card)] border p-5 md:p-6"
                 style={{
                   background: "var(--color-bg-muted)",
                   borderColor: "var(--color-border)",
@@ -141,7 +141,7 @@ export async function NosotrosContent() {
             {TEAM_KEYS.map((key) => (
               <div
                 key={key}
-                className="flex flex-col items-center gap-3 rounded-[var(--radius-card)] border px-6 py-8 text-center"
+                className="flex h-full flex-col items-center gap-3 rounded-[var(--radius-card)] border px-6 py-8 text-center"
                 style={{ borderColor: "var(--color-border)" }}
               >
                 <Image

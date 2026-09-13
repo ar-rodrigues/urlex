@@ -49,7 +49,7 @@ export async function TrayectoriaContent() {
           </Reveal>
           <RevealStagger className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {PROCESS_KEYS.map((key) => (
-              <div key={key} className="flex flex-col items-center gap-3 text-center">
+              <div key={key} className="flex h-full flex-col items-center gap-3 text-center">
                 <span
                   className="flex h-12 w-12 items-center justify-center rounded-full text-lg font-semibold"
                   style={{

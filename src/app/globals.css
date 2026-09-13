@@ -157,9 +157,11 @@ body {
 
 /* —— UI Button variants (hover states from brand design) —— */
 .ui-btn.ant-btn {
-  height: 43px;
-  padding-inline: 32px;
+  height: 52px;
+  padding-inline: 40px;
   border-radius: var(--radius-button);
+  font-size: 15px;
+  letter-spacing: 0.02em;
   box-shadow: none;
   transform: translateZ(0);
   transition:
@@ -187,8 +189,8 @@ body {
 
 .ui-btn--primary.ant-btn:hover,
 .ui-btn--primary.ant-btn:focus-visible {
-  background: var(--color-bg-muted) !important;
-  border-color: var(--color-bg-muted) !important;
+  background: var(--color-bg) !important;
+  border-color: var(--color-bg) !important;
   color: var(--color-text) !important;
 }
 
@@ -207,7 +209,6 @@ body {
 }
 
 .ui-btn--secondaryLight.ant-btn {
-  height: 48px;
   background: transparent !important;
   border-color: var(--color-primary) !important;
   color: var(--color-primary) !important;
@@ -232,12 +233,12 @@ body {
 .ui-btn--onAccent.ant-btn:focus-visible {
   background: var(--color-bg) !important;
   border-color: var(--color-bg) !important;
-  color: var(--color-text) !important;
+  color: var(--color-primary) !important;
 }
 
 .ui-btn--muted.ant-btn {
-  background: var(--color-bg-muted) !important;
-  border-color: var(--color-bg-muted) !important;
+  background: var(--color-bg) !important;
+  border-color: var(--color-bg) !important;
   color: var(--color-text) !important;
   font-weight: 600;
 }

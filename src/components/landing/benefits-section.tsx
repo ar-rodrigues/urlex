@@ -36,7 +36,7 @@ export async function BenefitsSection() {
           {BENEFITS.map(({ key, icon }) => (
             <div
               key={key}
-              className="flex flex-col gap-2 rounded-2xl border border-black/10 bg-white p-8 shadow-[0_4px_8px_rgba(0,0,0,0.03)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)]"
+              className="flex h-full flex-col gap-2 rounded-2xl border border-black/10 bg-white p-8 shadow-[0_4px_8px_rgba(0,0,0,0.03)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)]"
             >
               <div className="flex items-center gap-4">
                 <div

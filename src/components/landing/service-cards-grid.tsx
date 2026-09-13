@@ -23,8 +23,8 @@ export async function ServiceCardsGrid({
       icon={icon}
       className={
         layout === "scroll"
-          ? "flex w-[280px] shrink-0 flex-col gap-7 rounded-[var(--radius-card)] bg-white p-4 shadow-[0_4px_8px_rgba(0,0,0,0.12)] md:w-[293px]"
-          : "flex flex-col gap-7 rounded-[var(--radius-card)] bg-white p-4 shadow-[0_4px_8px_rgba(0,0,0,0.12)]"
+          ? "flex h-full w-[280px] shrink-0 flex-col gap-7 rounded-[var(--radius-card)] bg-white p-4 shadow-[0_4px_8px_rgba(0,0,0,0.12)] md:w-[293px]"
+          : "flex h-full flex-col gap-7 rounded-[var(--radius-card)] bg-white p-4 shadow-[0_4px_8px_rgba(0,0,0,0.12)]"
       }
     />
   ));
