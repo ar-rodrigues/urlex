@@ -362,11 +362,11 @@
       "subtitle": "Te ayudamos a prevenir riesgos, proteger activos comerciales y resolver controversias mercantiles con estrategia, experiencia y criterio legal.",
       "items": {
         "debts": {
-          "title": "Cobro de deudas y cartera vencida",
+          "title": "Cobro de créditos y cartera vencida",
           "description": "Gestión legal para recuperar adeudos de manera eficiente."
         },
         "incorporation": {
-          "title": "Redacción y alta de actas constitutivas",
+          "title": "Elaboración de actas constitutivas de asamblea ordinarias y extraordinarias",
           "description": "Constitución formal de sociedades mercantiles ante notario y Registro Público."
         },
         "ip": {
@@ -375,7 +375,7 @@
         },
         "contracts": {
           "title": "Elaboración y revisión de contratos mercantiles",
-          "description": "Redacción y análisis de contratos comerciales adaptados a tu operación."
+          "description": "Redacción y análisis de contratos mercantiles adaptados a tu operación."
         },
         "negotiable": {
           "title": "Contratos relacionados con facturas, cheques y títulos",
@@ -390,7 +390,7 @@
           "description": "Defensa de derechos frente a actos de autoridad que afecten tu negocio."
         },
         "registry": {
-          "title": "Gestoría ante Corredor Público y Registro Público de Comercio",
+          "title": "Gestoría ante Notario, Corredor Público y Registro Público de Comercio",
           "description": "Trámites notariales y registrales para formalizar tu empresa."
         }
       },
@@ -406,7 +406,7 @@
       "breadcrumbCurrent": "Resolución de Contratos",
       "title": "Soluciones legales cuando una relación contractual ya no funciona",
       "body": "Un contrato en conflicto puede generar pérdidas, incertidumbre y litigios prolongados. En URLEX analizamos tu situación y te acompañamos para resolver, renegociar o terminar la relación con el menor riesgo posible.",
-      "practiceArea": "Área de Práctica · Resolución de Contratos",
+      "practiceArea": "Área de Práctica · Derecho Contractual",
       "imageAlt": "Revisión legal de contratos",
       "subtitle": "Analizamos la validez, eficacia y riesgos de cada contrato para definir la mejor ruta: renegociación, cumplimiento forzoso o terminación legal.",
       "items": {
@@ -659,6 +659,23 @@
     "body": "Nuestras instalaciones en Puebla están pensadas para brindarte un ambiente de privacidad, comodidad y profesionalismo durante cada consulta. Atendemos con discreción y te ofrecemos el espacio adecuado para hablar con confianza sobre tu situación legal.",
     "imageAlt": "Instalaciones del bufete URLEX",
     "galleryAlt": "Galería de instalaciones",
+    "Carousel": {
+      "label": "Galería de instalaciones",
+      "prev": "Foto anterior",
+      "next": "Foto siguiente",
+      "indicators": "Indicadores de la galería",
+      "goTo": "Ir a la foto {index}",
+      "status": "Foto {current} de {total}",
+      "slides": {
+        "oficina1": "Oficina del bufete URLEX",
+        "oficina2": "Espacio de trabajo en las oficinas de URLEX",
+        "oficina3": "Detalle de las oficinas de URLEX",
+        "salaEspera": "Sala de espera de URLEX",
+        "salaReuniones": "Sala de reuniones de URLEX",
+        "salaReuniones2": "Sala de reuniones de URLEX, vista adicional",
+        "salaReuniones3": "Sala de reuniones de URLEX, otra perspectiva"
+      }
+    },
     "contactTitle": "Contacto",
     "addressLine1": "Privada de la 37 sur #2115",
     "addressLine2": "Col. Belisario Domínguez.",
@@ -947,7 +964,6 @@
       "eyebrow": "¿Listo para rentar con tranquilidad?",
       "title": "Protege tu inmueble y renta con confianza",
       "body": "Permítenos ayudarte a elegir el plan que mejor se adapte a tus necesidades. Nuestro equipo está listo para asesorarte.",
-      "cta": "Solicitar asesoría",
       "formTitle": "Solicita más información",
       "imageAlt": "Edificio residencial moderno",
       "fullName": "Nombre completo",

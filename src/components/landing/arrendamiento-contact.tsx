@@ -127,24 +127,6 @@ function ArrendamientoContactInner() {
                 {t("body")}
               </p>
             </Reveal>
-            <Reveal emphasis from="left" delay={HERO_STEP * 3}>
-              <a href="#contacto-arrendamiento" className="w-fit">
-                <Button
-                  variant="primary"
-                  className="whitespace-nowrap"
-                  style={{
-                    height: 48,
-                    paddingInline: 28,
-                    fontSize: 16,
-                  }}
-                >
-                  <span className="flex items-center gap-2">
-                    {t("cta")}
-                    <span aria-hidden>→</span>
-                  </span>
-                </Button>
-              </a>
-            </Reveal>
           </div>
 
           <Reveal
