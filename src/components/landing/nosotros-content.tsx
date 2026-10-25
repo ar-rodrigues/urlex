@@ -15,9 +15,9 @@ const TEAM_KEYS = [
   "hector",
   "luis",
   "emiliano",
+  "joanna",
   "juan",
   "maricruz",
-  "joanna",
 ] as const;
 
 export async function NosotrosContent() {
