@@ -46,7 +46,7 @@ export async function AboutSection() {
           className="relative mx-auto h-[240px] w-full max-w-md shrink-0 overflow-hidden sm:h-[280px] lg:mx-0 lg:h-[268px] lg:w-[min(38%,400px)] lg:max-w-none"
         >
           <Image
-            src="/images/landing/about.jpg"
+            src="/images/landing/about.webp"
             alt={t("imageAlt")}
             fill
             className="object-cover"

@@ -52,12 +52,12 @@ export async function Hero() {
           className="relative order-1 h-[280px] w-full shrink-0 overflow-hidden sm:h-[340px] lg:order-2 lg:h-[464px] lg:w-[min(38%,400px)]"
         >
           <Image
-            src="/images/landing/hero.jpg"
+            src="/images/landing/hero.webp"
             alt={t("imageAlt")}
             fill
             className="object-cover"
-            sizes="(max-width: 640px) 100vw, (max-width: 1023px) 90vw, 400px"
-            quality={70}
+            sizes="(max-width: 640px) 180vw, (max-width: 1023px) 160vw, 1150px"
+            quality={75}
             priority
             fetchPriority="high"
           />

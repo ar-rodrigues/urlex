@@ -14,9 +14,9 @@ const VALUES = [
 const TEAM_KEYS = [
   "hector",
   "luis",
+  "emiliano",
   "juan",
   "maricruz",
-  "emiliano",
   "joanna",
 ] as const;
 
